@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Youtube, MessageCircle } from 'lucide-react';
 import QuoteForm from '../components/QuoteForm';
 import './Portfolio.css';
 import './ContactUs.css';
@@ -81,17 +81,21 @@ export default function ContactUs() {
                 <div className="contact-social">
                   <p className="contact-social-label">Follow Us</p>
                   <div className="contact-socials-row">
-                    <a href="https://www.instagram.com/sho_pros/" target="_blank" rel="noreferrer" className="contact-social-link">
+                    <a href="https://www.instagram.com/ShoProsOutdoors" target="_blank" rel="noreferrer" className="contact-social-link">
                       <Instagram size={18} />
                       <span>Instagram</span>
                     </a>
-                    <a href="https://www.facebook.com/ShoPros/" target="_blank" rel="noreferrer" className="contact-social-link">
+                    <a href="https://www.facebook.com/ShoProsOutdoors" target="_blank" rel="noreferrer" className="contact-social-link">
                       <Facebook size={18} />
                       <span>Facebook</span>
                     </a>
-                    <a href="https://www.youtube.com/@sho_pros" target="_blank" rel="noreferrer" className="contact-social-link">
+                    <a href="https://www.youtube.com/@ShoProsOutdoors" target="_blank" rel="noreferrer" className="contact-social-link">
                       <Youtube size={18} />
                       <span>YouTube</span>
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=17874083333&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" className="contact-social-link">
+                      <MessageCircle size={18} />
+                      <span>WhatsApp</span>
                     </a>
                   </div>
                 </div>

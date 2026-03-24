@@ -348,27 +348,26 @@
 }
 
 /* ══════════════════════════════
-   OUR PROCESS
+   OUR PROCESS — Horizontal Timeline
 ══════════════════════════════ */
 .process-section {
-  padding: 6rem 0;
-  background: var(--color-carbon);
+  padding: 5rem 0 4rem;
+  background: #faf9f7;
+  border-top: 1px solid var(--color-gray-200);
 }
 
-.process-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+.process-top {
+  text-align: center;
   margin-bottom: 4rem;
 }
 
 .process-heading {
   font-family: var(--font-primary);
-  font-weight: 900;
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--color-white);
-  line-height: 1.1;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  color: var(--color-black);
+  line-height: 1.15;
+  margin-top: 0.5rem;
 }
 
 .process-heading-accent {
@@ -376,58 +375,168 @@
   font-style: italic;
 }
 
-/* process-header-right flows naturally */
-
-.process-sub {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.75;
+/* ── Timeline row ── */
+.process-timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 1rem;
 }
 
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+/* ── Each step ── */
+.process-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 100px;
+  max-width: 160px;
+  text-align: center;
+  padding: 0 0.5rem;
 }
 
-.process-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  transition: background 0.25s ease, border-color 0.25s ease;
+/* ── Connector line (horizontal) ── */
+.process-connector {
+  position: absolute;
+  top: calc(4.5rem + 28px); /* vertically centered on the icon circle */
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background: var(--color-gray-300);
+  z-index: 0;
 }
 
-.process-card:hover {
-  background: rgba(166, 124, 82, 0.08);
-  border-color: rgba(166, 124, 82, 0.25);
-}
-
-.process-num {
-  display: block;
-  font-family: var(--font-primary);
-  font-weight: 900;
-  font-size: 2rem;
-  color: var(--color-wood);
-  margin-bottom: 1rem;
-  opacity: 0.7;
-}
-
-.process-title {
-  font-family: var(--font-primary);
-  font-weight: 700;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-white);
+/* ── Label above icon ── */
+.process-step-label {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--color-gray-500);
+  line-height: 1.4;
   margin-bottom: 0.75rem;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.process-desc {
-  font-size: 0.825rem;
-  color: rgba(255, 255, 255, 0.45);
-  line-height: 1.7;
+/* ── Icon circle ── */
+.process-icon-wrap {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-wood);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  flex-shrink: 0;
 }
+
+.process-step:hover .process-icon-wrap {
+  border-color: var(--color-wood);
+  box-shadow: 0 4px 20px rgba(166, 124, 82, 0.2);
+}
+
+/* ── Step info below icon ── */
+.process-step-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  margin-top: 0.75rem;
+}
+
+.process-step-num {
+  font-family: var(--font-primary);
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-wood);
+}
+
+.process-step-title {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-carbon);
+  line-height: 1.3;
+}
+
+/* ── CTA below timeline ── */
+.process-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+/* ── Mobile: vertical layout ── */
+@media (max-width: 768px) {
+  .process-timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    overflow-x: visible;
+  }
+
+  .process-step {
+    flex-direction: row;
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0;
+    gap: 1.25rem;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .process-step:last-child { border-bottom: none; }
+
+  .process-connector {
+    display: none;
+  }
+
+  .process-step-label {
+    min-height: auto;
+    margin-bottom: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .process-step-info {
+    align-items: flex-start;
+    margin-top: 0;
+  }
+
+  .process-icon-wrap {
+    flex-shrink: 0;
+  }
+
+  .process-step > .process-icon-wrap {
+    order: 1;
+  }
+
+  .process-step > .process-step-label {
+    display: none;
+  }
+
+  .process-step > .process-step-info {
+    order: 2;
+    flex: 1;
+    justify-content: center;
+  }
+}
+
 
 /* ══════════════════════════════
    TESTIMONIALS V2

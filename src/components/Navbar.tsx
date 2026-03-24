@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import mainLogo from '../assets/logos/MAIN Logo.png';
 import './Navbar.css';
 
 const navLinks = [
@@ -43,8 +44,7 @@ export default function Navbar() {
       <div className="navbar-inner">
         {/* Logo */}
         <Link to="/" className="navbar-logo">
-          <span className="logo-sho">SHO</span>
-          <span className="logo-pros">PROS</span>
+          <img src={mainLogo} alt="Sho Pros" className="navbar-logo-img" />
         </Link>
 
         {/* Desktop Nav */}

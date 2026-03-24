@@ -74,23 +74,27 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  font-family: var(--font-primary);
-  font-weight: 900;
-  font-size: 1.4rem;
-  letter-spacing: 0.02em;
-  gap: 0.15rem;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
 
-.navbar-logo:hover { opacity: 0.8; }
+.navbar-logo:hover { opacity: 0.85; }
 
-.logo-sho {
-  transition: color 0.4s ease;
+.navbar-logo-img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  /* White when over the dark hero video */
+  filter: brightness(0) invert(1);
+  transition: filter 0.4s ease, height 0.3s ease;
 }
 
-.logo-pros {
-  transition: color 0.4s ease;
+/* Natural colors when scrolled or on inner pages */
+.navbar.scrolled .navbar-logo-img,
+.navbar.solid .navbar-logo-img {
+  height: 52px;
+  filter: none;
 }
 
 /* Links */

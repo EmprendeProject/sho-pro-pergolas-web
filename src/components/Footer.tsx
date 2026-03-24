@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, ArrowRight, MessageCircle } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
@@ -39,14 +39,17 @@ export default function Footer() {
                 Premium custom pergolas, motorized shades, and luxury outdoor living systems for Puerto Rico & the Caribbean.
               </p>
               <div className="footer-socials">
-                <a href="https://www.instagram.com/sho_pros/" target="_blank" rel="noreferrer" className="social-icon" aria-label="Instagram">
+                <a href="https://www.instagram.com/ShoProsOutdoors" target="_blank" rel="noreferrer" className="social-icon" aria-label="Instagram">
                   <Instagram size={18} />
                 </a>
-                <a href="https://www.facebook.com/ShoPros/" target="_blank" rel="noreferrer" className="social-icon" aria-label="Facebook">
+                <a href="https://www.facebook.com/ShoProsOutdoors" target="_blank" rel="noreferrer" className="social-icon" aria-label="Facebook">
                   <Facebook size={18} />
                 </a>
-                <a href="https://www.youtube.com/@sho_pros" target="_blank" rel="noreferrer" className="social-icon" aria-label="YouTube">
+                <a href="https://www.youtube.com/@ShoProsOutdoors" target="_blank" rel="noreferrer" className="social-icon" aria-label="YouTube">
                   <Youtube size={18} />
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=17874083333&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer" className="social-icon" aria-label="WhatsApp">
+                  <MessageCircle size={18} />
                 </a>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, ChevronLeft, ChevronRight, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Star, ChevronLeft, ChevronRight, Phone, Mail, MessageSquare, MapPin, ClipboardList, HardHat, Wrench, Sparkles } from 'lucide-react';
 import { testimonials, signatureProjects } from '../data/content';
 import imgHurricane from '../assets/brands/hurricane.png';
 import imgInfinity from '../assets/brands/infinity.png';
@@ -9,20 +9,23 @@ import imgProgressive from '../assets/brands/progressive.png';
 import imgRenlita from '../assets/brands/renlita.png';
 import imgSig1 from '../assets/signature projects/signatureproject1.png';
 import imgSig2 from '../assets/signature projects/signatureproject2.png';
+import imgSig3 from '../assets/signature projects/signatureproject3.png';
 import './Home.css';
 
 const projectImages: Record<string, string> = {
   enclave: imgSig1,
   bachelorette: imgSig2,
+  pearl: imgSig3,
 };
 
 const procesSteps = [
-  { num: '01', title: 'Initial Consultation', desc: 'We start by understanding your vision, budget, and outdoor space. No pressure — just a real conversation.' },
-  { num: '02', title: 'Design & Selection', desc: 'Our team creates a custom layout and helps you select the perfect brand and product for your needs.' },
-  { num: '03', title: 'Proposal & Contract', desc: "You receive a clear, itemized quote. No surprises. We move forward only when you're fully confident." },
-  { num: '04', title: 'Fabrication', desc: 'Your system is custom fabricated to exact measurements — built to last through Caribbean weather.' },
-  { num: '05', title: 'Installation', desc: 'Our certified crew installs with precision and care, keeping your space clean throughout the process.' },
-  { num: '06', title: 'Final Walk-Through', desc: 'We walk through every detail with you, ensure everything works perfectly, and leave you with full documentation.' },
+  { num: '01', step: 'STEP 1', label: 'Submit your project inquiry', title: 'CONTACT US', icon: 'phone' },
+  { num: '02', step: 'STEP 2', label: 'Discuss scope and receive estimate', title: 'CONSULTATION', icon: 'chat' },
+  { num: '03', step: 'STEP 3', label: 'We measure and finalize your quote', title: 'SITE VISIT', icon: 'home' },
+  { num: '04', step: 'STEP 4', label: 'Confirm details and submit deposit', title: 'FINALIZE DESIGN', icon: 'clipboard' },
+  { num: '05', step: 'STEP 5', label: 'Custom-built, typically 3-4 months', title: 'PRODUCTION', icon: 'hard-hat' },
+  { num: '06', step: 'STEP 6', label: 'White-glove delivery and installation', title: 'INSTALLATION', icon: 'wrench' },
+  { num: '07', step: 'FINAL STEP', label: 'Step into your new favorite place to be', title: 'EXPERIENCE', icon: 'star' },
 ];
 
 const brandLogos = [
@@ -143,28 +146,46 @@ export default function Home() {
       {/* ── OUR PROCESS ── */}
       <section className="process-section">
         <div className="container">
-          <div className="process-header">
+          <div className="process-top">
+            <p className="sig-label">OUR PROCESS</p>
             <h2 className="process-heading">
-              Our Process<br />
-              <span className="process-heading-accent">Your Experience</span>
+              From First Call to <span className="process-heading-accent">Final Experience</span>
             </h2>
-            <div className="process-header-right">
-              <p className="process-sub">
-                From the first conversation to the final walk-through — we're with you every step of the way.
-              </p>
-              <Link to="/contact-us" className="btn-hero-primary" style={{ display: 'inline-flex', marginTop: '1.5rem' }}>
-                Get Started
-              </Link>
-            </div>
           </div>
-          <div className="process-grid">
-            {procesSteps.map(step => (
-              <div key={step.num} className="process-card">
-                <span className="process-num">{step.num}</span>
-                <h3 className="process-title">{step.title}</h3>
-                <p className="process-desc">{step.desc}</p>
+
+          <div className="process-timeline">
+            {procesSteps.map((step, i) => (
+              <div key={step.num} className="process-step">
+                {/* connector line (not on last item) */}
+                {i < procesSteps.length - 1 && <div className="process-connector" />}
+
+                {/* label above */}
+                <p className="process-step-label">{step.label}</p>
+
+                {/* icon circle */}
+                <div className="process-icon-wrap">
+                  {step.icon === 'phone'     && <Phone      size={22} />}
+                  {step.icon === 'chat'      && <MessageSquare size={22} />}
+                  {step.icon === 'home'      && <MapPin     size={22} />}
+                  {step.icon === 'clipboard' && <ClipboardList size={22} />}
+                  {step.icon === 'hard-hat'  && <HardHat    size={22} />}
+                  {step.icon === 'wrench'    && <Wrench     size={22} />}
+                  {step.icon === 'star'      && <Sparkles   size={22} />}
+                </div>
+
+                {/* step info below */}
+                <div className="process-step-info">
+                  <span className="process-step-num">{step.step}</span>
+                  <span className="process-step-title">{step.title}</span>
+                </div>
               </div>
             ))}
+          </div>
+
+          <div className="process-cta">
+            <Link to="/contact-us" className="btn-hero-primary">
+              Start Your Project
+            </Link>
           </div>
         </div>
       </section>
