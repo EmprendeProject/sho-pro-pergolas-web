@@ -1,0 +1,236 @@
+/* PAGE HEADER (shared) */
+.page-header {
+  background: var(--color-black);
+  padding: 10rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.01) 40px, rgba(255,255,255,0.01) 41px);
+}
+
+.page-header-title { font-size: clamp(2.5rem, 6vw, 4rem); margin-top: 0.5rem; }
+
+/* PORTFOLIO */
+.portfolio-page {}
+
+/* Signature Spotlight */
+.signature-spotlight-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.spotlight-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+}
+
+.spotlight-hero { grid-row: span 2; }
+
+.spotlight-img {
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.spotlight-hero .spotlight-img { aspect-ratio: 4/5; }
+
+.spotlight-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-full);
+}
+
+.spotlight-info { padding: 1.5rem; }
+
+.spotlight-brand {
+  font-family: var(--font-primary);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-wood);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.spotlight-name {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+}
+
+.spotlight-desc {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+  line-height: 1.6;
+}
+
+/* Filters */
+.portfolio-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gray-400);
+  margin-right: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  border: 1.5px solid var(--color-gray-200);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gray-500);
+  background: var(--color-white);
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover { border-color: var(--color-wood); color: var(--color-wood); }
+.filter-btn.active { border-color: var(--color-black); background: var(--color-black); color: var(--color-white); }
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.project-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.1); }
+.project-card.is-signature { border-color: var(--color-wood); }
+
+.project-img {
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.project-emoji { font-size: 3rem; }
+
+.signature-badge-tag {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--color-wood);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+}
+
+.project-info { padding: 1.25rem; }
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-brand {
+  font-family: var(--font-primary);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-wood);
+}
+
+.project-category {
+  font-size: 0.7rem;
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+}
+
+.project-name {
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-black);
+  margin-bottom: 0.375rem;
+}
+
+.project-type {
+  font-size: 0.75rem;
+  color: var(--color-gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.portfolio-empty {
+  text-align: center;
+  padding: 4rem;
+  color: var(--color-gray-400);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 1024px) {
+  .signature-spotlight-grid { grid-template-columns: 1fr; }
+  .spotlight-hero { grid-row: span 1; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}

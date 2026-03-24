@@ -1,0 +1,65 @@
+.brands-page {}
+
+.brands-philosophy {
+  background: var(--color-gray-100);
+  padding: 3rem 0;
+}
+
+.philosophy-banner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.philosophy-icon {
+  font-size: 2rem;
+  color: var(--color-wood);
+}
+
+.philosophy-banner-quote {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--color-carbon);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.philosophy-attr {
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-wood);
+}
+
+.all-brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.brands-partner-cta {
+  background: var(--color-carbon);
+  padding: 4rem 0;
+}
+
+.partner-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .all-brands-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .all-brands-grid { grid-template-columns: 1fr; }
+  .partner-cta-inner { flex-direction: column; align-items: flex-start; }
+}
