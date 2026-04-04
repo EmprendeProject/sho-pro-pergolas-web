@@ -23,5 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# Large files exceeding GitHub's 100MB limit
-public/library/Suntech/Suntech Product Catalogue.pdf
+# PDFs are too large for GitHub — host on Cloudflare/S3/etc.
+public/library/
