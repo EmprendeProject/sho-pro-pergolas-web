@@ -1,33 +1,46 @@
-import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './BrandCard.css';
 
 interface BrandCardProps {
+  id: string;
   name: string;
   description: string;
-  logoText?: string;
-  logoSrc?: string;
   path: string;
-  accentColor?: string;
-  bgGradient?: string;
+  index: number;
 }
 
-export default function BrandCard({ name, description, logoText, logoSrc, path, bgGradient }: BrandCardProps) {
+export default function BrandCard({ id, name, description, path, index }: BrandCardProps) {
+  // Use Vite's URL resolution for images. Adding index + 1 to map to 1.png, 2.png, etc.
+  const imgUrl = new URL(`../assets/brands/photos our brands/${index + 1}.png`, import.meta.url).href;
+  
+  // Logos known in the assets/brands folder
+  const logoList = ['hurricane', 'infinity', 'liquidview', 'progressive', 'renlita'];
+  const hasLogo = logoList.includes(id);
+  const logoUrl = hasLogo ? new URL(`../assets/brands/${id}.png`, import.meta.url).href : null;
+
+  // Alternate the layout by checking if index is odd
+  const isReverse = index % 2 !== 0;
+
   return (
-    <article className="brand-card">
-      <div className="brand-card-logo-wrap" style={{ background: bgGradient || 'var(--color-gray-100)' }}>
-        {logoSrc ? (
-          <img src={logoSrc} alt={name} className="brand-card-logo-img" />
-        ) : (
-          <span className="brand-card-logo-text">{logoText || name}</span>
-        )}
+    <article className={`brand-row ${isReverse ? 'brand-row-reverse' : ''}`}>
+      <div className="brand-row-image-container">
+        <img src={imgUrl} alt={name} className="brand-row-image" />
       </div>
-      <div className="brand-card-body">
-        <h3 className="brand-card-title">{name}</h3>
-        <p className="brand-card-desc">{description}</p>
-        <Link to={path} className="brand-card-link">
+
+      <div className="brand-row-content">
+        <div className="brand-row-logo-wrap">
+          {logoUrl ? (
+            <img src={logoUrl} alt={`${name} logo`} className="brand-row-logo" />
+          ) : (
+            <span className="brand-row-logo-text">{name}</span>
+          )}
+        </div>
+
+        <h2 className="brand-row-title">{name}</h2>
+        <p className="brand-row-desc">{description}</p>
+
+        <Link to={path} className="btn btn-outline-wood">
           <span>SEE MORE</span>
-          <ArrowRight size={14} />
         </Link>
       </div>
     </article>

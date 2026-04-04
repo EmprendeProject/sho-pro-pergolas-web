@@ -44,7 +44,7 @@ export default function Navbar() {
       <div className="navbar-inner">
         {/* Logo */}
         <Link to="/" className="navbar-logo">
-          <img src={mainLogo} alt="Sho Pros" className="navbar-logo-img" />
+          <img src={mainLogo} alt="Sho-Pros" className="navbar-logo-img" />
         </Link>
 
         {/* Desktop Nav */}

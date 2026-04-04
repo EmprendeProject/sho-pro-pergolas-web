@@ -106,7 +106,7 @@ export default function ContactUs() {
                 <blockquote className="promise-quote">
                   "We'll bring your outdoor dream to life!"
                 </blockquote>
-                <p className="promise-attr">— The Sho Pros Team</p>
+                <p className="promise-attr">— The Sho-Pros Team</p>
                 <div className="promise-features">
                   {['Free Consultation', 'Custom Design', 'Certified Install', 'Full Warranty'].map(f => (
                     <div key={f} className="promise-feature">

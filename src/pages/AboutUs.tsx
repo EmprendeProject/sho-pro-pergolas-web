@@ -12,7 +12,7 @@ const values = [
 ];
 
 const timeline = [
-  { year: '2018', label: 'Founded', desc: 'Sho Pros launches with hurricane fabric in Puerto Rico.' },
+  { year: '2018', label: 'Founded', desc: 'Sho-Pros launches with hurricane fabric in Puerto Rico.' },
   { year: '2019', label: 'First Pergola', desc: 'Installed the first motorized pergola in Puerto Rico.' },
   { year: '2021', label: 'Caribbean Expansion', desc: 'Expanded operations across the Caribbean islands.' },
   { year: '2023', label: '500+ Projects', desc: 'Completed over 500 residential and commercial installs.' },
@@ -39,16 +39,10 @@ export default function AboutUs() {
             <div className="founders-media">
               <div className="founders-img-stack">
                 <div className="founder-img-main">
-                  <div className="founder-placeholder">
-                    <span>🏄</span>
-                    <span className="founder-placeholder-name">Juno Montañez</span>
-                  </div>
+                  <img src={new URL('../assets/aboutus/Juno 3.jpg', import.meta.url).href} alt="Juno Montañez" className="founder-photo-main" />
                 </div>
                 <div className="founder-img-accent">
-                  <div className="founder-placeholder" style={{ background: 'linear-gradient(135deg,#2d4a1e,#1a3010)' }}>
-                    <span>🎨</span>
-                    <span className="founder-placeholder-name">Cristian G.</span>
-                  </div>
+                  <img src={new URL('../assets/aboutus/Juno 2 STX.jpg', import.meta.url).href} alt="Juno at work" className="founder-photo-accent" />
                 </div>
               </div>
             </div>
@@ -59,10 +53,10 @@ export default function AboutUs() {
               </h2>
               <div className="divider" />
               <p className="body-text">
-                Sho Pros was founded by Luis "Juno" Montañez after 15+ years in commercial leasing. But Juno's not your typical suit — he kite surfs, walks on planes (yeah, really), and hikes in places most people avoid.
+                Sho-Pros was founded by Luis "Juno" Montañez after 15+ years in commercial leasing. But Juno's not your typical suit — he kite surfs, walks on planes (yeah, really), and hikes in places most people avoid.
               </p>
               <p className="body-text" style={{ marginTop: '1rem' }}>
-                That same edge led to Sho Pros in 2018. Seeing Puerto Rico's outdoor spaces stuck with outdated solutions, Juno saw an opportunity. People needed systems that worked, impressed, and stood up to the island's unpredictable weather.
+                That same edge led to Sho-Pros in 2018. Seeing Puerto Rico's outdoor spaces stuck with outdated solutions, Juno saw an opportunity. People needed systems that worked, impressed, and stood up to the island's unpredictable weather.
               </p>
               <p className="body-text" style={{ marginTop: '1rem' }}>
                 We started with the first high-tech hurricane fabric. Then came motorized shades. And now? We're the only custom motorized pergola dealer in Puerto Rico and the Caribbean.
@@ -87,7 +81,7 @@ export default function AboutUs() {
             {[
               { title: 'What We Do', body: 'We design and install luxury outdoor living systems — from cutting-edge pergolas to sleek motorized shades that let you enjoy the view without the sunburn or surprise rain. Every product is hand-selected for durability, performance, and design.' },
               { title: 'How We Work', body: 'We don\'t just sell outdoor systems; we tailor them to your space and vision. Our process starts with listening to your needs, then designing the right solution and sourcing the best products. No corners cut.' },
-              { title: 'Where We Work', body: 'Sho Pros proudly serves Puerto Rico and the Caribbean, handling both residential and commercial projects. No job is too small or too custom for us to tackle.' },
+              { title: 'Where We Work', body: 'Sho-Pros proudly serves Puerto Rico and the Caribbean, handling both residential and commercial projects. No job is too small or too custom for us to tackle.' },
             ].map(item => (
               <div key={item.title} className="what-item">
                 <div className="what-dot" />
@@ -129,7 +123,7 @@ export default function AboutUs() {
           <div className="philosophy-center">
             <p className="section-label" style={{ color: 'var(--color-wood-light)' }}>Our Philosophy</p>
             <h2 className="heading-section" style={{ color: 'var(--color-white)', fontSize: '2rem', margin: '0.5rem 0' }}>
-              WHY CHOOSE SHO PROS?
+              WHY CHOOSE SHO-PROS?
             </h2>
             <div className="divider divider-center" />
             <blockquote className="philosophy-main-quote">
@@ -160,7 +154,11 @@ export default function AboutUs() {
             {team.map(member => (
               <div key={member.id} className="team-card">
                 <div className="team-avatar">
-                  <span className="team-emoji">{member.emoji}</span>
+                  <img 
+                    src={new URL(`../assets/aboutus/${member.imageFile}`, import.meta.url).href} 
+                    alt={member.name} 
+                    className="team-avatar-img" 
+                  />
                 </div>
                 <div className="team-info">
                   <h3 className="team-name">{member.name}</h3>

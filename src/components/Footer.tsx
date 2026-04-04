@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, ArrowRight, MessageCircle } from 'lucide-react';
+import mainLogo from '../assets/logos/MAIN Logo.png';
 import './Footer.css';
 
 export default function Footer() {
@@ -32,8 +33,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="footer-brand">
               <div className="footer-logo">
-                <span className="logo-sho" style={{ color: 'var(--color-white)' }}>SHO</span>
-                <span className="logo-pros" style={{ color: 'var(--color-wood)' }}>PROS</span>
+                <img src={mainLogo} alt="Sho-Pros" className="footer-logo-img" />
               </div>
               <p className="footer-tagline">
                 Premium custom pergolas, motorized shades, and luxury outdoor living systems for Puerto Rico & the Caribbean.
@@ -112,7 +112,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <div className="container">
-          <p className="footer-copy">© {year} Sho Pros. All rights reserved.</p>
+          <p className="footer-copy">© {year} Sho-Pros. All rights reserved.</p>
           <div className="footer-legal">
             <a href="#" className="footer-legal-link">Privacy Policy</a>
             <span className="footer-legal-dot">·</span>

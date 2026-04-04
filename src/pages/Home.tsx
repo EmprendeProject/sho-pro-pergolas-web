@@ -1,12 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, ChevronLeft, ChevronRight, Phone, Mail, MessageSquare, MapPin, ClipboardList, HardHat, Wrench, Sparkles } from 'lucide-react';
-import { testimonials, signatureProjects } from '../data/content';
-import imgHurricane from '../assets/brands/hurricane.png';
-import imgInfinity from '../assets/brands/infinity.png';
-import imgLiquidview from '../assets/brands/liquidview.png';
-import imgProgressive from '../assets/brands/progressive.png';
+import { ArrowRight, Star, ChevronLeft, ChevronRight, Phone, Mail, MessageSquare, MapPin, ClipboardList, HardHat, Wrench, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { testimonials, signatureProjects, homeFaqs } from '../data/content';
+import imgHurricane from '../assets/brands/hurricane fabric.png';
+import imgInfinity from '../assets/brands/infinity rack.png';
+import imgLiquidview from '../assets/brands/liquid view.png';
+import imgProgressive from '../assets/brands/progressive screens.png';
 import imgRenlita from '../assets/brands/renlita.png';
+import imgStruxure from '../assets/brands/struxure.png';
+import imgSuntech from '../assets/brands/suntech.png';
+import imgAzenco from '../assets/brands/azenco.png';
+import imgHDGolf from '../assets/brands/hd golf.png';
+import imgHaven from '../assets/brands/haven y harmony.png';
 import imgSig1 from '../assets/signature projects/signatureproject1.png';
 import imgSig2 from '../assets/signature projects/signatureproject2.png';
 import imgSig3 from '../assets/signature projects/signatureproject3.png';
@@ -29,16 +34,26 @@ const procesSteps = [
 ];
 
 const brandLogos = [
-  { name: 'Hurricane', img: imgHurricane },
+  { name: 'Hurricane Fabric', img: imgHurricane },
   { name: 'Infinity Rack', img: imgInfinity },
   { name: 'LiquidView', img: imgLiquidview },
   { name: 'Progressive Screens', img: imgProgressive },
   { name: 'Renlita', img: imgRenlita },
+  { name: 'StruXure', img: imgStruxure },
+  { name: 'Suntech', img: imgSuntech },
+  { name: 'Azenco', img: imgAzenco },
+  { name: 'HD Golf', img: imgHDGolf },
+  { name: 'Haven & Harmony', img: imgHaven },
 ];
 
 export default function Home() {
   const [testIdx, setTestIdx] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   useEffect(() => {
     timerRef.current = setInterval(() => {
@@ -80,11 +95,6 @@ export default function Home() {
             <h1 className="hero-title">
               Luxury Pergolas &<br />Outdoor Shade<br />Solutions
             </h1>
-            <p className="hero-sub">
-              Sho Pros is the premier destination for custom<br />
-              pergolas, carports, and motorized shades in<br />
-              Puerto Rico and the Caribbean.
-            </p>
             <div className="hero-actions">
               <Link to="/contact-us" className="btn-hero-primary">
                 Book a Free Consultation
@@ -102,7 +112,7 @@ export default function Home() {
               <h2 className="who-heading">Who We Are</h2>
               <div className="who-divider" />
               <p className="who-body">
-                Sho Pros is the premier destination for custom pergolas, carports, and motorized shades in Puerto Rico and the Caribbean. Our designs are made to impress and built to last.
+                Sho-Pros is the premier destination for custom pergolas, carports, and motorized shades in Puerto Rico and the Caribbean. Our designs are made to impress and built to last.
               </p>
               <p className="who-body">
                 More than just shade, we create spaces where you gather, relax, and enjoy life. With humility, not arrogance, we showcase only the top brands for our clients to experience.
@@ -231,6 +241,48 @@ export default function Home() {
                   <img src={b.img} alt={b.name} className="brand-marquee-img" />
                 </div>
                 <span className="brand-marquee-name">{b.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ SECTION ── */}
+      <section className="faq-section">
+        <div className="container">
+          <div className="faq-header">
+            <h2 className="faq-title">Preguntas Frecuentes</h2>
+            <p className="faq-sub">Todo lo que necesitas saber sobre nuestros productos y servicios.</p>
+          </div>
+          <div className="faq-accordion">
+            {homeFaqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className={`faq-item ${openFaq === index ? 'active' : ''}`}
+              >
+                <button 
+                  className="faq-question"
+                  onClick={() => toggleFaq(index)}
+                  aria-expanded={openFaq === index}
+                >
+                  <span>{faq.question}</span>
+                  {openFaq === index ? (
+                    <ChevronUp className="faq-icon" size={20} />
+                  ) : (
+                    <ChevronDown className="faq-icon" size={20} />
+                  )}
+                </button>
+                <div 
+                  className="faq-answer-wrapper"
+                  style={{
+                    maxHeight: openFaq === index ? '500px' : '0',
+                    opacity: openFaq === index ? 1 : 0,
+                    overflow: 'hidden',
+                    transition: 'all 0.4s ease-in-out'
+                  }}
+                >
+                  <p className="faq-answer">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>
