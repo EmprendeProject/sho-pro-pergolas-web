@@ -167,74 +167,74 @@ export const signatureProjects = [
 // Library documents
 export const libraryDocs = [
   // StruXure
-  { id: 1,  brand: 'StruXure', name: 'PergolaX Brochure',                    category: 'Brochure',       fileSize: '3.5 MB',  year: 2024, filePath: '/library/StruXure/SturuXure PergolaX Brochure.pdf' },
-  { id: 2,  brand: 'StruXure', name: 'Residential Architectural Binder',      category: 'Specifications', fileSize: '11.4 MB', year: 2024, filePath: '/library/StruXure/StruXure Residential Architectual Binder.pdf' },
-  { id: 3,  brand: 'StruXure', name: 'Care Guide',                            category: 'Guide',          fileSize: '348 KB',  year: 2024, filePath: '/library/StruXure/StruXure Care Guide.pdf' },
-  { id: 4,  brand: 'StruXure', name: 'Wood Grain Options',                    category: 'Specifications', fileSize: '2.1 MB',  year: 2024, filePath: '/library/StruXure/StruXure Wood Grain Options.pdf' },
-  { id: 5,  brand: 'StruXure', name: 'Color Options',                         category: 'Specifications', fileSize: '104 KB',  year: 2024, filePath: '/library/StruXure/SturuXure Color Options.pdf' },
-  { id: 6,  brand: 'StruXure', name: 'ICC Certification',                     category: 'Certifications', fileSize: '364 KB',  year: 2024, filePath: '/library/StruXure/StruXure ICC Certification.pdf' },
-  { id: 7,  brand: 'StruXure', name: 'Warranty',                              category: 'Warranty',       fileSize: '208 KB',  year: 2024, filePath: '/library/StruXure/StruXure Warranty.pdf' },
-  { id: 8,  brand: 'StruXure', name: 'Smart Control App (Somfy®)',            category: 'Guide',          fileSize: '260 KB',  year: 2024, filePath: '/library/StruXure/StruXure Smart Control App (by Somfy®).pdf' },
-  { id: 9,  brand: 'StruXure', name: 'Somfy Motor Specifications',            category: 'Specifications', fileSize: '84 KB',   year: 2024, filePath: '/library/StruXure/Somfy Motor Specs.pdf' },
-  { id: 10, brand: 'StruXure', name: 'MSDS Safety Data Sheet',               category: 'Certifications', fileSize: '152 KB',  year: 2024, filePath: '/library/StruXure/StruXure MSDS.pdf' },
-  { id: 11, brand: 'StruXure', name: 'Pergola Health Product Declaration',    category: 'Certifications', fileSize: '92 KB',   year: 2024, filePath: '/library/StruXure/StruXure Pergola Health Product Declaration.pdf' },
+  { id: 1,  brand: 'StruXure', name: 'PergolaX Brochure',                    category: 'Brochure',       fileSize: '3.5 MB',  year: 2024, filePath: '' },
+  { id: 2,  brand: 'StruXure', name: 'Residential Architectural Binder',      category: 'Specifications', fileSize: '11.4 MB', year: 2024, filePath: '' },
+  { id: 3,  brand: 'StruXure', name: 'Care Guide',                            category: 'Guide',          fileSize: '348 KB',  year: 2024, filePath: '' },
+  { id: 4,  brand: 'StruXure', name: 'Wood Grain Options',                    category: 'Specifications', fileSize: '2.1 MB',  year: 2024, filePath: '' },
+  { id: 5,  brand: 'StruXure', name: 'Color Options',                         category: 'Specifications', fileSize: '104 KB',  year: 2024, filePath: '' },
+  { id: 6,  brand: 'StruXure', name: 'ICC Certification',                     category: 'Certifications', fileSize: '364 KB',  year: 2024, filePath: '' },
+  { id: 7,  brand: 'StruXure', name: 'Warranty',                              category: 'Warranty',       fileSize: '208 KB',  year: 2024, filePath: '' },
+  { id: 8,  brand: 'StruXure', name: 'Smart Control App (Somfy®)',            category: 'Guide',          fileSize: '260 KB',  year: 2024, filePath: '' },
+  { id: 9,  brand: 'StruXure', name: 'Somfy Motor Specifications',            category: 'Specifications', fileSize: '84 KB',   year: 2024, filePath: '' },
+  { id: 10, brand: 'StruXure', name: 'MSDS Safety Data Sheet',               category: 'Certifications', fileSize: '152 KB',  year: 2024, filePath: '' },
+  { id: 11, brand: 'StruXure', name: 'Pergola Health Product Declaration',    category: 'Certifications', fileSize: '92 KB',   year: 2024, filePath: '' },
 
   // Azenco
-  { id: 12, brand: 'Azenco', name: '2025 Brochure',                          category: 'Brochure',       fileSize: '5.0 MB',  year: 2025, filePath: '/library/Azenco/Azenco Outdoor 2025 Brochure.pdf' },
-  { id: 13, brand: 'Azenco', name: '2025 Pergola Collection',                category: 'Brochure',       fileSize: '16.5 MB', year: 2025, filePath: '/library/Azenco/Azenco Outdoor 2025 Pergola Collection.pdf' },
-  { id: 14, brand: 'Azenco', name: 'Wood Color Chart',                       category: 'Specifications', fileSize: '356 KB',  year: 2024, filePath: '/library/Azenco/Azenco Outdoor Wood Color Chart.pdf' },
-  { id: 15, brand: 'Azenco', name: 'Remote Control Guide',                   category: 'Guide',          fileSize: '5.4 MB',  year: 2024, filePath: '/library/Azenco/Azenco Outdoor Remote Control.pdf' },
-  { id: 16, brand: 'Azenco', name: 'Smart Control via Bond Home App',        category: 'Guide',          fileSize: '1.0 MB',  year: 2024, filePath: '/library/Azenco/Azenco Outdoor Smart Control via Bond Home App.pdf' },
-  { id: 17, brand: 'Azenco', name: 'Maintenance Guide',                      category: 'Guide',          fileSize: '100 KB',  year: 2024, filePath: '/library/Azenco/Azenco Outdoor Maintenance Guide.pdf' },
-  { id: 18, brand: 'Azenco', name: 'Troubleshooting Guide',                  category: 'Guide',          fileSize: '2.7 MB',  year: 2024, filePath: '/library/Azenco/Azenco Outdoor Troubleshooting.pdf' },
-  { id: 19, brand: 'Azenco', name: 'Warranty',                              category: 'Warranty',       fileSize: '120 KB',  year: 2024, filePath: '/library/Azenco/Azenco Outdoor Warranty.pdf' },
+  { id: 12, brand: 'Azenco', name: '2025 Brochure',                          category: 'Brochure',       fileSize: '5.0 MB',  year: 2025, filePath: '' },
+  { id: 13, brand: 'Azenco', name: '2025 Pergola Collection',                category: 'Brochure',       fileSize: '16.5 MB', year: 2025, filePath: '' },
+  { id: 14, brand: 'Azenco', name: 'Wood Color Chart',                       category: 'Specifications', fileSize: '356 KB',  year: 2024, filePath: '' },
+  { id: 15, brand: 'Azenco', name: 'Remote Control Guide',                   category: 'Guide',          fileSize: '5.4 MB',  year: 2024, filePath: '' },
+  { id: 16, brand: 'Azenco', name: 'Smart Control via Bond Home App',        category: 'Guide',          fileSize: '1.0 MB',  year: 2024, filePath: '' },
+  { id: 17, brand: 'Azenco', name: 'Maintenance Guide',                      category: 'Guide',          fileSize: '100 KB',  year: 2024, filePath: '' },
+  { id: 18, brand: 'Azenco', name: 'Troubleshooting Guide',                  category: 'Guide',          fileSize: '2.7 MB',  year: 2024, filePath: '' },
+  { id: 19, brand: 'Azenco', name: 'Warranty',                              category: 'Warranty',       fileSize: '120 KB',  year: 2024, filePath: '' },
 
   // CabanaX
-  { id: 20, brand: 'CabanaX', name: 'CabanaX Brochure',                      category: 'Brochure',       fileSize: '22.0 MB', year: 2024, filePath: '/library/CabanaX/CabanaX Brochure.pdf' },
-  { id: 21, brand: 'CabanaX', name: 'Warranty',                              category: 'Warranty',       fileSize: '132 KB',  year: 2024, filePath: '/library/CabanaX/CabanaX Warranty.pdf' },
+  { id: 20, brand: 'CabanaX', name: 'CabanaX Brochure',                      category: 'Brochure',       fileSize: '22.0 MB', year: 2024, filePath: '' },
+  { id: 21, brand: 'CabanaX', name: 'Warranty',                              category: 'Warranty',       fileSize: '132 KB',  year: 2024, filePath: '' },
 
   // Progressive Screens
-  { id: 22, brand: 'Progressive Screens', name: 'Product Catalog',           category: 'Brochure',       fileSize: '21.3 MB', year: 2024, filePath: '/library/Progressive Screens/Progressive Screens Product Catalog.pdf' },
-  { id: 23, brand: 'Progressive Screens', name: 'Gen4 CAD Files',            category: 'Specifications', fileSize: '15.0 MB', year: 2024, filePath: '/library/Progressive Screens/Progressive Gen4 CAD Files.pdf' },
-  { id: 24, brand: 'Progressive Screens', name: 'TDI Approval Gen4',         category: 'Certifications', fileSize: '6.6 MB',  year: 2024, filePath: '/library/Progressive Screens/TDI Approval Progressive Gen4.pdf' },
-  { id: 25, brand: 'Progressive Screens', name: 'Warranty',                  category: 'Warranty',       fileSize: '276 KB',  year: 2024, filePath: '/library/Progressive Screens/Progressive Screens Warranty.pdf' },
+  { id: 22, brand: 'Progressive Screens', name: 'Product Catalog',           category: 'Brochure',       fileSize: '21.3 MB', year: 2024, filePath: '' },
+  { id: 23, brand: 'Progressive Screens', name: 'Gen4 CAD Files',            category: 'Specifications', fileSize: '15.0 MB', year: 2024, filePath: '' },
+  { id: 24, brand: 'Progressive Screens', name: 'TDI Approval Gen4',         category: 'Certifications', fileSize: '6.6 MB',  year: 2024, filePath: '' },
+  { id: 25, brand: 'Progressive Screens', name: 'Warranty',                  category: 'Warranty',       fileSize: '276 KB',  year: 2024, filePath: '' },
 
   // Renlita
-  { id: 26, brand: 'Renlita', name: 'Models Comparison',                     category: 'Brochure',       fileSize: '12.2 MB', year: 2024, filePath: '/library/Renlita/Renlita Models Comparison.pdf' },
-  { id: 27, brand: 'Renlita', name: 'Evo-Vue Single Panel Door',             category: 'Specifications', fileSize: '1.2 MB',  year: 2024, filePath: '/library/Renlita/Renlita Evo-Vue Single Panel Door.pdf' },
-  { id: 28, brand: 'Renlita', name: 'Color Options',                         category: 'Specifications', fileSize: '2.8 MB',  year: 2024, filePath: '/library/Renlita/Renlita Color Options.pdf' },
-  { id: 29, brand: 'Renlita', name: 'Warranty',                              category: 'Warranty',       fileSize: '60 KB',   year: 2024, filePath: '/library/Renlita/Renlita Warranty.pdf' },
+  { id: 26, brand: 'Renlita', name: 'Models Comparison',                     category: 'Brochure',       fileSize: '12.2 MB', year: 2024, filePath: '' },
+  { id: 27, brand: 'Renlita', name: 'Evo-Vue Single Panel Door',             category: 'Specifications', fileSize: '1.2 MB',  year: 2024, filePath: '' },
+  { id: 28, brand: 'Renlita', name: 'Color Options',                         category: 'Specifications', fileSize: '2.8 MB',  year: 2024, filePath: '' },
+  { id: 29, brand: 'Renlita', name: 'Warranty',                              category: 'Warranty',       fileSize: '60 KB',   year: 2024, filePath: '' },
 
   // LiquidView
-  { id: 30, brand: 'LiquidView', name: 'Digital Windows Brochure',           category: 'Brochure',       fileSize: '6.0 MB',  year: 2024, filePath: '/library/LiquidView/LiquidView Digital Windows Brochure.pdf' },
-  { id: 31, brand: 'LiquidView', name: 'Stanford Research Study',            category: 'Certifications', fileSize: '920 KB',  year: 2024, filePath: '/library/LiquidView/LiquidView Stanford Research Study.pdf' },
+  { id: 30, brand: 'LiquidView', name: 'Digital Windows Brochure',           category: 'Brochure',       fileSize: '6.0 MB',  year: 2024, filePath: '' },
+  { id: 31, brand: 'LiquidView', name: 'Stanford Research Study',            category: 'Certifications', fileSize: '920 KB',  year: 2024, filePath: '' },
 
   // Haven & Harmony
-  { id: 32, brand: 'Haven & Harmony', name: 'Product Catalog',               category: 'Brochure',       fileSize: '1.4 MB',  year: 2024, filePath: '/library/Haven & Harmony/Haven & Harmony Product Catalog.pdf' },
+  { id: 32, brand: 'Haven & Harmony', name: 'Product Catalog',               category: 'Brochure',       fileSize: '1.4 MB',  year: 2024, filePath: '' },
 
   // Infinity Rack
-  { id: 33, brand: 'Infinity Rack', name: 'Residential Brochure',            category: 'Brochure',       fileSize: '4.8 MB',  year: 2024, filePath: '/library/Infinity Rack/Infinity Rack Residential Brochure.pdf' },
-  { id: 34, brand: 'Infinity Rack', name: 'Commercial Brochure',             category: 'Brochure',       fileSize: '3.6 MB',  year: 2024, filePath: '/library/Infinity Rack/Infinity Rack Commercial Brochure.pdf' },
-  { id: 35, brand: 'Infinity Rack', name: 'Aluminum Carport Product Sheet',  category: 'Specifications', fileSize: '1.5 MB',  year: 2024, filePath: '/library/Infinity Rack/Infinity Rack Aluminum Carport Product Sheet.pdf' },
-  { id: 36, brand: 'Infinity Rack', name: 'Cantilever Carport Product Sheet',category: 'Specifications', fileSize: '892 KB',  year: 2024, filePath: '/library/Infinity Rack/Infinity Rack Cantilever Carport Product Sheet.pdf' },
-  { id: 37, brand: 'Infinity Rack', name: 'SunLounge Product Sheet',         category: 'Specifications', fileSize: '972 KB',  year: 2024, filePath: '/library/Infinity Rack/Infinity Rack SunLounge Product Sheet.pdf' },
-  { id: 38, brand: 'Infinity Rack', name: 'Super Span Structures Sheet',     category: 'Specifications', fileSize: '1.2 MB',  year: 2024, filePath: '/library/Infinity Rack/Infinity Rack Super Span Structures Product Sheet.pdf' },
-  { id: 39, brand: 'Infinity Rack', name: 'Warranty',                        category: 'Warranty',       fileSize: '468 KB',  year: 2024, filePath: '/library/Infinity Rack/Infinity Rack Warranty.pdf' },
+  { id: 33, brand: 'Infinity Rack', name: 'Residential Brochure',            category: 'Brochure',       fileSize: '4.8 MB',  year: 2024, filePath: '' },
+  { id: 34, brand: 'Infinity Rack', name: 'Commercial Brochure',             category: 'Brochure',       fileSize: '3.6 MB',  year: 2024, filePath: '' },
+  { id: 35, brand: 'Infinity Rack', name: 'Aluminum Carport Product Sheet',  category: 'Specifications', fileSize: '1.5 MB',  year: 2024, filePath: '' },
+  { id: 36, brand: 'Infinity Rack', name: 'Cantilever Carport Product Sheet',category: 'Specifications', fileSize: '892 KB',  year: 2024, filePath: '' },
+  { id: 37, brand: 'Infinity Rack', name: 'SunLounge Product Sheet',         category: 'Specifications', fileSize: '972 KB',  year: 2024, filePath: '' },
+  { id: 38, brand: 'Infinity Rack', name: 'Super Span Structures Sheet',     category: 'Specifications', fileSize: '1.2 MB',  year: 2024, filePath: '' },
+  { id: 39, brand: 'Infinity Rack', name: 'Warranty',                        category: 'Warranty',       fileSize: '468 KB',  year: 2024, filePath: '' },
 
   // HD Golf
-  { id: 40, brand: 'HD Golf', name: 'Catalog Brochure',                      category: 'Brochure',       fileSize: '2.9 MB',  year: 2024, filePath: '/library/HD Golf/HD Golf Catalog Brochure.pdf' },
-  { id: 41, brand: 'HD Golf', name: 'Instruction Brochure',                  category: 'Guide',          fileSize: '940 KB',  year: 2024, filePath: '/library/HD Golf/HD Golf Instruction Brochure.pdf' },
+  { id: 40, brand: 'HD Golf', name: 'Catalog Brochure',                      category: 'Brochure',       fileSize: '2.9 MB',  year: 2024, filePath: '' },
+  { id: 41, brand: 'HD Golf', name: 'Instruction Brochure',                  category: 'Guide',          fileSize: '940 KB',  year: 2024, filePath: '' },
 
   // Hurricane Fabric
-  { id: 42, brand: 'Hurricane Fabric', name: 'Approvals Summary',            category: 'Certifications', fileSize: '68 KB',   year: 2024, filePath: '/library/Hurricane Fabric/Hurricane Fabric Approvals Summary.pdf' },
-  { id: 43, brand: 'Hurricane Fabric', name: 'Installation Instructions',    category: 'Guide',          fileSize: '64 KB',   year: 2024, filePath: '/library/Hurricane Fabric/Hurricane Fabric Installation Instructions.pdf' },
-  { id: 44, brand: 'Hurricane Fabric', name: 'Installation Notes',           category: 'Guide',          fileSize: '4.4 MB',  year: 2024, filePath: '/library/Hurricane Fabric/Hurricane Fabric Installation Notes.pdf' },
-  { id: 45, brand: 'Hurricane Fabric', name: 'Hardware for Installation',    category: 'Guide',          fileSize: '80 KB',   year: 2024, filePath: '/library/Hurricane Fabric/Hurricane Fabric Hardware for Installation.pdf' },
-  { id: 46, brand: 'Hurricane Fabric', name: 'Measuring Guide for Panels',   category: 'Guide',          fileSize: '68 KB',   year: 2024, filePath: '/library/Hurricane Fabric/Hurricane Fabric Measuring Guide for Panels.pdf' },
-  { id: 47, brand: 'Hurricane Fabric', name: 'Cleaning Guide',               category: 'Guide',          fileSize: '60 KB',   year: 2024, filePath: '/library/Hurricane Fabric/Hurricane Fabric Cleaning Guide.pdf' },
+  { id: 42, brand: 'Hurricane Fabric', name: 'Approvals Summary',            category: 'Certifications', fileSize: '68 KB',   year: 2024, filePath: '' },
+  { id: 43, brand: 'Hurricane Fabric', name: 'Installation Instructions',    category: 'Guide',          fileSize: '64 KB',   year: 2024, filePath: '' },
+  { id: 44, brand: 'Hurricane Fabric', name: 'Installation Notes',           category: 'Guide',          fileSize: '4.4 MB',  year: 2024, filePath: '' },
+  { id: 45, brand: 'Hurricane Fabric', name: 'Hardware for Installation',    category: 'Guide',          fileSize: '80 KB',   year: 2024, filePath: '' },
+  { id: 46, brand: 'Hurricane Fabric', name: 'Measuring Guide for Panels',   category: 'Guide',          fileSize: '68 KB',   year: 2024, filePath: '' },
+  { id: 47, brand: 'Hurricane Fabric', name: 'Cleaning Guide',               category: 'Guide',          fileSize: '60 KB',   year: 2024, filePath: '' },
 
   // Suntech
-  { id: 48, brand: 'Suntech', name: 'Product Catalogue',                     category: 'Brochure',       fileSize: '360 MB',  year: 2024, filePath: '/library/Suntech/Suntech Product Catalogue.pdf' },
+  { id: 48, brand: 'Suntech', name: 'Product Catalogue',                     category: 'Brochure',       fileSize: '360 MB',  year: 2024, filePath: '' },
 ];
 
 // Team

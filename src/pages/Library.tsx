@@ -158,14 +158,18 @@ export default function Library() {
                     <td className="lib-size">{doc.fileSize}</td>
                     <td className="lib-year">{doc.year}</td>
                     <td>
-                      <button
-                        className="lib-download-btn"
-                        title={`Download ${doc.name}`}
-                        onClick={() => handleDownload(doc)}
-                      >
-                        <Download size={15} />
-                        <span>Download</span>
-                      </button>
+                      {doc.filePath ? (
+                        <button
+                          className="lib-download-btn"
+                          title={`Download ${doc.name}`}
+                          onClick={() => handleDownload(doc)}
+                        >
+                          <Download size={15} />
+                          <span>Download</span>
+                        </button>
+                      ) : (
+                        <span className="lib-coming-soon">Coming soon</span>
+                      )}
                     </td>
                   </tr>
                 ))}
