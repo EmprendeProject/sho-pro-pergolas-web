@@ -1,4 +1,4 @@
-.library-page {}
+.library-page { min-height: 100vh; }
 
 .library-filters-section {
   background: var(--color-gray-100);
@@ -159,6 +159,22 @@
   background: rgba(26, 45, 26, 0.08);
   color: #1a2d1a;
 }
+
+.lib-category-tag.guide {
+  background: rgba(180, 120, 10, 0.1);
+  color: #7a4f00;
+}
+
+.lib-category-tag.cert {
+  background: rgba(10, 60, 140, 0.08);
+  color: #0a3c8c;
+}
+
+.lib-category-tag.warranty {
+  background: rgba(20, 100, 60, 0.08);
+  color: #14643c;
+}
+
 
 .lib-size, .lib-year {
   font-size: 0.8rem;
