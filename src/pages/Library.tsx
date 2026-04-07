@@ -44,8 +44,14 @@ export default function Library() {
   });
 
   const handleDownload = (doc: typeof libraryDocs[0]) => {
+    if (!doc.filePath) return;
     const a = document.createElement('a');
-    a.href = doc.filePath;
+    // Forzar la descarga en Supabase Storage
+    const downloadUrl = doc.filePath.includes('?') 
+      ? `${doc.filePath}&download=` 
+      : `${doc.filePath}?download=`;
+      
+    a.href = downloadUrl;
     a.download = doc.name + '.pdf';
     a.target = '_blank';
     a.rel = 'noopener noreferrer';
