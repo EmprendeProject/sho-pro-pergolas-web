@@ -12,13 +12,24 @@ interface BrandCardProps {
 
 export default function BrandCard({ id, name, description, path, index }: BrandCardProps) {
   const [logoFailed, setLogoFailed] = useState(false);
-  const [photoFailed, setPhotoFailed] = useState(false);
+  const [photoStep, setPhotoStep] = useState(0);
 
   // Fallback local image
   const fallbackImgUrl = new URL(`../assets/brands/photos our brands/${index + 1}.png`, import.meta.url).href;
   
-  // Cloud photo expected path
-  const cloudImgUrl = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/Our%20Brands%20(Pictures)/${encodeURIComponent(name)}/${encodeURIComponent(name)}.jpg`;
+  // Cloud photo expected path base
+  const cloudFolderName = name === 'Azenco Outdoor' ? 'Azenco' : name.replace(/\s+/g, '');
+  const cloudImgBase = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/Our%20Brands%20(Pictures)/${encodeURIComponent(cloudFolderName)}/1`;
+
+  const photoSources = [
+    `${cloudImgBase}.jpg`,
+    `${cloudImgBase}.JPG`,
+    `${cloudImgBase}.png`,
+    `${cloudImgBase}.PNG`,
+    fallbackImgUrl
+  ];
+
+  const currentPhoto = photoSources[photoStep] || fallbackImgUrl;
 
   // Logos from Supabase "logos" folder
   const logoUrl = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/logos/${id}.png`;
@@ -30,10 +41,14 @@ export default function BrandCard({ id, name, description, path, index }: BrandC
     <article className={`brand-row ${isReverse ? 'brand-row-reverse' : ''}`}>
       <div className="brand-row-image-container">
         <img 
-          src={!photoFailed ? cloudImgUrl : fallbackImgUrl} 
+          src={currentPhoto} 
           alt={name} 
           className="brand-row-image" 
-          onError={() => setPhotoFailed(true)}
+          onError={() => {
+            if (photoStep < photoSources.length - 1) {
+              setPhotoStep((prev) => prev + 1);
+            }
+          }}
         />
       </div>
 

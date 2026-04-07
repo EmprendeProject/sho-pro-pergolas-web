@@ -1,13 +1,46 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { brands, brandProjects } from '../data/content';
+import { brands } from '../data/content';
 import './BrandPortfolio.css';
+
+// Local component to smartly lazy-load a gallery image and hide if not found
+const GalleryImage = ({ brandName, index }: { brandName: string; index: number }) => {
+  const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
+  const [extIndex, setExtIndex] = useState(0);
+
+  const cloudFolderName = brandName === 'Azenco Outdoor' ? 'Azenco' : brandName.replace(/\s+/g, '');
+  const cloudImgBase = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/Our%20Brands%20(Pictures)/${encodeURIComponent(cloudFolderName)}/${index}`;
+
+  const extensions = ['.jpg', '.JPG', '.png', '.PNG'];
+  const currentSrc = `${cloudImgBase}${extensions[extIndex]}`;
+
+  if (status === 'error') return null;
+
+  return (
+    <div className="brand-project-card" style={status === 'loading' ? { display: 'none' } : {}}>
+      <div className="brand-project-image-wrap" style={{ marginBottom: 0 }}>
+        <img
+          src={currentSrc}
+          alt={`${brandName} Gallery ${index}`}
+          className="brand-project-image"
+          onLoad={() => setStatus('success')}
+          onError={() => {
+            if (extIndex < extensions.length - 1) {
+              setExtIndex((prev) => prev + 1);
+            } else {
+              setStatus('error');
+            }
+          }}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default function BrandPortfolio() {
   const { brandId } = useParams<{ brandId: string }>();
   const [brand, setBrand] = useState<any>(null);
-  const [projects, setProjects] = useState<any[]>([]);
 
   useEffect(() => {
     // Scroll to top when loading the new page
@@ -15,9 +48,6 @@ export default function BrandPortfolio() {
 
     const foundBrand = brands.find((b) => b.id === brandId);
     setBrand(foundBrand);
-
-    const relatedProjects = brandProjects.filter((p) => p.brandId === brandId);
-    setProjects(relatedProjects);
   }, [brandId]);
 
   if (!brand) {
@@ -36,6 +66,8 @@ export default function BrandPortfolio() {
   const headerStyle = {
     background: brand.bgGradient || 'var(--color-carbon)',
   };
+
+  const galleryIndices = [1, 2, 3, 4, 5];
 
   return (
     <div className="brand-portfolio-page">
@@ -61,33 +93,11 @@ export default function BrandPortfolio() {
       {/* Grid */}
       <section className="section-padding brands-project-section">
         <div className="container">
-          {projects.length === 0 ? (
-            <div className="no-projects-msg">
-              <p>More projects coming soon for {brand.name}.</p>
-            </div>
-          ) : (
-            <div className="brand-projects-grid">
-              {projects.map((project, index) => (
-                <div key={project.id} className="brand-project-card">
-                  {/* For now we use the same main photos for placeholders, looping them to simulate galleries */}
-                  <div className="brand-project-image-wrap">
-                    <img 
-                      src={new URL(`../assets/brands/photos our brands/${(index % 10) + 1}.png`, import.meta.url).href} 
-                      alt={project.title} 
-                      className="brand-project-image"
-                    />
-                  </div>
-                  <div className="brand-project-info">
-                    <h3 className="brand-project-title">{project.title}</h3>
-                    <a href={project.link} className="brand-project-link">
-                      <span>View Project Gallery</span>
-                      <ArrowRight size={14} />
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
+          <div className="brand-projects-grid">
+            {galleryIndices.map((idx) => (
+              <GalleryImage key={idx} brandName={brand.name} index={idx} />
+            ))}
+          </div>
         </div>
       </section>
 
