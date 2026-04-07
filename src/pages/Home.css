@@ -701,8 +701,8 @@
 .brand-marquee-item:hover { opacity: 0.65; }
 
 .brand-marquee-logo {
-  width: 120px;
-  height: 60px;
+  width: 160px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -825,6 +825,7 @@
   line-height: 1.7;
   color: #555;
   border-top: 1px solid transparent;
+  white-space: pre-wrap;
 }
 
 .faq-item.active .faq-answer {

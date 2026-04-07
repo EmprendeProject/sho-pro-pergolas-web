@@ -140,7 +140,6 @@ export default function Library() {
                   <th>Document Name</th>
                   <th>Type</th>
                   <th>Size</th>
-                  <th>Year</th>
                   <th></th>
                 </tr>
               </thead>
@@ -162,7 +161,6 @@ export default function Library() {
                       </span>
                     </td>
                     <td className="lib-size">{doc.fileSize}</td>
-                    <td className="lib-year">{doc.year}</td>
                     <td>
                       {doc.filePath ? (
                         <button
@@ -181,7 +179,7 @@ export default function Library() {
                 ))}
                 {filtered.length === 0 && (
                   <tr>
-                    <td colSpan={6} className="lib-empty">No documents match your search.</td>
+                    <td colSpan={5} className="lib-empty">No documents match your search.</td>
                   </tr>
                 )}
               </tbody>

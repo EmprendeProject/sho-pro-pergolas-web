@@ -306,39 +306,43 @@ export const brandProjects = [
 // FAQs for Home Page
 export const homeFaqs = [
   {
-    question: "¿Cuál es el tiempo de entrega desde el pedido hasta la instalación?",
-    answer: "Una vez que se obtiene el permiso correspondiente, el plazo desde que se acepta su pedido hasta la instalación final suele ser de 3 a 5 semanas."
+    question: "WHAT IS A PERGOLA?",
+    answer: "EN: A pergola is a sleek, modern structure that adds shade, comfort, and style to your outdoor space. Ours are custom-built with premium materials — and yes, they can be motorized. Think of it as a smart roof that opens or closes depending on the weather (or your mood).\n\nES: Una pérgola es una estructura moderna que le da sombra, comodidad y estilo a tu espacio exterior. Las nuestras se hacen a la medida con materiales premium — y sí, pueden ser motorizadas. Es como un techo inteligente que se abre o cierra según el clima (o tu mood)."
   },
   {
-    question: "¿Sho-Pros Florida tiene un equipo de instalación?",
-    answer: "¡Sí! Proporcionan instaladores certificados y altamente capacitados que tienen su base en el sur de Florida."
+    question: "HOW DO I GET AN ESTIMATE?",
+    answer: "EN: Easy. Send us:\n• Approximate measurements\n• Photos of the space\n• Your location\nWe’ll follow up with a call and a rough estimate.If you wish to proceed, we’ll schedule a site visit for precise measurements and layout ideas. A $150 deposit is required for the site visit, credited toward your project if you move forward.\nVisit our Contact Us page for details or check the videos below.\n\nES: Sencillo. Envíanos:\n• Medidas aproximadas\n• Fotos del área\n• Tu ubicación\nTe llamamos para darte una cotización preliminar. Si deseas continuar, coordinamos una visita para medidas exactas y guía de diseño. Se requiere un depósito de $150 para la visita, que se descuenta si haces el proyecto.\nVisita nuestra página de Contacto o mira los videos abajo."
   },
   {
-    question: "¿Trabajan en proyectos residenciales y comerciales?",
-    answer: "¡Sí! Sus pérgolas, cabañas y cocheras (carports) son adecuadas para entornos residenciales y comerciales. Invitan a los usuarios a visitar su galería de proyectos y a contactarlos para encontrar la solución perfecta para cualquier aplicación específica."
+    question: "HOW DOES A PERGOLA ADD VALUE?",
+    answer: "EN: It gives you a beautiful, functional space you’ll actually use — and it boosts your property’s value. It’s a smart upgrade that looks amazing and works hard year-round.\n\nES: Te da un espacio funcional que vas a disfrutar todos los días, y eleva el valor de tu propiedad. Es una mejora elegante que realza tu exterior con estilo y propósito."
   },
   {
-    question: "¿Necesitaré un permiso para instalar sus soluciones de sombra?",
-    answer: "La necesidad de permisos depende de los requisitos específicos de planificación y construcción de su ciudad. Sho-Pros ofrece guiar a los clientes a través de este proceso según sus necesidades si se ponen en contacto con ellos."
+    question: "WHAT MAKES YOUR PERGOLAS DIFFERENT?",
+    answer: "EN: We use premium powder-coated aluminum engineered to withstand harsh weather. Each pergola is custom-designed to fit your space, featuring motorized options, LED lighting, and smart technology that automatically closes the roof when it rains.\n\nES: Usamos aluminio de alta calidad con recubrimiento resistente a la intemperie. Cada pérgola se diseña a la medida, con opciones motorizadas, iluminación LED y sensores inteligentes que cierran el techo automáticamente cuando llueve."
   },
   {
-    question: "¿Qué características compatibles están disponibles?",
-    answer: "Existe una amplia variedad de características y accesorios compatibles con la mayoría de sus productos. Entre ellos se incluyen: paredes de privacidad, pantallas de sombra motorizadas integradas, ventiladores, parlantes, sensores de viento y lluvia, tiras de iluminación LED, luces empotradas y sistemas de nebulización."
+    question: "WHAT WARRANTY DO YOU OFFER?",
+    answer: "EN: Warranty varies by product. Head to our Documentation page for the full details.\n\nES: La garantía depende del producto. Visita nuestra página de Documentación para más info."
   },
   {
-    question: "¿Puedo pedir un color personalizado?",
-    answer: "¡Sí! Las pérgolas y cocheras se pueden encargar con un acabado que imita la veta de la madera o en cualquier color personalizado que el cliente desee. Además, todas las soluciones de sombra están disponibles en su paleta de colores estándar, la cual incluye acabados con recubrimiento en polvo en color blanco, negro o gris/bronce."
+    question: "HOW LONG DOES INSTALLATION TAKE?",
+    answer: "EN: 3 to 5 days, depending on size and design. We get it done right — and with minimal disruption.\n\nES: Entre 3 a 5 días, según el tamaño y diseño. Hacemos el trabajo bien y sin interrumpir tu rutina."
   },
   {
-    question: "¿Ofrecen garantía?",
-    answer: "¡Sí! Todas las pérgolas y soluciones de sombra están cubiertas por la Garantía Limitada de por Vida de la marca Azenco, que incluye todas las estructuras de aluminio, los componentes electrónicos y los acabados de pintura en polvo. Adicionalmente, Sho-Pros Florida ofrece una garantía de instalación de 1 año que cubre la calidad de la mano de obra en la construcción."
+    question: "STRUCTURAL & DESIGN",
+    answer: "Q: Can my pergola attach to my house/building?\nEN: Yes — about 80% of our installs are wall-mounted, 15% are recessed, and 5% are standalone.\nES: Sí. El 80% de nuestras pérgolas se fijan a estructuras existentes, 15% se insertan y 5% son independientes.\n\nQ: Can I cover my entire patio or terrace?\nEN: Yes. But during design, we’ll talk about how you use your space to recommend the best size.\nES: Sí. Pero en la consulta de diseño hablaremos de cómo usas el espacio para recomendarte el tamaño ideal."
   },
   {
-    question: "¿Dónde puedo encontrar los precios de sus productos?",
-    answer: "Debido a que todos los productos se fabrican a medida, la forma más rápida de obtener un presupuesto es haciendo clic en \"Consulta de Diseño\" (Design Consultation) para proporcionar detalles sobre el cliente y el proyecto. Un miembro del equipo se pondrá en contacto rápidamente para ayudar."
+    question: "FEATURES & CUSTOMIZATION",
+    answer: "Q: Can I add lighting, fans, or other accessories?\nEN: Yes — fans, lighting, extra columns, hidden gutters... we’ve done it all.\nES: Claro. Podemos añadir luces, abanicos, columnas extra, canales ocultos y más.\n\nQ: Do you offer smart controls?\nEN: Yes. Azenco uses Bond. Struxure integrates with Somfy App.\nES: Sí. Azenco usa Bond. Struxure se conecta con Somfy App.\n\nQ: Can I choose the color?\nEN: 100%. Choose from standard tones, woodgrain, or your own Pantone. Note: Dorado Beach pergolas must be Rockefeller Brown per Dorado residences guidelines.\nES: ¡Claro! Puedes escoger entre colores estándar, acabados tipo madera o tu color Pantone. Nota: Las pérgolas de Dorado Beach deben ser color Rockefeller Brown, según las normas de Dorado Residences."
   },
   {
-    question: "¿Tienen una sala de exposición (showroom) que pueda visitar?",
-    answer: "¡Sí! La fábrica y sala de exposición de Azenco está ubicada en Miami, FL. Solo atienden con cita previa, por lo que es necesario reservar una \"Consulta de Diseño\" informando sobre el proyecto para que el equipo programe la visita."
+    question: "UTILITIES & ENGINEERING",
+    answer: "Q: Is installation included?\nEN: Yes. Jose and his team are pros — certified in every product line we offer.\nES: Sí. Jose y su equipo están certificados para instalar todos nuestros productos.\n\nQ: What about electricity and drainage?\nEN: You’ll need power for lighting/motors. Our pergolas have built-in drainage that connects to your patio or system.\nES: Necesitas corriente para luces y motores. Las pérgolas ya vienen con drenaje integrado que se conecta a tu patio o sistema existente.\n\nQ: Do I need to hire a contractor or electrician?\nEN: Nope. Install and electrical hookup (within 10 ft to a 20-amp circuit) is included.\nES: No. La instalación y la conexión eléctrica (a menos de 10 pies a un circuito de 20 amperios) están incluidas."
+  },
+  {
+    question: "PROCESS & PAYMENTS",
+    answer: "Q: What’s the timeline from estimate to install?\nEN: Once you place your order:\n• Manufacturing: 14 weeks\n• Transit: 10 days\n• Installation: 4–6 workdays (Mon–Fri, 8AM–3PM)\nES: Luego de ordenar:\n• Fabricación: 14 semanas\n• Tránsito: 10 días\n• Instalación: 4–6 días hábiles (lun–vie, 8AM–3PM)\n\nQ: Do you offer financing?\nEN: Not at the moment.\nES: Por ahora, no ofrecemos financiamiento.\n\nQ: What payment methods do you accept?\nEN: ACH, credit cards (additional fees apply), checks, and cash.\nES: ACH, tarjetas de crédito (aplican cargos adicionales), cheques y efectivo.\n\nQ: How much do pergolas cost?\nEN: Price varies by size, features, and motorization. Most clients invest $30K–$40K for a 10\' x 20\' pergola.\nES: El precio varía según el tamaño, características y motorización. La mayoría invierte $30K–$40K por una pérgola de 10\' x 20\'."
   }
 ];
