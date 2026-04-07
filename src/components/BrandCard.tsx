@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './BrandCard.css';
 
@@ -10,13 +11,17 @@ interface BrandCardProps {
 }
 
 export default function BrandCard({ id, name, description, path, index }: BrandCardProps) {
-  // Use Vite's URL resolution for images. Adding index + 1 to map to 1.png, 2.png, etc.
-  const imgUrl = new URL(`../assets/brands/photos our brands/${index + 1}.png`, import.meta.url).href;
+  const [logoFailed, setLogoFailed] = useState(false);
+  const [photoFailed, setPhotoFailed] = useState(false);
+
+  // Fallback local image
+  const fallbackImgUrl = new URL(`../assets/brands/photos our brands/${index + 1}.png`, import.meta.url).href;
   
-  // Logos known in the assets/brands folder
-  const logoList = ['hurricane', 'infinity', 'liquidview', 'progressive', 'renlita'];
-  const hasLogo = logoList.includes(id);
-  const logoUrl = hasLogo ? new URL(`../assets/brands/${id}.png`, import.meta.url).href : null;
+  // Cloud photo expected path
+  const cloudImgUrl = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/Our%20Brands%20(Pictures)/${encodeURIComponent(name)}/${encodeURIComponent(name)}.jpg`;
+
+  // Logos from Supabase "logos" folder
+  const logoUrl = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/logos/${id}.png`;
 
   // Alternate the layout by checking if index is odd
   const isReverse = index % 2 !== 0;
@@ -24,13 +29,23 @@ export default function BrandCard({ id, name, description, path, index }: BrandC
   return (
     <article className={`brand-row ${isReverse ? 'brand-row-reverse' : ''}`}>
       <div className="brand-row-image-container">
-        <img src={imgUrl} alt={name} className="brand-row-image" />
+        <img 
+          src={!photoFailed ? cloudImgUrl : fallbackImgUrl} 
+          alt={name} 
+          className="brand-row-image" 
+          onError={() => setPhotoFailed(true)}
+        />
       </div>
 
       <div className="brand-row-content">
         <div className="brand-row-logo-wrap">
-          {logoUrl ? (
-            <img src={logoUrl} alt={`${name} logo`} className="brand-row-logo" />
+          {!logoFailed ? (
+            <img 
+              src={logoUrl} 
+              alt={`${name} logo`} 
+              className="brand-row-logo" 
+              onError={() => setLogoFailed(true)}
+            />
           ) : (
             <span className="brand-row-logo-text">{name}</span>
           )}

@@ -39,10 +39,10 @@ export default function AboutUs() {
             <div className="founders-media">
               <div className="founders-img-stack">
                 <div className="founder-img-main">
-                  <img src={new URL('../assets/aboutus/Juno 3.jpg', import.meta.url).href} alt="Juno Montañez" className="founder-photo-main" />
+                  <img src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/About%20Us%20Photos/Juno%203.jpg`} alt="Juno Montañez" className="founder-photo-main" />
                 </div>
                 <div className="founder-img-accent">
-                  <img src={new URL('../assets/aboutus/Juno 2 STX.jpg', import.meta.url).href} alt="Juno at work" className="founder-photo-accent" />
+                  <img src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/About%20Us%20Photos/Juno%202%20STX.jpg`} alt="Juno at work" className="founder-photo-accent" />
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function AboutUs() {
               <div key={member.id} className="team-card">
                 <div className="team-avatar">
                   <img 
-                    src={new URL(`../assets/aboutus/${member.imageFile}`, import.meta.url).href} 
+                    src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/About%20Us%20Photos/${encodeURIComponent(member.imageFile)}`} 
                     alt={member.name} 
                     className="team-avatar-img" 
                   />
