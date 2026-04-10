@@ -8,6 +8,13 @@ export const brands = [
     bgGradient: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)',
   },
   {
+    id: 'cabanax',
+    name: 'Cabana X',
+    description: 'Cabana X offers premium, customizable modular cabanas that redefine outdoor living. With a sleek design and motorized louvers, it provides the perfect balance of luxury and weather control.',
+    path: '/our-brands/cabanax',
+    bgGradient: 'linear-gradient(135deg, #2b2b2b 0%, #111111 100%)',
+  },
+  {
     id: 'azenco',
     name: 'Azenco Outdoor',
     description: 'Azenco specializes in premium aluminum outdoor structures, including motorized and manual pergolas, cabanas, and carports. Combining over 20+ years of experience with advanced technology, they create elegant, functional designs.',
@@ -76,7 +83,7 @@ export const brands = [
 export const testimonials = [
   {
     id: 1,
-    name: 'Sylvia María Rosa',
+    name: 'Sylvia R.',
     role: 'Homeowner',
     quote: 'Fantastic product — looks great, provides shade, rain protection, and lighting. Juno went above and beyond to ensure everything was perfect.',
     rating: 5,
@@ -84,7 +91,7 @@ export const testimonials = [
   },
   {
     id: 2,
-    name: 'Alexandra Rochon',
+    name: 'Alexandra R.',
     role: 'Property Owner',
     quote: 'Well worth the investment. A beautifully designed, versatile product that has improved our home immensely. Couldn\'t be happier.',
     rating: 5,
@@ -92,7 +99,7 @@ export const testimonials = [
   },
   {
     id: 3,
-    name: 'Edward Dempsey',
+    name: 'Edward D.',
     role: 'Hotel Manager',
     quote: 'Installed two pergolas at one of our hotels. Wonderful product and service. The guests absolutely love the new outdoor areas. Will definitely use again.',
     rating: 5,
@@ -100,7 +107,7 @@ export const testimonials = [
   },
   {
     id: 4,
-    name: 'Henry Neumann',
+    name: 'Henry N.',
     role: 'Real Estate Developer',
     quote: 'Superior quality, complicated install, completed on schedule. Added a lot of value to our property. The team is truly professional.',
     rating: 5,
@@ -108,7 +115,7 @@ export const testimonials = [
   },
   {
     id: 5,
-    name: 'Raymond Fournier',
+    name: 'Raymond F.',
     role: 'Homeowner',
     quote: 'Exceeded our expectations. Our interior courtyard is now fully usable despite the constant Caribbean rain. Absolutely amazing transformation.',
     rating: 5,
@@ -116,7 +123,7 @@ export const testimonials = [
   },
   {
     id: 6,
-    name: 'Wilfredo Borroto',
+    name: 'Wilfredo B.',
     role: 'Commercial Client',
     quote: 'The professionalism and quality of work from Sho-Pros is unmatched. From the first consultation to the final installation, everything was flawless.',
     rating: 5,
@@ -129,6 +136,7 @@ export const signatureProjects = [
   {
     id: 'enclave',
     name: 'The Enclave',
+    subtitle: 'Award-Winning Pergola',
     type: 'Residential',
     category: 'Louvered Pergola',
     brand: 'StruXure',
@@ -138,6 +146,7 @@ export const signatureProjects = [
   {
     id: 'bachelorette',
     name: 'The Bachelorette House',
+    subtitle: 'Louvered Pergola',
     type: 'Residential',
     category: 'Motorized Shades',
     brand: 'Azenco',
@@ -147,6 +156,7 @@ export const signatureProjects = [
   {
     id: 'pearl',
     name: 'The Pearl Penthouse',
+    subtitle: 'Rooftop Louvered Pergola',
     type: 'Commercial',
     category: 'Rooftop Pergola',
     brand: 'Azenco',
@@ -306,43 +316,56 @@ export const brandProjects = [
 // FAQs for Home Page
 export const homeFaqs = [
   {
-    question: "WHAT IS A PERGOLA?",
-    answer: "EN: A pergola is a sleek, modern structure that adds shade, comfort, and style to your outdoor space. Ours are custom-built with premium materials — and yes, they can be motorized. Think of it as a smart roof that opens or closes depending on the weather (or your mood).\n\nES: Una pérgola es una estructura moderna que le da sombra, comodidad y estilo a tu espacio exterior. Las nuestras se hacen a la medida con materiales premium — y sí, pueden ser motorizadas. Es como un techo inteligente que se abre o cierra según el clima (o tu mood)."
+    question: "WHAT IS A MODERN PERGOLA?",
+    answer: "A modern pergola is a motorized louvered structure that brings shade, comfort, and style to your outdoor space. Our pergolas are custom-built from extruded aluminum, feature a built-in gutter system, and are powder-coated to withstand Caribbean weather. Automation allows the louvers to close when it rains, while LED lighting and motorized screens create ambiance and extra comfort."
   },
   {
     question: "HOW DO I GET AN ESTIMATE?",
-    answer: "EN: Easy. Send us:\n• Approximate measurements\n• Photos of the space\n• Your location\nWe’ll follow up with a call and a rough estimate.If you wish to proceed, we’ll schedule a site visit for precise measurements and layout ideas. A $150 deposit is required for the site visit, credited toward your project if you move forward.\nVisit our Contact Us page for details or check the videos below.\n\nES: Sencillo. Envíanos:\n• Medidas aproximadas\n• Fotos del área\n• Tu ubicación\nTe llamamos para darte una cotización preliminar. Si deseas continuar, coordinamos una visita para medidas exactas y guía de diseño. Se requiere un depósito de $150 para la visita, que se descuenta si haces el proyecto.\nVisita nuestra página de Contacto o mira los videos abajo."
+    answer: "It’s easy, just send us:\n• Approximate measurements\n• Photos of the space\n• Your location\n\nWe’ll provide an initial estimate. If you decide to move forward, we’ll schedule a site visit for precise measurements and layout ideas.\n\nA $150 deposit is required for the site visit, fully credited toward your project.\n\nSubmit your inquiry on our Contact Us page."
   },
   {
     question: "HOW DOES A PERGOLA ADD VALUE?",
-    answer: "EN: It gives you a beautiful, functional space you’ll actually use — and it boosts your property’s value. It’s a smart upgrade that looks amazing and works hard year-round.\n\nES: Te da un espacio funcional que vas a disfrutar todos los días, y eleva el valor de tu propiedad. Es una mejora elegante que realza tu exterior con estilo y propósito."
+    answer: "In Puerto Rico, outdoor spaces face intense sun, frequent rain, and a six‑month hurricane season. A modern pergola provides shade, shelter, and a durable structure built to withstand the toughest weather.\n\nFor homeowners, it extends usable outdoor space year‑round and boosts property value. For restaurants, hotels, and commercial spaces, it creates protected seating that enhances the guest experience and generates extra revenue."
   },
   {
-    question: "WHAT MAKES YOUR PERGOLAS DIFFERENT?",
-    answer: "EN: We use premium powder-coated aluminum engineered to withstand harsh weather. Each pergola is custom-designed to fit your space, featuring motorized options, LED lighting, and smart technology that automatically closes the roof when it rains.\n\nES: Usamos aluminio de alta calidad con recubrimiento resistente a la intemperie. Cada pérgola se diseña a la medida, con opciones motorizadas, iluminación LED y sensores inteligentes que cierran el techo automáticamente cuando llueve."
+    question: "WHAT MAKES SHO-PROS DIFFERENT?",
+    answer: "Sho-Pros introduced Puerto Rico to the modern pergola, and we know not all pergolas are created equal. Our boutique, white-glove approach ensures personalized attention through design, installation, and maintenance.\n\nWe hand-select only the highest-quality brands, using premium materials and cutting-edge technology to provide clients with the most advanced outdoor systems on the market."
   },
   {
     question: "WHAT WARRANTY DO YOU OFFER?",
-    answer: "EN: Warranty varies by product. Head to our Documentation page for the full details.\n\nES: La garantía depende del producto. Visita nuestra página de Documentación para más info."
+    answer: "Warranty varies by product. Head to our Documentation page for the full details."
   },
   {
     question: "HOW LONG DOES INSTALLATION TAKE?",
-    answer: "EN: 3 to 5 days, depending on size and design. We get it done right — and with minimal disruption.\n\nES: Entre 3 a 5 días, según el tamaño y diseño. Hacemos el trabajo bien y sin interrumpir tu rutina."
+    answer: "Typically 3 to 5 days, depending on size and design. We stay on site until your project is complete, with no shortcuts."
   },
   {
-    question: "STRUCTURAL & DESIGN",
-    answer: "Q: Can my pergola attach to my house/building?\nEN: Yes — about 80% of our installs are wall-mounted, 15% are recessed, and 5% are standalone.\nES: Sí. El 80% de nuestras pérgolas se fijan a estructuras existentes, 15% se insertan y 5% son independientes.\n\nQ: Can I cover my entire patio or terrace?\nEN: Yes. But during design, we’ll talk about how you use your space to recommend the best size.\nES: Sí. Pero en la consulta de diseño hablaremos de cómo usas el espacio para recomendarte el tamaño ideal."
+    question: "WHAT ARE COMMON INSTALLATION AND DESIGN OPTIONS?",
+    answer: "Installation types: Approximately 80% of our pergolas are wall-mounted, 15% fit directly into a concrete opening without posts, and 5% are standalone.\n\nDesign variations: Cantilever frames, where the structure extends beyond the posts, create a modern aesthetic (e.g., The Moonstone). Multiple posts can also be used for a distinctive look (e.g., The Onyx Lounge).\n\nFinish options: Woodgrain powder-coating on louvers is a popular enhancement that adds warmth and texture (e.g., The Blackwood Perch).\n\nCustom add-ons: Special beams for spotlights or ceiling fans are commonly incorporated in Puerto Rico to enhance lighting and airflow."
   },
   {
-    question: "FEATURES & CUSTOMIZATION",
-    answer: "Q: Can I add lighting, fans, or other accessories?\nEN: Yes — fans, lighting, extra columns, hidden gutters... we’ve done it all.\nES: Claro. Podemos añadir luces, abanicos, columnas extra, canales ocultos y más.\n\nQ: Do you offer smart controls?\nEN: Yes. Azenco uses Bond. Struxure integrates with Somfy App.\nES: Sí. Azenco usa Bond. Struxure se conecta con Somfy App.\n\nQ: Can I choose the color?\nEN: 100%. Choose from standard tones, woodgrain, or your own Pantone. Note: Dorado Beach pergolas must be Rockefeller Brown per Dorado residences guidelines.\nES: ¡Claro! Puedes escoger entre colores estándar, acabados tipo madera o tu color Pantone. Nota: Las pérgolas de Dorado Beach deben ser color Rockefeller Brown, según las normas de Dorado Residences."
+    question: "DO YOU OFFER SMART CONTROLS?",
+    answer: "Yes. Our pergolas and motorized screens are compatible with Bond and Somfy, allowing full control through their apps."
   },
   {
-    question: "UTILITIES & ENGINEERING",
-    answer: "Q: Is installation included?\nEN: Yes. Jose and his team are pros — certified in every product line we offer.\nES: Sí. Jose y su equipo están certificados para instalar todos nuestros productos.\n\nQ: What about electricity and drainage?\nEN: You’ll need power for lighting/motors. Our pergolas have built-in drainage that connects to your patio or system.\nES: Necesitas corriente para luces y motores. Las pérgolas ya vienen con drenaje integrado que se conecta a tu patio o sistema existente.\n\nQ: Do I need to hire a contractor or electrician?\nEN: Nope. Install and electrical hookup (within 10 ft to a 20-amp circuit) is included.\nES: No. La instalación y la conexión eléctrica (a menos de 10 pies a un circuito de 20 amperios) están incluidas."
+    question: "CAN I CUSTOMIZE THE COLOR ON MY PERGOLA?",
+    answer: "Absolutely. Choose from our standard colors, woodgrain finishes, or provide your RAL color and we’ll powder coat your pergola to match."
   },
   {
-    question: "PROCESS & PAYMENTS",
-    answer: "Q: What’s the timeline from estimate to install?\nEN: Once you place your order:\n• Manufacturing: 14 weeks\n• Transit: 10 days\n• Installation: 4–6 workdays (Mon–Fri, 8AM–3PM)\nES: Luego de ordenar:\n• Fabricación: 14 semanas\n• Tránsito: 10 días\n• Instalación: 4–6 días hábiles (lun–vie, 8AM–3PM)\n\nQ: Do you offer financing?\nEN: Not at the moment.\nES: Por ahora, no ofrecemos financiamiento.\n\nQ: What payment methods do you accept?\nEN: ACH, credit cards (additional fees apply), checks, and cash.\nES: ACH, tarjetas de crédito (aplican cargos adicionales), cheques y efectivo.\n\nQ: How much do pergolas cost?\nEN: Price varies by size, features, and motorization. Most clients invest $30K–$40K for a 10\' x 20\' pergola.\nES: El precio varía según el tamaño, características y motorización. La mayoría invierte $30K–$40K por una pérgola de 10\' x 20\'."
+    question: "IS INSTALLATION INCLUDED?",
+    answer: "Yes. Our team is certified to install all our product lines.\n\nElectrical hookup (within 10 ft to a 20-amp circuit) is also included."
+  },
+  {
+    question: "WHAT’S YOUR LEAD TIME?",
+    answer: "Our average lead time is 3–4 months from the time your deposit is placed:\n• Manufacturing: 12–14 weeks\n• Transit: Approx. 10 days\n• Installation: 3–5 days (Mon–Fri, 8 AM – 3 PM)"
+  },
+  {
+    question: "DO YOU OFFER FINANCING?",
+    answer: "Not at this time."
+  },
+  {
+    question: "WHAT PAYMENT METHODS DO YOU ACCEPT?",
+    answer: "ACH, credit cards (additional fees apply), checks, and cash."
   }
 ];
+

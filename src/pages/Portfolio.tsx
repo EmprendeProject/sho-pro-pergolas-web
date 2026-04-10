@@ -61,6 +61,7 @@ export default function Portfolio() {
                 <div className="spotlight-info">
                   <span className="spotlight-brand">{proj.brand}</span>
                   <h3 className="spotlight-name">{proj.name}</h3>
+                  {proj.subtitle && <p className="spotlight-subtitle" style={{ fontSize: '1.25rem', color: 'var(--color-gold)', marginBottom: '0.5rem', fontWeight: 600 }}>{proj.subtitle}</p>}
                   <p className="spotlight-desc">{proj.description}</p>
                 </div>
               </article>

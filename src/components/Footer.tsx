@@ -36,7 +36,7 @@ export default function Footer() {
                 <img src={mainLogo} alt="Sho-Pros" className="footer-logo-img" />
               </div>
               <p className="footer-tagline">
-                Premium custom pergolas, motorized shades, and luxury outdoor living systems for Puerto Rico & the Caribbean.
+                Modern louvered pergolas, motorized shades, and luxury outdoor systems across Puerto Rico and the Caribbean.
               </p>
               <div className="footer-socials">
                 <a href="https://www.instagram.com/ShoProsOutdoors" target="_blank" rel="noreferrer" className="social-icon" aria-label="Instagram">

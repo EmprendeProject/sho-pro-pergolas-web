@@ -24,13 +24,13 @@ const projectImages: Record<string, string> = {
 };
 
 const procesSteps = [
-  { num: '01', step: 'STEP 1', label: 'Submit your project inquiry', title: 'CONTACT US', icon: 'phone' },
-  { num: '02', step: 'STEP 2', label: 'Discuss scope and receive estimate', title: 'CONSULTATION', icon: 'chat' },
-  { num: '03', step: 'STEP 3', label: 'We measure and finalize your quote', title: 'SITE VISIT', icon: 'home' },
-  { num: '04', step: 'STEP 4', label: 'Confirm details and submit deposit', title: 'FINALIZE DESIGN', icon: 'clipboard' },
-  { num: '05', step: 'STEP 5', label: 'Custom-built, typically 3-4 months', title: 'PRODUCTION', icon: 'hard-hat' },
-  { num: '06', step: 'STEP 6', label: 'White-glove delivery and installation', title: 'INSTALLATION', icon: 'wrench' },
-  { num: '07', step: 'FINAL STEP', label: 'Step into your new favorite place to be', title: 'EXPERIENCE', icon: 'star' },
+  { num: '01', step: 'STEP 1', label: 'Submit project inquiry', title: 'CONTACT US', icon: 'phone' },
+  { num: '02', step: 'STEP 2', label: 'Preliminary project estimate', title: 'CONSULT', icon: 'chat' },
+  { num: '03', step: 'STEP 3', label: 'Onsite measurements', title: 'SITE VISIT', icon: 'home' },
+  { num: '04', step: 'STEP 4', label: 'Approve final proposal & deposit', title: 'FINALIZE DESIGN', icon: 'clipboard' },
+  { num: '05', step: 'STEP 5', label: 'Custom-built, 3–4 month lead time', title: 'PRODUCTION', icon: 'hard-hat' },
+  { num: '06', step: 'STEP 6', label: 'Delivery and professional installation', title: 'INSTALLATION', icon: 'wrench' },
+  { num: '07', step: 'FINAL STEP', label: 'Enjoy your space', title: 'EXPERIENCE', icon: 'star' },
 ];
 
 const brandLogos = [
@@ -93,11 +93,11 @@ export default function Home() {
           <div className="hero-inner">
             <p className="hero-eyebrow">Puerto Rico & The Caribbean</p>
             <h1 className="hero-title">
-              Luxury Pergolas &<br />Outdoor Shade<br />Solutions
+              Luxury Pergolas &<br />Outdoor<br />Solutions
             </h1>
             <div className="hero-actions">
               <Link to="/contact-us" className="btn-hero-primary">
-                Book a Free Consultation
+                Start Your Project
               </Link>
             </div>
           </div>
@@ -112,10 +112,10 @@ export default function Home() {
               <h2 className="who-heading">Who We Are</h2>
               <div className="who-divider" />
               <p className="who-body">
-                Sho-Pros is the premier destination for custom pergolas, carports, and motorized shades in Puerto Rico and the Caribbean. Our designs are made to impress and built to last.
+                Sho-Pros is an award-winning outdoor solution dealership specializing in luxury residential and commercial installations across Puerto Rico and the Caribbean.
               </p>
               <p className="who-body">
-                More than just shade, we create spaces where you gather, relax, and enjoy life. With humility, not arrogance, we showcase only the top brands for our clients to experience.
+                We offer pergolas, carports, motorized screens, and other outdoor solutions from top-tier brands, selected for quality, durability, and clean design. Our systems are made to impress and built to last.
               </p>
               <Link to="/about-us" className="who-link">
                 Learn our story <ArrowRight size={15} />
@@ -128,7 +128,7 @@ export default function Home() {
       {/* ── SIGNATURE PROJECTS ── */}
       <section className="sig-section">
         <div className="container">
-          <p className="sig-label">SIGNATURE PROJECTS</p>
+          <h2 className="sig-heading">SIGNATURE PROJECTS</h2>
 
           {/* Image cards for projects with photos */}
           <div className="sig-cards">
@@ -138,8 +138,8 @@ export default function Home() {
                 <Link key={proj.id} to="/portfolio" className="sig-card">
                   <img src={projectImages[proj.id]} alt={proj.name} className="sig-card-img" />
                   <div className="sig-card-overlay">
-                    <span className="sig-card-category">{proj.category}</span>
                     <h3 className="sig-card-name">{proj.name}</h3>
+                    <span className="sig-card-category">{proj.subtitle}</span>
                   </div>
                 </Link>
               ))}
@@ -174,13 +174,13 @@ export default function Home() {
 
                 {/* icon circle */}
                 <div className="process-icon-wrap">
-                  {step.icon === 'phone'     && <Phone      size={22} />}
-                  {step.icon === 'chat'      && <MessageSquare size={22} />}
-                  {step.icon === 'home'      && <MapPin     size={22} />}
+                  {step.icon === 'phone' && <Phone size={22} />}
+                  {step.icon === 'chat' && <MessageSquare size={22} />}
+                  {step.icon === 'home' && <MapPin size={22} />}
                   {step.icon === 'clipboard' && <ClipboardList size={22} />}
-                  {step.icon === 'hard-hat'  && <HardHat    size={22} />}
-                  {step.icon === 'wrench'    && <Wrench     size={22} />}
-                  {step.icon === 'star'      && <Sparkles   size={22} />}
+                  {step.icon === 'hard-hat' && <HardHat size={22} />}
+                  {step.icon === 'wrench' && <Wrench size={22} />}
+                  {step.icon === 'star' && <Sparkles size={22} />}
                 </div>
 
                 {/* step info below */}
@@ -251,16 +251,16 @@ export default function Home() {
       <section className="faq-section">
         <div className="container">
           <div className="faq-header">
-            <h2 className="faq-title">Preguntas Frecuentes</h2>
-            <p className="faq-sub">Todo lo que necesitas saber sobre nuestros productos y servicios.</p>
+            <h2 className="faq-title">FAQs</h2>
+            <p className="faq-sub">Everything you need to know about our products and services.</p>
           </div>
           <div className="faq-accordion">
             {homeFaqs.map((faq, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`faq-item ${openFaq === index ? 'active' : ''}`}
               >
-                <button 
+                <button
                   className="faq-question"
                   onClick={() => toggleFaq(index)}
                   aria-expanded={openFaq === index}
@@ -272,7 +272,7 @@ export default function Home() {
                     <ChevronDown className="faq-icon" size={20} />
                   )}
                 </button>
-                <div 
+                <div
                   className="faq-answer-wrapper"
                   style={{
                     maxHeight: openFaq === index ? '500px' : '0',
@@ -293,7 +293,6 @@ export default function Home() {
       <section className="home-contact-band">
         <div className="container">
           <h2 className="contact-band-title">CONTACT US NOW</h2>
-          <p className="contact-band-sub">Turn your outdoor space into the lifestyle it deserves</p>
           <div className="contact-band-info">
             <a href="tel:+17875302525" className="contact-band-link">
               <Phone size={16} />
@@ -305,7 +304,7 @@ export default function Home() {
             </a>
           </div>
           <div className="contact-band-actions">
-            <Link to="/contact-us" className="btn-hero-primary">Book a Free Consultation</Link>
+            <Link to="/contact-us" className="btn-hero-primary">Start Your Project</Link>
           </div>
         </div>
       </section>

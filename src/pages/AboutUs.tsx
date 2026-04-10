@@ -12,11 +12,12 @@ const values = [
 ];
 
 const timeline = [
-  { year: '2018', label: 'Founded', desc: 'Sho-Pros launches with hurricane fabric in Puerto Rico.' },
-  { year: '2019', label: 'First Pergola', desc: 'Installed the first motorized pergola in Puerto Rico.' },
-  { year: '2021', label: 'Caribbean Expansion', desc: 'Expanded operations across the Caribbean islands.' },
-  { year: '2023', label: '500+ Projects', desc: 'Completed over 500 residential and commercial installs.' },
-  { year: '2024', label: '#1 Dealer', desc: 'Named the No. 1 custom pergola dealer in the region.' },
+  { year: '2018', label: 'Founded', desc: '2018: Sho-Pros brought the first high-tech hurricane fabric to Puerto Rico. Eliminating the need for clunky metal shutters.' },
+  { year: '2019', label: '', desc: '2019: Installed the first motorized pergola in Puerto Rico.' },
+  { year: '202X', label: '', desc: '202X: Expanded operation across the Caribbean and Florida.' },
+  { year: '2021', label: '', desc: '2021: Recognized as an award-winning dealership by StruXure' },
+  { year: '2024', label: '', desc: '2024: Completed over 500 residential and commercial installs.' },
+  { year: 'Today', label: '', desc: 'Today: Puerto Rico’s leading dealer of custom modern pergolas' },
 ];
 
 export default function AboutUs() {
@@ -47,22 +48,22 @@ export default function AboutUs() {
               </div>
             </div>
             <div className="founders-content">
-              <p className="section-label">The Founders</p>
+              <p className="section-label">The Founder</p>
               <h2 className="heading-section founders-title">
                 Born From Passion,<br />Built on Excellence
               </h2>
               <div className="divider" />
               <p className="body-text">
-                Sho-Pros was founded by Luis "Juno" Montañez after 15+ years in commercial leasing. But Juno's not your typical suit — he kite surfs, walks on planes (yeah, really), and hikes in places most people avoid.
+                Sho-Pros was founded by Luis "Juno" Montañez after 15+ years in commercial leasing. Not your typical suit, Juno kitesurfs, walks on planes (yes, really), and hikes where most people wouldn’t dare.
               </p>
               <p className="body-text" style={{ marginTop: '1rem' }}>
-                That same edge led to Sho-Pros in 2018. Seeing Puerto Rico's outdoor spaces stuck with outdated solutions, Juno saw an opportunity. People needed systems that worked, impressed, and stood up to the island's unpredictable weather.
+                That same adventurous spirit inspired Sho-Pros in 2018. Frustrated with Puerto Rico’s outdated outdoor solutions, Juno saw an opportunity: create systems that impress, perform, and stand up to the island’s relentless weather.
               </p>
               <p className="body-text" style={{ marginTop: '1rem' }}>
-                We started with the first high-tech hurricane fabric. Then came motorized shades. And now? We're the only custom motorized pergola dealer in Puerto Rico and the Caribbean.
+                We introduced Puerto Rico’s first high-tech hurricane fabric. Next, we brought motorized shades with patented neodymium magnets that eliminate zippers and prevent snags. Today, Sho-Pros sets the standard for modern pergolas across Puerto Rico and the Caribbean.
               </p>
               <div className="founders-highlights">
-                {['Puerto Rico\'s #1 Pergola Dealer', 'Caribbean Coverage', '500+ Projects Completed', 'Hand-Selected Premium Brands'].map(h => (
+                {["Puerto Rico's First Pergola Dealer", 'South Florida & Caribbean Coverage', '500+ Projects Completed', 'Hand-Selected Premium Brands'].map(h => (
                   <div key={h} className="highlight-item">
                     <CheckCircle size={16} />
                     <span>{h}</span>
@@ -79,9 +80,9 @@ export default function AboutUs() {
         <div className="container">
           <div className="what-we-do-grid">
             {[
-              { title: 'What We Do', body: 'We design and install luxury outdoor living systems — from cutting-edge pergolas to sleek motorized shades that let you enjoy the view without the sunburn or surprise rain. Every product is hand-selected for durability, performance, and design.' },
-              { title: 'How We Work', body: 'We don\'t just sell outdoor systems; we tailor them to your space and vision. Our process starts with listening to your needs, then designing the right solution and sourcing the best products. No corners cut.' },
-              { title: 'Where We Work', body: 'Sho-Pros proudly serves Puerto Rico and the Caribbean, handling both residential and commercial projects. No job is too small or too custom for us to tackle.' },
+              { title: 'What We Do', body: 'Sho-Pros designs and installs high-end outdoor systems built for comfort and style. From modern pergolas to motorized shades, we give you full control of your outdoor space. Every product is selected for durability, performance, and clean design.' },
+              { title: 'How We Work', body: 'We don’t just sell outdoor systems, we tailor them to your space and vision. Our process starts with understanding your needs, followed by thoughtful design and sourcing the right products for the job.' },
+              { title: 'Where We Work', body: 'Sho-Pros proudly serves Puerto Rico and the Caribbean, handling both residential and commercial projects. We also have a branch in South Florida.' },
             ].map(item => (
               <div key={item.title} className="what-item">
                 <div className="what-dot" />
@@ -127,7 +128,7 @@ export default function AboutUs() {
             </h2>
             <div className="divider divider-center" />
             <blockquote className="philosophy-main-quote">
-              "With humility, not arrogance, we showcase only the top brands for our clients to experience."
+              “Setting the standard for modern outdoor living.”
             </blockquote>
             <div className="values-grid">
               {values.map(v => (
