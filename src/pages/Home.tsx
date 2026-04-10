@@ -128,7 +128,7 @@ export default function Home() {
       {/* ── SIGNATURE PROJECTS ── */}
       <section className="sig-section">
         <div className="container">
-          <h2 className="sig-heading">SIGNATURE PROJECTS</h2>
+          <h2 className="sig-heading">Signature projects</h2>
 
           {/* Image cards for projects with photos */}
           <div className="sig-cards">
@@ -252,7 +252,6 @@ export default function Home() {
         <div className="container">
           <div className="faq-header">
             <h2 className="faq-title">FAQs</h2>
-            <p className="faq-sub">Everything you need to know about our products and services.</p>
           </div>
           <div className="faq-accordion">
             {homeFaqs.map((faq, index) => (

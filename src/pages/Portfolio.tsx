@@ -49,7 +49,7 @@ export default function Portfolio() {
       <section className="section-padding">
         <div className="container">
           <p className="section-label">Featured</p>
-          <h2 className="heading-section" style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>SIGNATURE PROJECTS</h2>
+          <h2 className="heading-section" style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Signature Projects</h2>
           <div className="divider" />
           <div className="signature-spotlight-grid">
             {signatureProjects.map((proj, i) => (

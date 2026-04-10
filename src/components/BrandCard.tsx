@@ -8,9 +8,10 @@ interface BrandCardProps {
   description: string;
   path: string;
   index: number;
+  coverImage?: string;
 }
 
-export default function BrandCard({ id, name, description, path, index }: BrandCardProps) {
+export default function BrandCard({ id, name, description, path, index, coverImage }: BrandCardProps) {
   const [logoFailed, setLogoFailed] = useState(false);
   const [photoStep, setPhotoStep] = useState(0);
 
@@ -29,7 +30,7 @@ export default function BrandCard({ id, name, description, path, index }: BrandC
     fallbackImgUrl
   ];
 
-  const currentPhoto = photoSources[photoStep] || fallbackImgUrl;
+  const currentPhoto = coverImage || photoSources[photoStep] || fallbackImgUrl;
 
   // Logos from Supabase "logos" folder
   const logoUrl = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/logos/${id}.png`;

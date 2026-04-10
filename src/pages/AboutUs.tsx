@@ -12,12 +12,12 @@ const values = [
 ];
 
 const timeline = [
-  { year: '2018', label: 'Founded', desc: '2018: Sho-Pros brought the first high-tech hurricane fabric to Puerto Rico. Eliminating the need for clunky metal shutters.' },
-  { year: '2019', label: '', desc: '2019: Installed the first motorized pergola in Puerto Rico.' },
-  { year: '202X', label: '', desc: '202X: Expanded operation across the Caribbean and Florida.' },
-  { year: '2021', label: '', desc: '2021: Recognized as an award-winning dealership by StruXure' },
-  { year: '2024', label: '', desc: '2024: Completed over 500 residential and commercial installs.' },
-  { year: 'Today', label: '', desc: 'Today: Puerto Rico’s leading dealer of custom modern pergolas' },
+  { year: '2018', label: 'Founded', desc: 'Sho-Pros brought the first high-tech hurricane fabric to Puerto Rico. Eliminating the need for clunky metal shutters.' },
+  { year: '2019', label: '', desc: 'Installed the first motorized pergola in Puerto Rico.' },
+  { year: '2020', label: '', desc: 'Expanded operation across the Caribbean and Florida.' },
+  { year: '2021', label: '', desc: 'Recognized as an award-winning dealership by StruXure' },
+  { year: '2024', label: '', desc: 'Completed over 500 residential and commercial installs.' },
+  { year: 'Today', label: '', desc: 'Puerto Rico’s leading dealer of custom modern pergolas' },
 ];
 
 export default function AboutUs() {
@@ -40,10 +40,10 @@ export default function AboutUs() {
             <div className="founders-media">
               <div className="founders-img-stack">
                 <div className="founder-img-main">
-                  <img src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/About%20Us%20Photos/Juno%203.jpg`} alt="Juno Montañez" className="founder-photo-main" />
+                  <img src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/About%20Us%20Photos/Juno%202%20STX.jpg`} alt="Juno Montañez" className="founder-photo-main" />
                 </div>
                 <div className="founder-img-accent">
-                  <img src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/About%20Us%20Photos/Juno%202%20STX.jpg`} alt="Juno at work" className="founder-photo-accent" />
+                  <img src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/About%20Us%20Photos/juno%20avion.jpeg`} alt="Juno at work" className="founder-photo-accent" />
                 </div>
               </div>
             </div>
@@ -155,10 +155,10 @@ export default function AboutUs() {
             {team.map(member => (
               <div key={member.id} className="team-card">
                 <div className="team-avatar">
-                  <img 
-                    src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/About%20Us%20Photos/${encodeURIComponent(member.imageFile)}`} 
-                    alt={member.name} 
-                    className="team-avatar-img" 
+                  <img
+                    src={`${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/About%20Us%20Photos/${encodeURIComponent(member.imageFile)}`}
+                    alt={member.name}
+                    className="team-avatar-img"
                   />
                 </div>
                 <div className="team-info">
