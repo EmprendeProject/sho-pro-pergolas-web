@@ -45,6 +45,8 @@
 }
 
 .founders-title {
+  font-family: var(--font-display);
+  font-weight: normal;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   color: var(--color-black);
   margin: 0.5rem 0;
@@ -194,6 +196,8 @@
 .philosophy-center { text-align: center; }
 
 .philosophy-main-quote {
+  font-family: var(--font-display);
+  font-weight: normal;
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-style: italic;
   color: rgba(255,255,255,0.75);

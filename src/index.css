@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'NewYork';
+  font-family: 'NewYork-Display';
   src: url('./assets/fonts/NewYork PERSONAL USE.woff2') format('woff2');
-  font-weight: 100 900;
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -35,7 +35,8 @@
   --color-gray-700: #2e2e2e;
 
   /* Typography */
-  --font-primary: 'NewYork', Georgia, serif;
+  --font-display: 'NewYork-Display', 'New York', ui-serif, Georgia, serif;
+  --font-primary: 'New York', ui-serif, Georgia, serif;
   --font-secondary: 'Inter', sans-serif;
 
   --fs-xs: 0.75rem;
@@ -109,18 +110,18 @@ ul, ol { list-style: none; }
    TYPOGRAPHY UTILITIES
    ============================================ */
 .heading-display {
-  font-family: var(--font-primary);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-family: var(--font-display);
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: normal;
   line-height: 1;
 }
 
 .heading-section {
-  font-family: var(--font-primary);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .heading-sub {
