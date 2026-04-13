@@ -139,7 +139,7 @@ export const signatureProjects = [
     name: 'The Enclave',
     subtitle: 'Award-Winning Pergola',
     type: 'Residential',
-    category: 'Louvered Pergola',
+    category: 'Residential Pergolas',
     brand: 'StruXure',
     description: 'A breathtaking private estate featuring a custom StruXure Pergola X system spanning the entire pool area.',
     image: '',
@@ -149,7 +149,7 @@ export const signatureProjects = [
     name: 'The Bachelorette House',
     subtitle: 'Louvered Pergola',
     type: 'Residential',
-    category: 'Motorized Shades',
+    category: 'Residential Pergolas',
     brand: 'Azenco',
     description: 'Cover story property with full motorized shade solutions and LED lighting throughout the outdoor entertaining spaces.',
     image: '',
@@ -159,7 +159,7 @@ export const signatureProjects = [
     name: 'The Pearl Penthouse',
     subtitle: 'Rooftop Louvered Pergola',
     type: 'Commercial',
-    category: 'Rooftop Pergola',
+    category: 'Commercial Pergolas',
     brand: 'Azenco',
     description: 'Luxury rooftop penthouse transformation with premium aluminum pergola system and hidden drainage.',
     image: '',
@@ -168,14 +168,184 @@ export const signatureProjects = [
     id: 'marina',
     name: 'Marina Bay Club',
     type: 'Commercial',
-    category: 'Hurricane Screens',
+    category: 'Motorized Screens',
     brand: 'Progressive Screens',
     description: 'Full-perimeter hurricane-rated retractable screen system protecting the waterfront lounge year-round.',
     image: '',
   },
 ];
 
-// Library documents
+const _BASE = 'https://agcxxpjkqckqqefkhazp.supabase.co/storage/v1/object/public/archivos/portfolio';
+const _enc = (s: string) => s.split('/').map(encodeURIComponent).join('/');
+export const portfolioImg = (path: string) => `${_BASE}/${_enc(path)}`;
+
+export type ProjectCategory =
+  | 'Signature Projects'
+  | 'Commercial Pergolas'
+  | 'Residential Pergolas'
+  | 'Motorized Screens'
+  | 'Motorized Doors'
+  | 'Premium Carports';
+
+export interface PortfolioProject {
+  id: string;
+  name: string;
+  category: ProjectCategory;
+  location: string;
+  brand: string;
+  signature: boolean;
+  coverImage: string;
+  photos: string[];
+}
+
+export const portfolioProjects: PortfolioProject[] = [
+
+  // ── SIGNATURE PROJECTS ──────────────────────────────────────────────
+  {
+    id: 'enclave',
+    name: 'The Enclave',
+    category: 'Signature Projects',
+    location: 'San Juan, PR',
+    brand: 'StruXure',
+    signature: true,
+    coverImage: portfolioImg('Signature Projects/The Enclave/The Enclave MAIN.png'),
+    photos: [
+      portfolioImg('Signature Projects/The Enclave/The Enclave MAIN.png'),
+      portfolioImg('Signature Projects/The Enclave/The Enclave 1.jpg'),
+      portfolioImg('Signature Projects/The Enclave/The Enclave 2.jpg'),
+      portfolioImg('Signature Projects/The Enclave/The Enclave 3.jpg'),
+      portfolioImg('Signature Projects/The Enclave/The Enclave 4.jpg'),
+      portfolioImg('Signature Projects/The Enclave/Signature Photo.jpg'),
+    ],
+  },
+  {
+    id: 'bachelorette',
+    name: 'The Bachelorette House',
+    category: 'Signature Projects',
+    location: 'Dorado, PR',
+    brand: 'Azenco',
+    signature: true,
+    coverImage: portfolioImg('Signature Projects/The Bachelorette House/MAIN Picture.png'),
+    photos: [
+      portfolioImg('Signature Projects/The Bachelorette House/MAIN Picture.png'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 1.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 2a.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 3.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 4.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 5.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 6.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 7.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 8.jpg'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 9.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 10.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 11.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 12.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 13.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 14.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 15.JPG'),
+      portfolioImg('Signature Projects/The Bachelorette House/The Bachelorette House - Dorado, PR 16.JPG'),
+    ],
+  },
+  {
+    id: 'pearl',
+    name: 'The Pearl Penthouse',
+    category: 'Signature Projects',
+    location: 'Condado, PR',
+    brand: 'Azenco',
+    signature: true,
+    coverImage: portfolioImg('Signature Projects/The Pearl Penthouse/The Pearl Penthouse - Condado, PR 1.jpeg'),
+    photos: [
+      portfolioImg('Signature Projects/The Pearl Penthouse/The Pearl Penthouse - Condado, PR 1.jpeg'),
+      portfolioImg('Signature Projects/The Pearl Penthouse/The Pearl Penthouse - Condado, PR 2.jpeg'),
+      portfolioImg('Signature Projects/The Pearl Penthouse/R-Shade 1.jpg'),
+      portfolioImg('Signature Projects/The Pearl Penthouse/R-Shade 2.jpg'),
+      portfolioImg('Signature Projects/The Pearl Penthouse/R-Shade 3.jpg'),
+    ],
+  },
+
+  // ── COMMERCIAL PERGOLAS ─────────────────────────────────────────────
+  {
+    id: 'marriott',
+    name: 'Marriott Hotel Isla Verde',
+    category: 'Commercial Pergolas',
+    location: 'Isla Verde, PR',
+    brand: 'Azenco',
+    signature: false,
+    coverImage: portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Marriott Hotel Isla Verde/1.HEIC'),
+    photos: [
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Marriott Hotel Isla Verde/1.HEIC'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Marriott Hotel Isla Verde/2.HEIC'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Marriott Hotel Isla Verde/3.HEIC'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Marriott Hotel Isla Verde/IMG_5048.HEIC'),
+    ],
+  },
+  {
+    id: 'palacio-provincial',
+    name: 'Palacio Provincial',
+    category: 'Commercial Pergolas',
+    location: 'Viejo San Juan, PR',
+    brand: 'Azenco',
+    signature: false,
+    coverImage: portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 1.jpg'),
+    photos: [
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 1.jpg'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 2.jpg'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 3.jpg'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 4.jpg'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 5.jpg'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 6.jpg'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 7.jpg'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 8.jpg'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 9.jpg'),
+      portfolioImg('Commercial Pergolas/Motorized Louvered Pergola/Palacio Provincial/Palacio Provincial - VSJ, PR 10.jpg'),
+    ],
+  },
+
+  // ── MOTORIZED DOORS ─────────────────────────────────────────────────
+  {
+    id: 'renlita-s1000',
+    name: 'Renlita S-1000',
+    category: 'Motorized Doors',
+    location: 'Puerto Rico',
+    brand: 'Renlita',
+    signature: false,
+    coverImage: portfolioImg('Motorized Doors/Renlita S-1000/1.JPG'),
+    photos: [
+      portfolioImg('Motorized Doors/Renlita S-1000/1.JPG'),
+      portfolioImg('Motorized Doors/Renlita S-1000/2.jpeg'),
+      portfolioImg('Motorized Doors/Renlita S-1000/3.jpeg'),
+      portfolioImg('Motorized Doors/Renlita S-1000/4.jpeg'),
+      portfolioImg('Motorized Doors/Renlita S-1000/5.JPG'),
+      portfolioImg('Motorized Doors/Renlita S-1000/6.JPG'),
+      portfolioImg('Motorized Doors/Renlita S-1000/7.JPG'),
+      portfolioImg('Motorized Doors/Renlita S-1000/8.JPG'),
+      portfolioImg('Motorized Doors/Renlita S-1000/IMG_2008 2.jpeg'),
+      portfolioImg('Motorized Doors/Renlita S-1000/IMG_2011 2.jpeg'),
+      portfolioImg('Motorized Doors/Renlita S-1000/IMG_2019.jpeg'),
+      portfolioImg('Motorized Doors/Renlita S-1000/IMG_2024.jpeg'),
+      portfolioImg('Motorized Doors/Renlita S-1000/IMG_2027.jpeg'),
+      portfolioImg('Motorized Doors/Renlita S-1000/IMG_2029.jpeg'),
+    ],
+  },
+
+  // ── PREMIUM CARPORTS ────────────────────────────────────────────────
+  {
+    id: 'carport-st-regis',
+    name: 'St. Regis Carport',
+    category: 'Premium Carports',
+    location: 'Bahía Beach, PR',
+    brand: 'Infinity Rack',
+    signature: false,
+    coverImage: portfolioImg('Premium Carports/Carport - St Regis, PR 1.jpg'),
+    photos: [
+      portfolioImg('Premium Carports/Carport - St Regis, PR 1.jpg'),
+      portfolioImg('Premium Carports/Carport - St Regis, PR 2.jpg'),
+      portfolioImg('Premium Carports/Carport - St Regis, PR 3.jpg'),
+    ],
+  },
+];
+
+
 export const libraryDocs = [
   // StruXure
   { id: 1, brand: 'StruXure', name: 'PergolaX Brochure', category: 'Brochure', fileSize: '3.5 MB', year: 2024, filePath: 'https://agcxxpjkqckqqefkhazp.supabase.co/storage/v1/object/public/archivos/library/StruXure/SturuXure%20PergolaX%20Brochure.pdf' },

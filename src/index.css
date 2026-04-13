@@ -11,7 +11,7 @@
   font-synthesis: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
 
 
 /* ============================================
@@ -36,7 +36,7 @@
 
   /* Typography */
   --font-primary: 'NewYork', Georgia, serif;
-  --font-secondary: 'Inter', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
 
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
@@ -88,6 +88,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -96,7 +97,6 @@ body {
   color: var(--color-carbon);
   line-height: 1.6;
   font-size: 1rem;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -139,7 +139,7 @@ ul, ol { list-style: none; }
 
 .body-text {
   font-family: var(--font-secondary);
-  font-weight: 400;
+  font-weight: 300;
   font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.7;
   color: var(--color-gray-600);
