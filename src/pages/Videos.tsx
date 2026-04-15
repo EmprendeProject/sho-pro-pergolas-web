@@ -1,33 +1,47 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Play, ArrowRight, HelpCircle } from 'lucide-react';
+import { Play, X, ArrowRight, HelpCircle, Loader2, AlertCircle } from 'lucide-react';
+import { useYouTubeVideos } from '../hooks/useYouTubeVideos';
 import './Portfolio.css';
 import './Videos.css';
-
-const videos = [
-  { id: 1, title: 'StruXure Pergola X — The Ultimate Outdoor System', brand: 'StruXure', duration: '3:42', youtubeId: 'dQw4w9WgXcQ', thumb: 'linear-gradient(135deg,#1a1a2e,#16213e)' },
-  { id: 2, title: 'Azenco Aluminum Pergola Installation Time-Lapse', brand: 'Azenco', duration: '5:18', youtubeId: 'dQw4w9WgXcQ', thumb: 'linear-gradient(135deg,#2d4a1e,#1a3010)' },
-  { id: 3, title: 'Progressive Screens — Hurricane Protection Demo', brand: 'Progressive Screens', duration: '4:05', youtubeId: 'dQw4w9WgXcQ', thumb: 'linear-gradient(135deg,#3d1a1a,#5c2e2e)' },
-  { id: 4, title: 'LiquidView Digital Window — Stanford Research Overview', brand: 'LiquidView', duration: '6:22', youtubeId: 'dQw4w9WgXcQ', thumb: 'linear-gradient(135deg,#0f3460,#1a4a8a)' },
-  { id: 5, title: 'Haven & Harmony Custom Porch Swings Showcase', brand: 'Haven & Harmony', duration: '2:55', youtubeId: 'dQw4w9WgXcQ', thumb: 'linear-gradient(135deg,#4a3728,#7a5c40)' },
-  { id: 6, title: 'The Enclave — Signature Project Walkthrough', brand: 'StruXure', duration: '8:14', youtubeId: 'dQw4w9WgXcQ', thumb: 'linear-gradient(135deg,#1a1a1a,#2d2419)' },
-  { id: 7, title: 'Renlita Vertical Doors — How They Work', brand: 'Renlita', duration: '3:30', youtubeId: 'dQw4w9WgXcQ', thumb: 'linear-gradient(135deg,#1c1c1c,#333)' },
-  { id: 8, title: 'HD Golf Simulator — The Ultimate Home Golf Experience', brand: 'HD Golf', duration: '4:48', youtubeId: 'dQw4w9WgXcQ', thumb: 'linear-gradient(135deg,#0d3d1f,#1a6b35)' },
-];
 
 const howToSteps = [
   { step: 1, title: 'Visit our contact page', desc: 'Go to the Contact Us section and fill in your basic info.' },
   { step: 2, title: 'Complete the quote form', desc: 'Tell us your location, role, and interests through our 5-step form.' },
   { step: 3, title: 'Upload your plans', desc: 'Share floor plans or photos of your outdoor space if available.' },
-  { step: 4, title: 'We\'ll reach out', desc: 'Our team will contact you within 24-48 hours to schedule a consultation.' },
+  { step: 4, title: "We'll reach out", desc: 'Our team will contact you within 24-48 hours to schedule a consultation.' },
 ];
 
 export default function Videos() {
+  const { videos, loading, error } = useYouTubeVideos();
+  const [activeId, setActiveId] = useState<string | null>(null);
+
   return (
     <div className="videos-page">
+      {/* Lightbox */}
+      {activeId && (
+        <div className="yt-lightbox" onClick={() => setActiveId(null)}>
+          <div className="yt-lightbox-inner" onClick={e => e.stopPropagation()}>
+            <button className="yt-lightbox-close" onClick={() => setActiveId(null)} aria-label="Close">
+              <X size={22} />
+            </button>
+            <div className="yt-lightbox-embed">
+              <iframe
+                src={`https://www.youtube.com/embed/${activeId}?autoplay=1&rel=0`}
+                title="YouTube video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <section className="page-header">
         <div className="container">
-          <p className="section-label" style={{ color: 'var(--color-wood-light)' }}>Watch & Learn</p>
+          <p className="section-label" style={{ color: 'var(--color-wood-light)' }}>Watch &amp; Learn</p>
           <h1 className="heading-section page-header-title" style={{ color: 'var(--color-white)' }}>
             VIDEOS
           </h1>
@@ -43,25 +57,51 @@ export default function Videos() {
           <div className="videos-layout">
             {/* Video Grid */}
             <div className="videos-main">
-              <div className="videos-grid">
-                {videos.map(video => (
-                  <article key={video.id} className="video-card">
-                    <div className="video-thumb" style={{ background: video.thumb }}>
-                      <button className="video-play-btn" aria-label="Play video">
-                        <Play size={24} fill="currentColor" />
-                      </button>
-                      <span className="video-duration">{video.duration}</span>
-                    </div>
-                    <div className="video-info">
-                      <span className="video-brand">{video.brand}</span>
-                      <h3 className="video-title">{video.title}</h3>
-                    </div>
-                  </article>
-                ))}
-              </div>
+
+              {loading && (
+                <div className="yt-state">
+                  <Loader2 size={36} className="yt-spinner" />
+                  <p>Loading videos…</p>
+                </div>
+              )}
+
+              {error && (
+                <div className="yt-state yt-error">
+                  <AlertCircle size={36} />
+                  <p>{error}</p>
+                </div>
+              )}
+
+              {!loading && !error && videos.length === 0 && (
+                <div className="yt-state">
+                  <p>No videos found.</p>
+                </div>
+              )}
+
+              {!loading && !error && videos.length > 0 && (
+                <div className="videos-grid">
+                  {videos.map(video => (
+                    <article key={video.id} className="video-card" onClick={() => setActiveId(video.id)}>
+                      <div className="video-thumb">
+                        {video.thumbnail ? (
+                          <img src={video.thumbnail} alt={video.title} className="video-thumb-img" />
+                        ) : (
+                          <div className="video-thumb-placeholder" />
+                        )}
+                        <button className="video-play-btn" aria-label="Play video">
+                          <Play size={24} fill="currentColor" />
+                        </button>
+                      </div>
+                      <div className="video-info">
+                        <h3 className="video-title">{video.title}</h3>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* Sidebar: How to request a quote */}
+            {/* Sidebar */}
             <aside className="videos-sidebar">
               <div className="sidebar-card">
                 <div className="sidebar-header">

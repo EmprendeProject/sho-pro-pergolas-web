@@ -1,20 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, ChevronLeft, ChevronRight, Phone, Mail, MessageSquare, MapPin, ClipboardList, HardHat, Wrench, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
-import { testimonials, signatureProjects, homeFaqs } from '../data/content';
-import imgHurricane from '../assets/brands/hurricane fabric.png';
-import imgInfinity from '../assets/brands/infinity rack.png';
-import imgLiquidview from '../assets/brands/liquid view.png';
-import imgProgressive from '../assets/brands/progressive screens.png';
-import imgRenlita from '../assets/brands/renlita.png';
-import imgStruxure from '../assets/brands/struxure.png';
-import imgSuntech from '../assets/brands/suntech.png';
-import imgAzenco from '../assets/brands/azenco.png';
-import imgHDGolf from '../assets/brands/hd golf.png';
-import imgHaven from '../assets/brands/haven y harmony.png';
+import { testimonials, signatureProjects, homeFaqs, brands } from '../data/content';
 import imgSig1 from '../assets/signature projects/signatureproject1.png';
 import imgSig2 from '../assets/signature projects/signatureproject2.png';
 import imgSig3 from '../assets/signature projects/signatureproject3.png';
+import ImageWithFallback from '../components/ImageWithFallback';
+import { localBrandLogos } from '../utils/localAssets';
 import './Home.css';
 
 const projectImages: Record<string, string> = {
@@ -30,21 +22,35 @@ const procesSteps = [
   { num: '04', step: 'STEP 4', label: 'Approve final proposal & deposit', title: 'FINALIZE DESIGN', icon: 'clipboard' },
   { num: '05', step: 'STEP 5', label: 'Custom-built, 3–4 month lead time', title: 'PRODUCTION', icon: 'hard-hat' },
   { num: '06', step: 'STEP 6', label: 'Delivery and professional installation', title: 'INSTALLATION', icon: 'wrench' },
-  { num: '07', step: 'FINAL STEP', label: 'Enjoy your space', title: 'EXPERIENCE', icon: 'star' },
 ];
 
-const brandLogos = [
-  { name: 'Hurricane Fabric', img: imgHurricane },
-  { name: 'Infinity Rack', img: imgInfinity },
-  { name: 'LiquidView', img: imgLiquidview },
-  { name: 'Progressive Screens', img: imgProgressive },
-  { name: 'Renlita', img: imgRenlita },
-  { name: 'StruXure', img: imgStruxure },
-  { name: 'Suntech', img: imgSuntech },
-  { name: 'Azenco', img: imgAzenco },
-  { name: 'HD Golf', img: imgHDGolf },
-  { name: 'Haven & Harmony', img: imgHaven },
-];
+const getLogoSources = (id: string, name: string) => {
+  const localLogo = localBrandLogos[id];
+  const cloudFolderName = name === 'Azenco Outdoor' ? 'Azenco' : name.replace(/\s+/g, '');
+  const basePathCloud = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/brands%20(logos)/${encodeURIComponent(name)}`;
+  const basePathCloudClean = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/brands%20(logos)/${encodeURIComponent(cloudFolderName)}`;
+  const basePathCloudId = `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/brands%20(logos)/${encodeURIComponent(id)}`;
+
+  return [
+    localLogo,
+    `${basePathCloud}/logo.png`,
+    `${basePathCloud}/logo.jpeg`,
+    `${basePathCloud}/logo.jpg`,
+    `${basePathCloud}/logo.PNG`,
+    `${basePathCloudClean}/logo.png`,
+    `${basePathCloudClean}/logo.jpeg`,
+    `${basePathCloudClean}/logo.jpg`,
+    `${basePathCloudId}/logo.png`,
+    `${basePathCloudId}/logo.jpeg`,
+    `${basePathCloudId}/logo.jpg`,
+    `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/brands%20(logos)/${encodeURIComponent(name)}.png`,
+    `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/brands%20(logos)/${encodeURIComponent(name)}.jpeg`,
+    `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/brands%20(logos)/${encodeURIComponent(id)}.png`,
+    `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/brands%20(logos)/${encodeURIComponent(id)}.jpeg`,
+    `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/brands%20(logos)/${encodeURIComponent(name)}%20logo.png`,
+    `${import.meta.env.VITE_SUPABASE_URL}/storage/v1/object/public/archivos/logos/${id}.png`
+  ].filter(Boolean) as string[];
+};
 
 function renderAnswer(text: string) {
   const parts = text.split(/(\*\*[\s\S]*?\*\*)/g);
@@ -245,10 +251,15 @@ export default function Home() {
         <p className="brand-marquee-label">OUR BRANDS</p>
         <div className="brand-marquee-track-wrap">
           <div className="brand-marquee-track">
-            {[...brandLogos, ...brandLogos].map((b, i) => (
+            {[...brands, ...brands].map((b, i) => (
               <div key={i} className="brand-marquee-item">
                 <div className="brand-marquee-logo">
-                  <img src={b.img} alt={b.name} className="brand-marquee-img" />
+                  <ImageWithFallback 
+                    sources={getLogoSources(b.id, b.name)} 
+                    alt={b.name} 
+                    className="brand-marquee-img" 
+                    fallbackText={b.name}
+                  />
                 </div>
                 <span className="brand-marquee-name">{b.name}</span>
               </div>
