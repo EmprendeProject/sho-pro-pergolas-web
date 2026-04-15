@@ -91,7 +91,7 @@ export default function Home() {
       <section className="hero" id="hero">
         <div className="hero-bg">
           <iframe
-            src="https://player.vimeo.com/video/1176602144?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&quality=1080p"
+            src="https://player.vimeo.com/video/1183460886?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&quality=1080p"
             className="hero-video"
             frameBorder="0"
             allow="autoplay; fullscreen"
