@@ -137,6 +137,10 @@
 .yt-spinner { animation: yt-spin 1s linear infinite; }
 
 .video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -148,12 +152,13 @@
   align-items: center;
   justify-content: center;
   transition: all 0.25s ease;
+  z-index: 2;
 }
 
 .video-card:hover .video-play-btn {
   background: var(--color-wood);
   border-color: var(--color-wood);
-  transform: scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .video-duration {
@@ -283,4 +288,47 @@
 
 @media (max-width: 640px) {
   .videos-grid { grid-template-columns: 1fr; }
+}
+
+/* Pagination */
+.videos-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.btn-pagination {
+  background: var(--color-black);
+  color: var(--color-white);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-pagination:hover:not(:disabled) {
+  background: var(--color-wood);
+}
+
+.btn-pagination:disabled {
+  background: var(--color-gray-200);
+  color: var(--color-gray-400);
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: var(--color-gray-500);
+  font-weight: 500;
 }

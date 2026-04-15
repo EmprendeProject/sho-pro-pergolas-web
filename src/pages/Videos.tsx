@@ -15,6 +15,11 @@ const howToSteps = [
 export default function Videos() {
   const { videos, loading, error } = useYouTubeVideos();
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  
+  const itemsPerPage = 8;
+  const totalPages = Math.ceil(videos.length / itemsPerPage);
+  const paginatedVideos = videos.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
     <div className="videos-page">
@@ -79,24 +84,46 @@ export default function Videos() {
               )}
 
               {!loading && !error && videos.length > 0 && (
-                <div className="videos-grid">
-                  {videos.map(video => (
-                    <article key={video.id} className="video-card" onClick={() => setActiveId(video.id)}>
-                      <div className="video-thumb">
-                        {video.thumbnail ? (
-                          <img src={video.thumbnail} alt={video.title} className="video-thumb-img" />
-                        ) : (
-                          <div className="video-thumb-placeholder" />
-                        )}
-                        <button className="video-play-btn" aria-label="Play video">
-                          <Play size={24} fill="currentColor" />
-                        </button>
-                      </div>
-                      <div className="video-info">
-                        <h3 className="video-title">{video.title}</h3>
-                      </div>
-                    </article>
-                  ))}
+                <div className="videos-list-container">
+                  <div className="videos-grid">
+                    {paginatedVideos.map(video => (
+                      <article key={video.id} className="video-card" onClick={() => setActiveId(video.id)}>
+                        <div className="video-thumb">
+                          {video.thumbnail ? (
+                            <img src={video.thumbnail} alt={video.title} className="video-thumb-img" />
+                          ) : (
+                            <div className="video-thumb-placeholder" />
+                          )}
+                          <button className="video-play-btn" aria-label="Play video">
+                            <Play size={24} fill="currentColor" />
+                          </button>
+                        </div>
+                        <div className="video-info">
+                          <h3 className="video-title">{video.title}</h3>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+
+                  {totalPages > 1 && (
+                    <div className="videos-pagination">
+                      <button 
+                        className="btn-pagination" 
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                      >
+                        Prev
+                      </button>
+                      <span className="pagination-info">Page {currentPage} of {totalPages}</span>
+                      <button 
+                        className="btn-pagination" 
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                      >
+                        Next
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
