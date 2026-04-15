@@ -234,8 +234,11 @@
 /* Team */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .team-card {
@@ -309,7 +312,7 @@
   .founders-media { max-width: 420px; }
   .what-we-do-grid { grid-template-columns: 1fr; gap: 2rem; }
   .values-grid { grid-template-columns: 1fr 1fr; }
-  .team-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; max-width: 620px; }
 }
 
 @media (max-width: 640px) {

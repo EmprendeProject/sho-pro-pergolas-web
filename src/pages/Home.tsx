@@ -46,6 +46,16 @@ const brandLogos = [
   { name: 'Haven & Harmony', img: imgHaven },
 ];
 
+function renderAnswer(text: string) {
+  const parts = text.split(/(\*\*[\s\S]*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
 export default function Home() {
   const [testIdx, setTestIdx] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -280,7 +290,7 @@ export default function Home() {
                     transition: 'all 0.4s ease-in-out'
                   }}
                 >
-                  <p className="faq-answer">{faq.answer}</p>
+                  <p className="faq-answer">{renderAnswer(faq.answer)}</p>
                 </div>
               </div>
             ))}
@@ -295,7 +305,7 @@ export default function Home() {
           <div className="contact-band-info">
             <a href="tel:+17875302525" className="contact-band-link">
               <Phone size={16} />
-              <span>Company Phone Number: +1 787-530-2525</span>
+              <span>Phone Number: +1 787-530-2525</span>
             </a>
             <a href="mailto:info@sho-pros.com" className="contact-band-link">
               <Mail size={16} />

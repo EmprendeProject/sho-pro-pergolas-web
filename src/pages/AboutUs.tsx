@@ -127,9 +127,9 @@ export default function AboutUs() {
               WHY CHOOSE SHO-PROS?
             </h2>
             <div className="divider divider-center" />
-            <blockquote className="philosophy-main-quote">
+            {/* <blockquote className="philosophy-main-quote">
               “Setting the standard for modern outdoor living.”
-            </blockquote>
+            </blockquote> */}
             <div className="values-grid">
               {values.map(v => (
                 <div key={v.title} className="value-card">
@@ -146,7 +146,7 @@ export default function AboutUs() {
       {/* Team */}
       <section className="section-padding">
         <div className="container">
-          <div className="section-header center">
+          <div className="section-header center" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <p className="section-label">The People</p>
             <h2 className="heading-section" style={{ fontSize: '2rem' }}>MEET THE TEAM</h2>
             <div className="divider divider-center" />

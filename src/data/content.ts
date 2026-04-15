@@ -492,7 +492,7 @@ export const homeFaqs = [
   },
   {
     question: "HOW DO I GET AN ESTIMATE?",
-    answer: "It’s easy, just send us:\n\n • Approximate measurements\n• Photos of the space\n• Your location\n\n We’ll provide an initial estimate. If you decide to move forward, we’ll schedule a site visit for precise measurements and layout ideas.\n\nA $150 deposit is required for the site visit, fully credited toward your project.\n\nSubmit your inquiry on our Contact Us page."
+    answer: "**It's easy, just send us:\n\n • Approximate measurements\n• Photos of the space\n• Your location**\n\n We'll provide an initial estimate. If you decide to move forward, we'll schedule a site visit for precise measurements and layout ideas.\n\nA $150 deposit is required for the site visit, fully credited toward your project.\n\nSubmit your inquiry on our Contact Us page."
   },
   {
     question: "HOW DOES A PERGOLA ADD VALUE?",
@@ -528,7 +528,7 @@ export const homeFaqs = [
   },
   {
     question: "WHAT’S YOUR LEAD TIME?",
-    answer: "Our average lead time is 3–4 months from the time your deposit is placed:\n• Manufacturing: 12–14 weeks\n• Transit: Approx. 10 days\n• Installation: 3–5 days (Mon–Fri, 8 AM – 3 PM)"
+    answer: "**Our average lead time is 3–4 months from the time your deposit is placed:**\n• Manufacturing: 12–14 weeks\n• Transit: Approx. 10 days\n• Installation: 3–5 days (Mon–Fri, 8 AM – 3 PM)"
   },
   {
     question: "DO YOU OFFER FINANCING?",

@@ -6,10 +6,9 @@ import {
 import './QuoteForm.css';
 
 const COUNTRIES = [
-  'Florida, USA', 'Puerto Rico', 'Bahamas', 'Dominican Republic', 'Jamaica',
-  'Trinidad & Tobago', 'Barbados', 'Cayman Islands', 'Aruba', 'St. Lucia',
-  'Turks & Caicos', 'U.S. Virgin Islands', 'British Virgin Islands', 'Antigua & Barbuda',
-  'St. Kitts & Nevis', 'Grenada', 'Belize', 'Cuba', 'Haiti', 'Martinique'
+  'Puerto Rico',
+  'Florida',
+  'Caribbean',
 ];
 
 const ROLES = [
@@ -35,7 +34,7 @@ export default function QuoteForm() {
   const [interests, setInterests] = useState<string[]>([]);
   const [files, setFiles] = useState<File[]>([]);
   const [dragging, setDragging] = useState(false);
-  const [contact, setContact] = useState({ name: '', email: '', phone: '' });
+  const [contact, setContact] = useState({ name: '', email: '', phone: '', zipCode: '' });
   const [submitted, setSubmitted] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -64,6 +63,18 @@ export default function QuoteForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const roleName = ROLES.find(r => r.id === role)?.label || role;
+    const message =
+      `🏡 *New Quote Request – Sho-Pros*\n\n` +
+      `📍 *Location:* ${country}\n` +
+      `🗺️ *Zip Code:* ${contact.zipCode || 'N/A'}\n` +
+      `👤 *Role:* ${roleName}\n` +
+      `✅ *Interests:* ${interests.join(', ')}\n\n` +
+      `👤 *Name:* ${contact.name}\n` +
+      `📧 *Email:* ${contact.email}\n` +
+      `📞 *Phone:* ${contact.phone}`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://api.whatsapp.com/send/?phone=17874083333&text=${encoded}&type=phone_number&app_absent=0`, '_blank');
     setSubmitted(true);
   };
 
@@ -240,6 +251,16 @@ export default function QuoteForm() {
                   required
                   value={contact.phone}
                   onChange={e => setContact(p => ({ ...p, phone: e.target.value }))}
+                />
+              </div>
+              <div className="form-group">
+                <label className="form-label">Zip Code</label>
+                <input
+                  className="form-input"
+                  type="text"
+                  placeholder="00901"
+                  value={contact.zipCode}
+                  onChange={e => setContact(p => ({ ...p, zipCode: e.target.value }))}
                 />
               </div>
             </div>
