@@ -175,10 +175,10 @@ export const signatureProjects = [
   },
   {
     id: 'barlovento',
-    name: 'Barlovento Estate',
-    subtitle: 'Signature Project',
+    name: 'Barlovento',
+    subtitle: 'Motorized Screens',
     type: 'Residential',
-    category: 'Signature Projects',
+    category: 'Motorized Screens',
     brand: 'Progressive Screens',
     description: 'An elegant outdoor living space tailored for the pristine Barlovento environment.',
     image: '',
