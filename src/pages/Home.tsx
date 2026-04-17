@@ -13,13 +13,14 @@ const projectImages: Record<string, string> = {
   enclave: imgSig1,
   bachelorette: imgSig2,
   pearl: imgSig3,
+  barlovento: 'https://agcxxpjkqckqqefkhazp.supabase.co/storage/v1/object/public/archivos/portfolio/Signature%20Projects/Barlovento/COVER.jpg',
 };
 
 const procesSteps = [
   { num: '01', step: 'STEP 1', label: 'Submit project inquiry', title: 'CONTACT US', icon: 'phone' },
-  { num: '02', step: 'STEP 2', label: 'Preliminary project estimate', title: 'CONSULT', icon: 'chat' },
+  { num: '02', step: 'STEP 2', label: 'Receive project estimate', title: 'CONSULT', icon: 'chat' },
   { num: '03', step: 'STEP 3', label: 'Onsite measurements', title: 'SITE VISIT', icon: 'home' },
-  { num: '04', step: 'STEP 4', label: 'Approve final proposal & deposit', title: 'FINALIZE DESIGN', icon: 'clipboard' },
+  { num: '04', step: 'STEP 4', label: 'Approve final proposal & submit deposit', title: 'FINALIZE DESIGN', icon: 'clipboard' },
   { num: '05', step: 'STEP 5', label: 'Custom-built, 3–4 month lead time', title: 'PRODUCTION', icon: 'hard-hat' },
   { num: '06', step: 'STEP 6', label: 'Delivery and professional installation', title: 'INSTALLATION', icon: 'wrench' },
 ];
@@ -254,10 +255,10 @@ export default function Home() {
             {[...brands, ...brands].map((b, i) => (
               <div key={i} className="brand-marquee-item">
                 <div className="brand-marquee-logo">
-                  <ImageWithFallback 
-                    sources={getLogoSources(b.id, b.name)} 
-                    alt={b.name} 
-                    className="brand-marquee-img" 
+                  <ImageWithFallback
+                    sources={getLogoSources(b.id, b.name)}
+                    alt={b.name}
+                    className="brand-marquee-img"
                     fallbackText={b.name}
                   />
                 </div>

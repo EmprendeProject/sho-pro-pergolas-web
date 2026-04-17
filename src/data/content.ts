@@ -173,6 +173,16 @@ export const signatureProjects = [
     description: 'Full-perimeter hurricane-rated retractable screen system protecting the waterfront lounge year-round.',
     image: '',
   },
+  {
+    id: 'barlovento',
+    name: 'Barlovento Estate',
+    subtitle: 'Signature Project',
+    type: 'Residential',
+    category: 'Signature Projects',
+    brand: 'Progressive Screens',
+    description: 'An elegant outdoor living space tailored for the pristine Barlovento environment.',
+    image: '',
+  },
 ];
 
 const _BASE = 'https://agcxxpjkqckqqefkhazp.supabase.co/storage/v1/object/public/archivos/portfolio';
@@ -260,6 +270,20 @@ export const portfolioProjects: PortfolioProject[] = [
       portfolioImg('Signature Projects/The Pearl Penthouse/R-Shade 1.jpg'),
       portfolioImg('Signature Projects/The Pearl Penthouse/R-Shade 2.jpg'),
       portfolioImg('Signature Projects/The Pearl Penthouse/R-Shade 3.jpg'),
+    ],
+  },
+  {
+    id: 'barlovento',
+    name: 'Barlovento Estate',
+    category: 'Signature Projects',
+    location: 'Barlovento',
+    brand: 'Progressive Screens',
+    signature: true,
+    coverImage: portfolioImg('Signature Projects/Barlovento/COVER.jpg'),
+    photos: [
+      portfolioImg('Signature Projects/Barlovento/COVER.jpg'),
+      portfolioImg('Signature Projects/Barlovento/1.JPG'),
+      portfolioImg('Signature Projects/Barlovento/2.jpg'),
     ],
   },
 

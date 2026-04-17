@@ -12,12 +12,12 @@ const values = [
 ];
 
 const timeline = [
-  { year: '2018', label: 'Founded', desc: 'Sho-Pros brought the first high-tech hurricane fabric to Puerto Rico. Eliminating the need for clunky metal shutters.' },
+  { year: '2018', label: 'Founded', desc: 'Sho-Pros brought the first high-tech hurricane fabric to PR. Eliminating the need for clunky metal shutters.' },
   { year: '2019', label: '', desc: 'Installed the first motorized pergola in Puerto Rico.' },
   { year: '2020', label: '', desc: 'Expanded operation across the Caribbean and Florida.' },
-  { year: '2021', label: '', desc: 'Recognized as an award-winning dealership by StruXure' },
-  { year: '2024', label: '', desc: 'Completed over 500 residential and commercial installs.' },
-  { year: 'Today', label: '', desc: 'Puerto Rico’s leading dealer of custom modern pergolas' },
+  { year: '2021', label: '', desc: 'Recognized as an award-winning dealership by StruXure.' },
+  { year: '2024', label: '', desc: 'Completed over 300 residential and commercial installs.' },
+  { year: 'Today', label: '', desc: 'Puerto Rico’s leading dealer of custom modern pergolas.' },
 ];
 
 export default function AboutUs() {
@@ -63,7 +63,7 @@ export default function AboutUs() {
                 We introduced Puerto Rico’s first high-tech hurricane fabric. Next, we brought motorized shades with patented neodymium magnets that eliminate zippers and prevent snags. Today, Sho-Pros sets the standard for modern pergolas across Puerto Rico and the Caribbean.
               </p>
               <div className="founders-highlights">
-                {["Puerto Rico's First Pergola Dealer", 'South Florida & Caribbean Coverage', '500+ Projects Completed', 'Hand-Selected Premium Brands'].map(h => (
+                {["Puerto Rico's First Pergola Dealer", 'South Florida & Caribbean Coverage', '300+ Projects Completed', 'Hand-Selected Premium Brands'].map(h => (
                   <div key={h} className="highlight-item">
                     <CheckCircle size={16} />
                     <span>{h}</span>
