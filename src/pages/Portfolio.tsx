@@ -27,6 +27,35 @@ export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<'All' | ProjectCategory>('All');
   const [lightbox, setLightbox] = useState<{ photos: string[]; index: number } | null>(null);
 
+  const signatureSpotlights = [
+    {
+      id: 'enclave',
+      title: 'StruXure: The Enclave',
+      desc: 'Award-winning project recognized for its striking design. Features a cantilever motorized louvered pergola with three supporting columns.'
+    },
+    {
+      id: 'bachelorette',
+      title: 'Azenco: The Bachelorette House',
+      desc: 'After winning viewers’ hearts on The Bachelorette, JoJo Fletcher and Jordan Rogers brought in Sho-Pros to create their modern outdoor living space.'
+    },
+    {
+      id: 'pearl',
+      title: 'Azenco: The Pearl Penthouse',
+      desc: 'The Peninsula penthouse in Condado was transformed with both motorized and static pergolas, providing flexible coverage atop one of the city’s most iconic luxury buildings.'
+    },
+    {
+      id: 'barlovento',
+      title: 'Progressive Screens: Barlovento',
+      desc: 'Full-perimeter motorized retractable screens provide year-round protection from harsh sun and strong winds for this beachfront restaurant in the Dorado Ritz-Carlton.'
+    }
+  ];
+
+  const spotlightProjects = signatureSpotlights.map(spot => {
+    const proj = portfolioProjects.find(p => p.id === spot.id);
+    return { ...spot, project: proj };
+  }).filter(s => s.project);
+
+
   const filtered = portfolioProjects.filter(p =>
     activeCategory === 'All' || p.category === activeCategory
   );
@@ -58,6 +87,51 @@ export default function Portfolio() {
           </p>
         </div>
       </section>
+
+      {/* ── Signature Spotlights ── */}
+      {spotlightProjects.length > 0 && (
+        <section className="section-padding" style={{ paddingBottom: 0, paddingTop: '4rem' }}>
+          <div className="container">
+            <h2 className="heading-section" style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>
+              Signature Projects
+            </h2>
+            <p style={{ color: 'var(--color-gray-500)', fontSize: '1.05rem', maxWidth: '600px' }}>
+              A curated selection of our most iconic and sophisticated installations.
+            </p>
+
+            <div className="signature-spotlight-grid">
+              {spotlightProjects.map((spot, idx) => {
+                const proj = spot.project!;
+                return (
+                  <article 
+                    key={spot.id} 
+                    className={`spotlight-card ${idx === 0 ? 'spotlight-hero' : ''}`}
+                  >
+                    <div 
+                      className="spotlight-img project-img project-img--photo"
+                      onClick={() => openLightbox(proj.photos, 0)}
+                      role="button"
+                    >
+                      <img src={proj.coverImage} alt={spot.title} className="project-cover-img" loading="lazy" />
+                      <div className="project-img-overlay">
+                        <span className="project-view-gallery">
+                          <Images size={16} />
+                          View Gallery
+                        </span>
+                      </div>
+                      <div className="spotlight-badge">Signature</div>
+                    </div>
+                    <div className="spotlight-info">
+                      <h3 className="spotlight-name">{spot.title}</h3>
+                      <p className="spotlight-desc">{spot.desc}</p>
+                    </div>
+                  </article>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Projects with Filters ── */}
       <section className="section-padding portfolio-projects-section">
