@@ -364,11 +364,17 @@
   letter-spacing: 0.08em;
 }
 
-.lightbox-close {
+.lightbox-controls {
   position: fixed;
   top: 1.25rem;
   right: 1.25rem;
   z-index: 9001;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.lightbox-action-btn {
   color: var(--color-white);
   width: 44px;
   height: 44px;
@@ -377,9 +383,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
-.lightbox-close:hover { background: rgba(255,255,255,0.22); }
+.lightbox-action-btn:hover {
+  background: rgba(255,255,255,0.22);
+  transform: scale(1.05);
+}
 
 .lightbox-arrow {
   position: fixed;

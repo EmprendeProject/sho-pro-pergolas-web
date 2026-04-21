@@ -36,6 +36,7 @@ export default function QuoteForm() {
   const [dragging, setDragging] = useState(false);
   const [contact, setContact] = useState({ name: '', email: '', phone: '', zipCode: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const toggleInterest = (item: string) => {
@@ -61,20 +62,73 @@ export default function QuoteForm() {
     return true;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  /** Upload a single File to Cloudinary and return its permanent public URL */
+  const uploadFile = async (file: File): Promise<string | null> => {
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('upload_preset', 'sho_pros_uploads');
+      const res = await fetch(
+        'https://api.cloudinary.com/v1_1/dc41ngxjv/auto/upload',
+        { method: 'POST', body: formData }
+      );
+      const json = await res.json();
+      // Cloudinary returns: { secure_url: 'https://res.cloudinary.com/...' }
+      return json?.secure_url ?? null;
+    } catch {
+      return null;
+    }
+  };
+
+  const sendToPancakeCRM = async () => {
+    const PANCAKE_API_KEY = '3f35589702424b48b8fa17cc699657a8';
+    const SHOP_ID = '1942209558';
+    const TABLE_NAME = 'Contact';
+
+    const fileUrls = files.length > 0
+      ? (await Promise.all(files.map(uploadFile))).filter(Boolean) as string[]
+      : [];
+
     const roleName = ROLES.find(r => r.id === role)?.label || role;
-    const message =
-      `🏡 *New Quote Request – Sho-Pros*\n\n` +
-      `📍 *Location:* ${country}\n` +
-      `🗺️ *Zip Code:* ${contact.zipCode || 'N/A'}\n` +
-      `👤 *Role:* ${roleName}\n` +
-      `✅ *Interests:* ${interests.join(', ')}\n\n` +
-      `👤 *Name:* ${contact.name}\n` +
-      `📧 *Email:* ${contact.email}\n` +
-      `📞 *Phone:* ${contact.phone}`;
-    const encoded = encodeURIComponent(message);
-    window.open(`https://api.whatsapp.com/send/?phone=17874083333&text=${encoded}&type=phone_number&app_absent=0`, '_blank');
+    let noteText =
+      `📍 Location: ${country}\n` +
+      `🗺️ Zip Code: ${contact.zipCode || 'N/A'}\n` +
+      `👤 Role: ${roleName}\n` +
+      `✅ Interests: ${interests.join(', ')}\n` +
+      `🌐 Source: Website Quote Form`;
+
+    if (fileUrls.length > 0) {
+      noteText += `\n📎 Files:\n` + fileUrls.join('\n');
+    }
+
+    const payload: Record<string, unknown> = {
+      Name: contact.name,
+      Phone: contact.phone,
+      Email: contact.email,
+      Note: noteText,
+      zip_code: contact.zipCode || '',
+      city: country,
+    };
+
+    try {
+      await fetch(
+        `https://pos.pages.fm/api/v1/shops/${SHOP_ID}/crm/${TABLE_NAME}/records?api_key=${PANCAKE_API_KEY}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }
+      );
+    } catch {
+      // Silently fail – never block the user experience
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    await sendToPancakeCRM();
+    setSubmitting(false);
     setSubmitted(true);
   };
 
@@ -264,9 +318,12 @@ export default function QuoteForm() {
                 />
               </div>
             </div>
-            <button type="submit" className="btn btn-primary quote-submit-btn">
-              <span>Submit Request</span>
-              <Check size={16} />
+            <button type="submit" className="btn btn-primary quote-submit-btn" disabled={submitting}>
+              {submitting ? (
+                <><span>Sending...</span><span className="spinner" /></>
+              ) : (
+                <><span>Submit Request</span><Check size={16} /></>
+              )}
             </button>
           </form>
         )}

@@ -570,7 +570,7 @@ export const homeFaqs = [
   },
   {
     question: "HOW DO I GET AN ESTIMATE?",
-    answer: "**It's easy, just send us:\n\n • Approximate measurements\n• Photos of the space\n• Your location**\n\n We'll provide an initial estimate. If you decide to move forward, we'll schedule a site visit for precise measurements and layout ideas.\n\nA $150 deposit is required for the site visit, fully credited toward your project.\n\nSubmit your inquiry on our Contact Us page."
+    answer: "**It's easy, just send us:\n\n •Approximate measurements\n• Photos of the space\n• Your location**\n\n We'll provide an initial estimate. If you decide to move forward, we'll schedule a site visit for precise measurements and layout ideas.\n\nA $150 deposit is required for the site visit, fully credited toward your project.\n\nSubmit your inquiry on our Contact Us page."
   },
   {
     question: "HOW DOES A PERGOLA ADD VALUE?",

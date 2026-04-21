@@ -14,7 +14,7 @@ const values = [
 const timeline = [
   { year: '2018', label: 'Founded', desc: 'Sho-Pros brought the first high-tech hurricane fabric to PR. Eliminating the need for clunky metal shutters.' },
   { year: '2019', label: '', desc: 'Installed the first motorized pergola in Puerto Rico.' },
-  { year: '2020', label: '', desc: 'Expanded operation across the Caribbean and Florida.' },
+  { year: '2020', label: '', desc: 'Expanded operations across the Caribbean and Florida.' },
   { year: '2021', label: '', desc: 'Recognized as an award-winning dealership by StruXure.' },
   { year: '2024', label: '', desc: 'Completed over 300 residential and commercial installs.' },
   { year: 'Today', label: '', desc: 'Puerto Rico’s leading dealer of custom modern pergolas.' },

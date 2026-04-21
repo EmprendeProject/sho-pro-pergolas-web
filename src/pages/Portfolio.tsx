@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Filter, X, ChevronLeft, ChevronRight, MapPin, Images } from 'lucide-react';
+import { ArrowRight, Filter, X, ChevronLeft, ChevronRight, MapPin, Images, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { portfolioProjects, type ProjectCategory } from '../data/content';
 import './Portfolio.css';
@@ -166,9 +166,19 @@ export default function Portfolio() {
       {/* ── Lightbox ── */}
       {lightbox && (
         <div className="lightbox-overlay" onClick={closeLightbox}>
-          <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">
-            <X size={24} />
-          </button>
+          <div className="lightbox-controls" onClick={e => e.stopPropagation()}>
+            <a
+              href={`${lightbox.photos[lightbox.index]}?download=`}
+              className="lightbox-action-btn"
+              aria-label="Download"
+              download
+            >
+              <Download size={22} />
+            </a>
+            <button className="lightbox-action-btn" onClick={closeLightbox} aria-label="Close">
+              <X size={24} />
+            </button>
+          </div>
 
           <button
             className="lightbox-arrow lightbox-arrow--prev"
