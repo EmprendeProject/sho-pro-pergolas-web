@@ -72,6 +72,12 @@ export default function Portfolio() {
   const prevPhoto = () => setLightbox(lb => lb ? { ...lb, index: (lb.index - 1 + lb.photos.length) % lb.photos.length } : lb);
   const nextPhoto = () => setLightbox(lb => lb ? { ...lb, index: (lb.index + 1) % lb.photos.length } : lb);
 
+  // Cloudinary Optimization Helper
+  const getOptimizedUrl = (url: string, width: number) => {
+    if (!url || !url.includes('cloudinary.com')) return url;
+    return url.replace('/upload/', `/upload/f_auto,q_auto,w_${width},c_limit/`);
+  };
+
   return (
     <div className="portfolio-page">
 
@@ -112,7 +118,7 @@ export default function Portfolio() {
                       onClick={() => openLightbox(proj.photos, 0)}
                       role="button"
                     >
-                      <img src={proj.coverImage} alt={spot.title} className="project-cover-img" loading="lazy" />
+                      <img src={getOptimizedUrl(proj.coverImage, 1000)} alt={spot.title} className="project-cover-img" loading="lazy" />
                       <div className="project-img-overlay">
                         <span className="project-view-gallery">
                           <Images size={16} />
@@ -179,7 +185,7 @@ export default function Portfolio() {
                   aria-label={`View gallery for ${proj.name}`}
                 >
                   <img
-                    src={proj.coverImage}
+                    src={getOptimizedUrl(proj.coverImage, 800)}
                     alt={proj.name}
                     className="project-cover-img"
                     loading="lazy"
@@ -264,7 +270,7 @@ export default function Portfolio() {
 
           <div className="lightbox-img-wrap" onClick={e => e.stopPropagation()}>
             <img
-              src={lightbox.photos[lightbox.index]}
+              src={getOptimizedUrl(lightbox.photos[lightbox.index], 1920)}
               alt={`Photo ${lightbox.index + 1}`}
               className="lightbox-img"
             />
@@ -289,7 +295,7 @@ export default function Portfolio() {
                 className={`lightbox-thumb ${i === lightbox.index ? 'active' : ''}`}
                 onClick={() => setLightbox({ ...lightbox, index: i })}
               >
-                <img src={photo} alt={`Thumbnail ${i + 1}`} loading="lazy" />
+                <img src={getOptimizedUrl(photo, 200)} alt={`Thumbnail ${i + 1}`} loading="lazy" />
               </button>
             ))}
           </div>
