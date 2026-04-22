@@ -69,7 +69,7 @@ export default function QuoteForm() {
       formData.append('file', file);
       formData.append('upload_preset', 'sho_pros_uploads');
       const res = await fetch(
-        'https://api.cloudinary.com/v1_1/dc41ngxjv/auto/upload',
+        'https://api.cloudinary.com/v1_1/du2kej0xd/auto/upload',
         { method: 'POST', body: formData }
       );
       const json = await res.json();

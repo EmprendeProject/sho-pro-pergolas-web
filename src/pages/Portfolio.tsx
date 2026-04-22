@@ -29,17 +29,17 @@ export default function Portfolio() {
 
   const signatureSpotlights = [
     {
-      id: 'enclave',
+      id: 'the-enclave',
       title: 'StruXure: The Enclave',
       desc: 'Award-winning project recognized for its striking design. Features a cantilever motorized louvered pergola with three supporting columns.'
     },
     {
-      id: 'bachelorette',
+      id: 'the-bachelorette-house',
       title: 'Azenco: The Bachelorette House',
       desc: 'After winning viewers’ hearts on The Bachelorette, JoJo Fletcher and Jordan Rogers brought in Sho-Pros to create their modern outdoor living space.'
     },
     {
-      id: 'pearl',
+      id: 'the-pearl-penthouse',
       title: 'Azenco: The Pearl Penthouse',
       desc: 'The Peninsula penthouse in Condado was transformed with both motorized and static pergolas, providing flexible coverage atop one of the city’s most iconic luxury buildings.'
     },
