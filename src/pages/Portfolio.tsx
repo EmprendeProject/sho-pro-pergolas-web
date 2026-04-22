@@ -56,9 +56,11 @@ export default function Portfolio() {
   }).filter(s => s.project);
 
 
-  const filtered = portfolioProjects.filter(p =>
-    activeCategory === 'All' || p.category === activeCategory
-  );
+  const filtered = portfolioProjects.filter(p => {
+    if (activeCategory === 'All') return true;
+    if (activeCategory === 'Signature Projects') return p.signature;
+    return p.category === activeCategory;
+  });
 
   // Lightbox helpers
   const openLightbox = (photos: string[], index: number) => {

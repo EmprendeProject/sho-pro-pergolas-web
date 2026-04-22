@@ -317,12 +317,46 @@
 }
 
 @media (max-width: 1024px) {
+  .signature-spotlight-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .spotlight-hero {
+    grid-row: auto;
+  }
+  .spotlight-hero .spotlight-img {
+    aspect-ratio: 16/9;
+    min-height: auto;
+  }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px) {
   .projects-grid { grid-template-columns: 1fr; }
-  .portfolio-filters-wrap { gap: 0.5rem; }
+  .portfolio-filters-wrap {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .portfolio-filters {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    gap: 0.6rem;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .portfolio-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-label {
+    padding-top: 0;
+  }
+  .signature-spotlight-grid {
+    gap: 1.5rem;
+  }
 }
 
 /* ══ LIGHTBOX ════════════════════════════════════════════════════════════════ */
