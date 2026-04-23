@@ -10,10 +10,13 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.01) 40px, rgba(255,255,255,0.01) 41px);
+  background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255, 255, 255, 0.01) 40px, rgba(255, 255, 255, 0.01) 41px);
 }
 
-.page-header-title { font-size: clamp(2.5rem, 6vw, 4rem); margin-top: 0.5rem; }
+.page-header-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-top: 0.5rem;
+}
 
 /* PORTFOLIO */
 .portfolio-page {}
@@ -36,7 +39,9 @@
   flex-direction: column;
 }
 
-.spotlight-hero { grid-row: span 3; }
+.spotlight-hero {
+  grid-row: span 3;
+}
 
 .spotlight-img {
   aspect-ratio: 16/9;
@@ -47,15 +52,19 @@
   flex-shrink: 0;
 }
 
-.spotlight-hero .spotlight-img { flex: 1; aspect-ratio: auto; min-height: 400px; }
+.spotlight-hero .spotlight-img {
+  flex: 1;
+  aspect-ratio: auto;
+  min-height: 400px;
+}
 
 .spotlight-badge {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--color-white);
   font-family: var(--font-primary);
   font-size: 0.65rem;
@@ -66,7 +75,9 @@
   border-radius: var(--radius-full);
 }
 
-.spotlight-info { padding: 1.5rem; }
+.spotlight-info {
+  padding: 1.5rem;
+}
 
 .spotlight-brand {
   font-family: var(--font-primary);
@@ -147,7 +158,11 @@
   white-space: nowrap;
 }
 
-.filter-btn:hover { border-color: var(--color-wood); color: var(--color-wood); }
+.filter-btn:hover {
+  border-color: var(--color-wood);
+  color: var(--color-wood);
+}
+
 .filter-btn.active {
   border-color: var(--color-black);
   background: var(--color-black);
@@ -161,8 +176,15 @@
   margin-bottom: 1.75rem;
 }
 
-.portfolio-count strong { color: var(--color-carbon); }
-.portfolio-count em { color: var(--color-wood); font-style: normal; font-weight: 600; }
+.portfolio-count strong {
+  color: var(--color-carbon);
+}
+
+.portfolio-count em {
+  color: var(--color-wood);
+  font-style: normal;
+  font-weight: 600;
+}
 
 /* Projects Grid */
 .projects-grid {
@@ -179,8 +201,14 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.1); }
-.project-card.is-signature { border-color: var(--color-wood); }
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.1);
+}
+
+.project-card.is-signature {
+  border-color: var(--color-wood);
+}
 
 .project-img {
   aspect-ratio: 4/3;
@@ -193,7 +221,9 @@
 }
 
 /* Real photo cover */
-.project-img--photo { background: var(--color-black); }
+.project-img--photo {
+  background: var(--color-black);
+}
 
 .project-cover-img {
   width: 100%;
@@ -203,7 +233,9 @@
   transition: transform 0.5s ease;
 }
 
-.project-card:hover .project-cover-img { transform: scale(1.04); }
+.project-card:hover .project-cover-img {
+  transform: scale(1.04);
+}
 
 /* Hover overlay */
 .project-img-overlay {
@@ -216,7 +248,9 @@
   transition: background 0.3s ease;
 }
 
-.project-card:hover .project-img-overlay { background: rgba(0, 0, 0, 0.38); }
+.project-card:hover .project-img-overlay {
+  background: rgba(0, 0, 0, 0.38);
+}
 
 .project-view-gallery {
   display: flex;
@@ -243,7 +277,7 @@
   position: absolute;
   bottom: 0.75rem;
   left: 0.75rem;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   font-family: var(--font-primary);
   font-size: 0.6rem;
   font-weight: 700;
@@ -269,7 +303,9 @@
   border-radius: var(--radius-full);
 }
 
-.project-info { padding: 1.25rem; }
+.project-info {
+  padding: 1.25rem;
+}
 
 .project-meta {
   display: flex;
@@ -321,39 +357,48 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+
   .spotlight-hero {
     grid-row: auto;
   }
+
   .spotlight-hero .spotlight-img {
     aspect-ratio: 16/9;
     min-height: auto;
   }
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
-  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
   .portfolio-filters-wrap {
     flex-direction: column;
     gap: 0.5rem;
   }
+
   .portfolio-filters {
-    display: grid;
-    grid-template-rows: repeat(2, auto);
-    grid-auto-flow: column;
-    gap: 0.6rem;
+    flex-wrap: nowrap;
     overflow-x: auto;
     width: 100%;
     padding-bottom: 0.5rem;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
+
   .portfolio-filters::-webkit-scrollbar {
     display: none;
   }
+
   .filter-label {
     padding-top: 0;
   }
+
   .signature-spotlight-grid {
     gap: 1.5rem;
   }
@@ -393,7 +438,7 @@
 }
 
 .lightbox-counter {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255, 0.55);
   font-size: 0.75rem;
   font-family: var(--font-primary);
   text-align: center;
@@ -416,14 +461,15 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s ease, transform 0.2s ease;
 }
+
 .lightbox-action-btn:hover {
-  background: rgba(255,255,255,0.22);
+  background: rgba(255, 255, 255, 0.22);
   transform: scale(1.05);
 }
 
@@ -436,15 +482,24 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s ease;
 }
-.lightbox-arrow:hover { background: rgba(255,255,255,0.22); }
-.lightbox-arrow--prev { left: 1rem; }
-.lightbox-arrow--next { right: 1rem; }
+
+.lightbox-arrow:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-arrow--prev {
+  left: 1rem;
+}
+
+.lightbox-arrow--next {
+  right: 1rem;
+}
 
 /* Thumbnail strip */
 .lightbox-thumbs {
