@@ -1327,11 +1327,11 @@ export const brandProjects = [
 export const homeFaqs = [
   {
     question: "WHAT IS A MODERN PERGOLA?",
-    answer: "A modern pergola is a motorized louvered structure that brings shade, comfort, and style to your outdoor space.\n\n Our pergolas are custom-built from extruded aluminum, feature a built-in gutter system, and are powder-coated to withstand Caribbean weather.\n\n Automation allows the louvers to close when it rains, while LED lighting and motorized screens create ambiance and extra comfort."
+    answer: "A modern pergola is a motorized louvered structure that brings shade, comfort, and style to your outdoor space.\n\nOur pergolas are custom-built from extruded aluminum, feature a built-in gutter system, and are powder-coated to withstand Caribbean weather.\n\n Automation allows the louvers to close when it rains, while LED lighting and motorized screens create ambiance and extra comfort."
   },
   {
     question: "HOW DO I GET AN ESTIMATE?",
-    answer: "**It's easy, just send us:\n\n •Approximate measurements\n• Photos of the space\n• Your location**\n\n We'll provide an initial estimate. If you decide to move forward, we'll schedule a site visit for precise measurements and layout ideas.\n\nA $150 deposit is required for the site visit, fully credited toward your project.\n\nSubmit your inquiry on our Contact Us page."
+    answer: "**It's easy, just send us:\n\n•Approximate measurements\n• Photos of the space\n• Your location**\n\n We'll provide an initial estimate. If you decide to move forward, we'll schedule a site visit for precise measurements and layout ideas.\n\nA $150 deposit is required for the site visit, fully credited toward your project.\n\nSubmit your inquiry on our Contact Us page."
   },
   {
     question: "HOW DOES A PERGOLA ADD VALUE?",
