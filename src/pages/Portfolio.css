@@ -24,9 +24,10 @@
 /* Signature Spotlight */
 .signature-spotlight-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2rem;
+  align-items: start;
 }
 
 .spotlight-card {
@@ -34,25 +35,41 @@
   overflow: hidden;
   background: var(--color-white);
   border: 1px solid var(--color-gray-200);
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .spotlight-hero {
+  grid-column: auto;
   grid-row: auto;
 }
 
 .spotlight-img {
-  aspect-ratio: 16/9;
+  height: 260px;
+  width: 100%;
+  aspect-ratio: unset !important;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   cursor: pointer;
+  background: var(--color-black);
+  overflow: hidden;
 }
 
 .spotlight-hero .spotlight-img {
-  aspect-ratio: 16/9;
-  min-height: auto;
+  height: 260px;
+}
+
+/* Fill each spotlight frame while keeping image proportions */
+.signature-spotlight-grid .spotlight-img .project-cover-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* All spotlight cards use the same framing */
+.signature-spotlight-grid .spotlight-card:first-child .project-cover-img {
+  object-position: center center;
 }
 
 .spotlight-badge {
@@ -73,7 +90,8 @@
 }
 
 .spotlight-info {
-  display: none;
+  display: block;
+  padding: 1.25rem 1.25rem 1.5rem;
 }
 
 .spotlight-brand {
@@ -98,9 +116,13 @@
 }
 
 .spotlight-desc {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-gray-500);
   line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Filters */
@@ -351,21 +373,16 @@
 
 @media (max-width: 1024px) {
   .signature-spotlight-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
   }
 
   .spotlight-hero {
+    grid-column: auto;
     grid-row: auto;
   }
 
-  .spotlight-hero .spotlight-img {
-    aspect-ratio: 16/9;
-    min-height: auto;
-  }
-
   .spotlight-info {
-    display: block;
     padding: 1.5rem;
   }
 
@@ -375,6 +392,23 @@
 }
 
 @media (max-width: 640px) {
+  /* Signature Projects: 1 columna apilada en mobile */
+  .signature-spotlight-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .spotlight-hero {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* La imagen ocupa más espacio en mobile para mejor visualización */
+  .spotlight-img,
+  .spotlight-hero .spotlight-img {
+    height: 220px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -399,10 +433,6 @@
 
   .filter-label {
     padding-top: 0;
-  }
-
-  .signature-spotlight-grid {
-    gap: 1.5rem;
   }
 }
 
