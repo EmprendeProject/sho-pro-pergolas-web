@@ -3,6 +3,7 @@ import {
   ChevronRight, ChevronLeft, Check, Upload, User, Briefcase,
   Wrench, Palette, Building2, MapPin, X
 } from 'lucide-react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import './QuoteForm.css';
 
 const COUNTRIES = [
@@ -37,6 +38,7 @@ export default function QuoteForm() {
   const [contact, setContact] = useState({ name: '', email: '', phone: '', zipCode: '' });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const toggleInterest = (item: string) => {
@@ -126,6 +128,10 @@ export default function QuoteForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!captchaToken) {
+      alert('Please complete the CAPTCHA first.');
+      return;
+    }
     setSubmitting(true);
     await sendToPancakeCRM();
     setSubmitting(false);
@@ -318,7 +324,15 @@ export default function QuoteForm() {
                 />
               </div>
             </div>
-            <button type="submit" className="btn btn-primary quote-submit-btn" disabled={submitting}>
+            
+            <div className="recaptcha-wrapper" style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+              <ReCAPTCHA
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                onChange={(token) => setCaptchaToken(token)}
+              />
+            </div>
+
+            <button type="submit" className="btn btn-primary quote-submit-btn" disabled={submitting || !captchaToken}>
               {submitting ? (
                 <><span>Sending...</span><span className="spinner" /></>
               ) : (
