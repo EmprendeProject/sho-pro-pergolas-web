@@ -24,8 +24,7 @@
 /* Signature Spotlight */
 .signature-spotlight-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -35,12 +34,11 @@
   overflow: hidden;
   background: var(--color-white);
   border: 1px solid var(--color-gray-200);
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .spotlight-hero {
-  grid-row: span 3;
+  grid-row: auto;
 }
 
 .spotlight-img {
@@ -49,13 +47,12 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .spotlight-hero .spotlight-img {
-  flex: 1;
-  aspect-ratio: auto;
-  min-height: 400px;
+  aspect-ratio: 16/9;
+  min-height: auto;
 }
 
 .spotlight-badge {
@@ -76,7 +73,7 @@
 }
 
 .spotlight-info {
-  padding: 1.5rem;
+  display: none;
 }
 
 .spotlight-brand {
@@ -365,6 +362,11 @@
   .spotlight-hero .spotlight-img {
     aspect-ratio: 16/9;
     min-height: auto;
+  }
+
+  .spotlight-info {
+    display: block;
+    padding: 1.5rem;
   }
 
   .projects-grid {
