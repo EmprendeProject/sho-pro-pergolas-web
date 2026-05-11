@@ -1,20 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, ChevronLeft, ChevronRight, Phone, Mail, MessageSquare, MapPin, ClipboardList, HardHat, Wrench, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
-import { testimonials, signatureProjects, homeFaqs, brands } from '../data/content';
-import imgSig1 from '../assets/signature projects/signatureproject1.png';
-import imgSig2 from '../assets/signature projects/signatureproject2.png';
-import imgSig3 from '../assets/signature projects/signatureproject3.png';
+import { testimonials, portfolioProjects, homeFaqs, brands } from '../data/content';
 import ImageWithFallback from '../components/ImageWithFallback';
 import { localBrandLogos } from '../utils/localAssets';
 import './Home.css';
 
-const projectImages: Record<string, string> = {
-  enclave: imgSig1,
-  bachelorette: imgSig2,
-  pearl: imgSig3,
-  barlovento: 'https://agcxxpjkqckqqefkhazp.supabase.co/storage/v1/object/public/archivos/portfolio/Signature%20Projects/Barlovento/COVER.jpg',
-};
+const signatureProjects = portfolioProjects.filter(p => p.signature);
 
 const procesSteps = [
   { num: '01', step: 'STEP 1', label: 'Submit project inquiry', title: 'CONTACT US', icon: 'phone' },
@@ -147,19 +139,17 @@ export default function Home() {
         <div className="container">
           <h2 className="sig-heading">Signature projects</h2>
 
-          {/* Image cards for projects with photos */}
+          {/* Image cards for signature projects from portfolioProjects */}
           <div className="sig-cards">
-            {signatureProjects
-              .filter(proj => projectImages[proj.id])
-              .map(proj => (
-                <Link key={proj.id} to="/portfolio" className="sig-card">
-                  <img src={projectImages[proj.id]} alt={proj.name} className="sig-card-img" />
-                  <div className="sig-card-overlay">
-                    <h3 className="sig-card-name">{proj.name}</h3>
-                    <span className="sig-card-category">{proj.subtitle}</span>
-                  </div>
-                </Link>
-              ))}
+            {signatureProjects.map(proj => (
+              <Link key={proj.id} to="/portfolio" className="sig-card">
+                <img src={proj.coverImage} alt={proj.name} className="sig-card-img" />
+                <div className="sig-card-overlay">
+                  <h3 className="sig-card-name">{proj.name}</h3>
+                  <span className="sig-card-category">{proj.category}</span>
+                </div>
+              </Link>
+            ))}
           </div>
 
           <div className="sig-cta">
