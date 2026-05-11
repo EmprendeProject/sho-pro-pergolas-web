@@ -39,9 +39,9 @@ export default function Portfolio() {
       desc: 'After winning viewers’ hearts on The Bachelorette, JoJo Fletcher and Jordan Rogers brought in Sho-Pros to create their modern outdoor living space.'
     },
     {
-      id: 'the-pearl-penthouse',
-      title: 'Azenco: The Pearl Penthouse',
-      desc: 'The Peninsula penthouse in Condado was transformed with both motorized and static pergolas, providing flexible coverage atop one of the city’s most iconic luxury buildings.'
+      id: 'zen-garden',
+      title: 'Azenco: Zen Garden',
+      desc: 'A serene outdoor retreat in Condado featuring a premium Azenco louvered pergola that transforms the space into a lush, year-round sanctuary.'
     },
     {
       id: 'barlovento',

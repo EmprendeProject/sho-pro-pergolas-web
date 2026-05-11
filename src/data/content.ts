@@ -374,7 +374,7 @@ export const portfolioProjects: PortfolioProject[] = [
     category: 'Residential Pergolas',
     location: `Condado, PR`,
     brand: 'Azenco',
-    signature: false,
+    signature: true,
     coverImage: 'https://res.cloudinary.com/du2kej0xd/image/upload/v1778441414/3_snnv9y.jpg',
     photos: [
       'https://res.cloudinary.com/du2kej0xd/image/upload/v1778441414/3_snnv9y.jpg',
@@ -497,7 +497,7 @@ export const portfolioProjects: PortfolioProject[] = [
     category: 'Commercial Pergolas',
     location: `Condado, PR`,
     brand: 'Azenco',
-    signature: true,
+    signature: false,
     coverImage: 'https://res.cloudinary.com/du2kej0xd/image/upload/v1778441401/1_kt2kef.jpg',
     photos: [
       'https://res.cloudinary.com/du2kej0xd/image/upload/v1778441401/1_kt2kef.jpg',
@@ -1175,7 +1175,7 @@ export const brandProjects = [
 export const homeFaqs = [
   {
     question: "WHAT IS A MODERN PERGOLA?",
-    answer: "A modern pergola is a motorized louvered structure that brings shade, comfort, and style to your outdoor space.\n\nOur pergolas are custom-built from extruded aluminum, feature a built-in gutter system, and are powder-coated to withstand Caribbean weather.\n\n Automation allows the louvers to close when it rains, while LED lighting and motorized screens create ambiance and extra comfort."
+    answer: "A modern pergola is a motorized louvered structure that brings shade, comfort, and style to your outdoor space.\n\nOur pergolas are custom-built from extruded aluminum, feature a built-in gutter system, and are powder-coated to withstand Caribbean weather.\n\nAutomation allows the louvers to close when it rains, while LED lighting and motorized screens create ambiance and extra comfort."
   },
   {
     question: "HOW DO I GET AN ESTIMATE?",
