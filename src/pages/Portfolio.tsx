@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { ArrowRight, Filter, X, ChevronLeft, ChevronRight, MapPin, Images, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { portfolioProjects, type ProjectCategory } from '../data/content';
+import { type ProjectCategory } from '../data/content';
+import { portfolioProjects } from '../data/portfolioData';
 import './Portfolio.css';
 
 const ALL_CATEGORIES: ('All' | ProjectCategory)[] = [
