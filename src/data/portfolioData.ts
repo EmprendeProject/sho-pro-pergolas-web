@@ -1,6 +1,6 @@
 // AUTO-GENERATED — do not edit manually
 // Run: node generate-portfolio.mjs
-// Generated: 2026-05-31T00:39:00.503Z
+// Generated: 2026-05-31T16:26:30.205Z
 
 import type { ProjectCategory } from './content';
 
@@ -11,6 +11,7 @@ export interface PortfolioProject {
   location: string;
   brand: string;
   signature: boolean;
+  folderOrder: number;   // numeric order from Cloudinary folder names
   coverImage: string;
   photos: string[];
 }
@@ -23,6 +24,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Dorado, PR",
     "brand": "StruXure",
     "signature": true,
+    "folderOrder": 1,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152857/1_s3atwe.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152857/1_s3atwe.webp",
@@ -39,6 +41,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Condado, PR",
     "brand": "Azenco",
     "signature": true,
+    "folderOrder": 2,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152853/1_hhernr.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152853/1_hhernr.webp",
@@ -59,28 +62,13 @@ export const portfolioProjects: PortfolioProject[] = [
     ]
   },
   {
-    "id": "dark-knight",
-    "name": "Dark Knight",
-    "category": "Residential Pergolas",
-    "location": "Guaynabo, PR",
-    "brand": "Azenco",
-    "signature": false,
-    "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152887/1_bwkiaz.webp",
-    "photos": [
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152887/1_bwkiaz.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152836/2_wqxld2.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152843/3_rnasga.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152866/4_pwrgul.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152886/5_havchs.webp"
-    ]
-  },
-  {
     "id": "the-bachelorette-house",
     "name": "The Bachelorette House",
     "category": "Residential Pergolas",
     "location": "Dorado, PR",
     "brand": "Azenco",
     "signature": true,
+    "folderOrder": 3,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152846/1_vt1kyv.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152846/1_vt1kyv.webp",
@@ -96,12 +84,46 @@ export const portfolioProjects: PortfolioProject[] = [
     ]
   },
   {
+    "id": "barlovento",
+    "name": "Barlovento",
+    "category": "Motorized Screens",
+    "location": "Dorado, PR",
+    "brand": "Progressive Screens",
+    "signature": true,
+    "folderOrder": 4,
+    "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152854/1_ty15em.webp",
+    "photos": [
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152854/1_ty15em.webp",
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152878/2_kladzm.webp",
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152897/3_t17teb.webp",
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152867/4_gvtcdz.webp"
+    ]
+  },
+  {
+    "id": "dark-knight",
+    "name": "Dark Knight",
+    "category": "Residential Pergolas",
+    "location": "Guaynabo, PR",
+    "brand": "Azenco",
+    "signature": false,
+    "folderOrder": 5,
+    "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152887/1_bwkiaz.webp",
+    "photos": [
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152887/1_bwkiaz.webp",
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152836/2_wqxld2.webp",
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152843/3_rnasga.webp",
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152866/4_pwrgul.webp",
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152886/5_havchs.webp"
+    ]
+  },
+  {
     "id": "cloud-nine",
     "name": "Cloud Nine",
     "category": "Residential Pergolas",
     "location": "Condado, PR",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 6,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152875/1_za1dqw.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152875/1_za1dqw.webp",
@@ -120,6 +142,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Puerto Rico",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 7,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152959/1_ssz2xn.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152959/1_ssz2xn.webp",
@@ -150,6 +173,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "St. Regis, PR",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 8,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152903/1_jqp0ds.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152903/1_jqp0ds.webp",
@@ -162,27 +186,13 @@ export const portfolioProjects: PortfolioProject[] = [
     ]
   },
   {
-    "id": "barlovento",
-    "name": "Barlovento",
-    "category": "Motorized Screens",
-    "location": "Dorado, PR",
-    "brand": "Progressive Screens",
-    "signature": true,
-    "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152854/1_ty15em.webp",
-    "photos": [
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152854/1_ty15em.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152878/2_kladzm.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152897/3_t17teb.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152867/4_gvtcdz.webp"
-    ]
-  },
-  {
     "id": "palacio-provincial",
     "name": "Palacio Provincial",
     "category": "Commercial Pergolas",
     "location": "Viejo San Juan, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 9,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152930/Palacio_Provincial_-_VSJ_PR_1_bz11d4.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152930/Palacio_Provincial_-_VSJ_PR_1_bz11d4.webp",
@@ -204,6 +214,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Miramar, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 10,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152924/The_Blackwood_Perch_-_Miramar_PR_1_duqqhy.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152924/The_Blackwood_Perch_-_Miramar_PR_1_duqqhy.webp",
@@ -221,6 +232,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Puerto Rico",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 11,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152834/1_juk6dm.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152834/1_juk6dm.webp",
@@ -247,6 +259,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Puerto Rico",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 12,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152904/Soliz_1_z8lise.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152904/Soliz_1_z8lise.webp",
@@ -263,6 +276,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Bayamón, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 13,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152869/Carport_-_St_Regis_PR_1_eexqhl.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152869/Carport_-_St_Regis_PR_1_eexqhl.webp",
@@ -277,6 +291,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Puerto Rico",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 14,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152877/1_vvytng.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152877/1_vvytng.webp",
@@ -306,6 +321,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Puerto Rico",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 15,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152959/1_rjpnxx.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152959/1_rjpnxx.webp",
@@ -322,6 +338,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Isla Verde, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 16,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152821/1_adlx4b.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152821/1_adlx4b.webp",
@@ -338,6 +355,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Miramar, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 17,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780153002/The_Ember_Lounge_-_Miramar_PR_1_fbh9hv.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780153002/The_Ember_Lounge_-_Miramar_PR_1_fbh9hv.webp",
@@ -355,6 +373,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "San Juan, PR",
     "brand": "SunTech",
     "signature": false,
+    "folderOrder": 18,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152891/1_ifvl8o.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152891/1_ifvl8o.webp",
@@ -370,6 +389,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Humacao, PR",
     "brand": "Progressive Screens",
     "signature": false,
+    "folderOrder": 19,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152828/1_l7qijw.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152828/1_l7qijw.webp",
@@ -386,6 +406,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Bayamón, PR",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 20,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152958/1_tr4vzd.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152958/1_tr4vzd.webp",
@@ -404,6 +425,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Cupey, PR",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 21,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152790/1_pctkvi.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152790/1_pctkvi.webp",
@@ -420,6 +442,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Mayagüez, PR",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 22,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152806/1_b96d66.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152806/1_b96d66.webp",
@@ -438,6 +461,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Bayamón, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 23,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152864/1_t4iswz.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152864/1_t4iswz.webp",
@@ -453,6 +477,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Humacao, PR",
     "brand": "Infinity Rack",
     "signature": false,
+    "folderOrder": 24,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152787/1_uz08er.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152787/1_uz08er.webp",
@@ -469,6 +494,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Condado, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 25,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152845/HiBird_Hotel_Pure_Juice_Bar_-_Condado_PR_1_qfpzrj.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152845/HiBird_Hotel_Pure_Juice_Bar_-_Condado_PR_1_qfpzrj.webp",
@@ -490,6 +516,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "San Juan, PR",
     "brand": "Progressive Screens",
     "signature": false,
+    "folderOrder": 26,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152797/1._Cover_uqfn7z.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152797/1._Cover_uqfn7z.webp",
@@ -507,6 +534,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "San Juan, PR",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 27,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152923/1_xudbbs.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152923/1_xudbbs.webp",
@@ -522,6 +550,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Guaynabo, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 28,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152790/1_nptx7k.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152790/1_nptx7k.webp",
@@ -540,6 +569,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Dorado, PR",
     "brand": "SunTech",
     "signature": false,
+    "folderOrder": 29,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152947/1_pumypt.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152947/1_pumypt.webp",
@@ -555,6 +585,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Condado, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 30,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152872/1_japfdu.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152872/1_japfdu.webp",
@@ -578,6 +609,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Condado, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 31,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152805/1_oesh0v.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152805/1_oesh0v.webp",
@@ -596,6 +628,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Dorado, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 32,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152809/1_lfba0w.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152809/1_lfba0w.webp",
@@ -613,6 +646,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Puerto Rico",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 33,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152801/1_gbahzl.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152801/1_gbahzl.webp",
@@ -630,6 +664,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Isla Verde, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 34,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152833/1_oeudy8.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152833/1_oeudy8.webp",
@@ -645,6 +680,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Dorado, PR",
     "brand": "CabanaX",
     "signature": false,
+    "folderOrder": 35,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152799/1_ovqkoy.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152799/1_ovqkoy.webp",
@@ -661,6 +697,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "San Juan, PR",
     "brand": "Renlita",
     "signature": false,
+    "folderOrder": 36,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152920/1_s0sobq.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152920/1_s0sobq.webp",
@@ -679,6 +716,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Humacao, PR",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 37,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152834/The_Summerset_-_Palmas_PR_1_mohzxl.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152834/The_Summerset_-_Palmas_PR_1_mohzxl.webp",
@@ -698,6 +736,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Miramar, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 38,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152996/1_xjkuq6.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152996/1_xjkuq6.webp",
@@ -714,6 +753,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "St. Regis, PR",
     "brand": "Progressive Screens",
     "signature": false,
+    "folderOrder": 39,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152886/1_j2fc50.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152886/1_j2fc50.webp",
@@ -729,6 +769,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Isla Verde, PR",
     "brand": "Progressive Screens",
     "signature": false,
+    "folderOrder": 40,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152850/1_guu8uy.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152850/1_guu8uy.webp",
@@ -743,6 +784,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "San Juan, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 41,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152887/The_Aqua_Vista_-_Guaynabo_PR_1_z494rt.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152887/The_Aqua_Vista_-_Guaynabo_PR_1_z494rt.webp",
@@ -763,6 +805,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Puerto Rico",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 42,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152985/Carport_-_Bayamo%CC%81n_PR_1_zmsmsb.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152985/Carport_-_Bayamo%CC%81n_PR_1_zmsmsb.webp",
@@ -779,6 +822,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Puerto Rico",
     "brand": "Sho-Pros",
     "signature": false,
+    "folderOrder": 43,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152927/1_pd8lna.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152927/1_pd8lna.webp",
@@ -795,6 +839,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Various",
     "brand": "Infinity Rack",
     "signature": false,
+    "folderOrder": 44,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152808/1_eeb9je.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152808/1_eeb9je.webp",
@@ -811,6 +856,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Guaynabo, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 45,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152851/The_Brisa_Walk_-_Rio_Grande_PR_1_zgwovm.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152851/The_Brisa_Walk_-_Rio_Grande_PR_1_zgwovm.webp",
@@ -827,6 +873,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Bayamón, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 46,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152832/1_pabubf.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152832/1_pabubf.webp",
@@ -845,6 +892,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "San Juan, PR",
     "brand": "Progressive Screens",
     "signature": false,
+    "folderOrder": 47,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152803/1_ds8evo.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152803/1_ds8evo.webp",
@@ -859,6 +907,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Dorado, PR",
     "brand": "Progressive Screens",
     "signature": false,
+    "folderOrder": 48,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152810/1_aw6eyo.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152810/1_aw6eyo.webp",
@@ -877,6 +926,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "San Juan, PR",
     "brand": "StruXure",
     "signature": false,
+    "folderOrder": 49,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152910/1_aeyz58.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152910/1_aeyz58.webp",
@@ -894,6 +944,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Humacao, PR",
     "brand": "Progressive Screens",
     "signature": false,
+    "folderOrder": 50,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152825/1_tdbjvp.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152825/1_tdbjvp.webp",
@@ -910,6 +961,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Cupey, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 51,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152917/1_bq65xa.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152917/1_bq65xa.webp",
@@ -924,6 +976,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Dorado, PR",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 52,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152861/1_sog0jk.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152861/1_sog0jk.webp",
@@ -940,6 +993,7 @@ export const portfolioProjects: PortfolioProject[] = [
     "location": "Puerto Rico",
     "brand": "Azenco",
     "signature": false,
+    "folderOrder": 53,
     "coverImage": "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152795/1_fcrbw1.webp",
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780152795/1_fcrbw1.webp",

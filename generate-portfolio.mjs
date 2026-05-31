@@ -123,12 +123,34 @@ const slugify = (str) => str
 
 const stripNumber = (str) => str.replace(/^\d+\.?\d*\s*/, '').trim();
 
-// ── Sort order by number prefix ────────────────────────────────────────────
-
+/**
+ * Compute a stable numeric sort key from a full folder path.
+ *
+ * Rules:
+ *  - Top-level project:  "portfolio/2. Dark Knight"          → 2000
+ *  - Sub-project:        "portfolio/1. Sig Projects/3. Bach" → 1003
+ *
+ * Multiplying the parent by 1000 guarantees sub-projects of folder 1
+ * (1001, 1002, …) always sort before top-level folder 2 (2000).
+ */
 const folderSortKey = (folderPath) => {
-  const name = folderPath.split('/').pop() ?? '';
-  const m = name.match(/^(\d+(?:\.\d+)?)/);
-  return m ? parseFloat(m[1]) : 999;
+  // Strip the root "portfolio/" prefix, keep the rest
+  const withoutRoot = folderPath.replace(/^portfolio\//, '');
+  const segments = withoutRoot.split('/');
+
+  const getNum = (seg) => {
+    const m = seg.match(/^(\d+(?:\.\d+)?)/);   // e.g. "3.5. The Indigo" → 3.5
+    return m ? parseFloat(m[1]) : 999;
+  };
+
+  if (segments.length === 1) {
+    // flat project — e.g. "2. Dark Knight" → 2000
+    return getNum(segments[0]) * 1000;
+  } else {
+    // nested — e.g. ["1. Signature Projects", "3. The Bachelorette House"]
+    // parent × 1000  +  child
+    return getNum(segments[0]) * 1000 + getNum(segments[1]);
+  }
 };
 
 // ── Generate ────────────────────────────────────────────────────────────────
@@ -146,13 +168,12 @@ async function main() {
     byFolder.get(folder).push(r);
   }
 
-  // Sort folders by their numeric prefix
-  const sortedFolders = [...byFolder.keys()].sort((a, b) => {
-    const aKey = folderSortKey(a);
-    const bKey = folderSortKey(b);
-    // Sub-folders (signature projects) keep their parent order = 1.x
-    return aKey - bKey;
-  });
+  // Sort folders by compound numeric sort key
+  const sortedFolders = [...byFolder.keys()].sort((a, b) =>
+    folderSortKey(a) - folderSortKey(b)
+  );
+
+  let orderCounter = 1;
 
   // Build projects array
   const projects = [];
@@ -186,11 +207,12 @@ async function main() {
       location: meta.location,
       brand: meta.brand,
       signature: meta.signature,
+      folderOrder: orderCounter++,   // Cloudinary display order
       coverImage: photos[0] ?? '',
       photos
     });
 
-    process.stderr.write(`  ✓ ${cleanName} (${slug}) → ${photos.length} images\n`);
+    process.stderr.write(`  ${orderCounter - 1}. ${cleanName} (${slug}) → ${photos.length} images\n`);
   }
 
   // Generate TypeScript file
@@ -207,6 +229,7 @@ export interface PortfolioProject {
   location: string;
   brand: string;
   signature: boolean;
+  folderOrder: number;   // numeric order from Cloudinary folder names
   coverImage: string;
   photos: string[];
 }
