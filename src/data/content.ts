@@ -195,7 +195,8 @@ export type ProjectCategory =
   | 'Residential Pergolas'
   | 'Motorized Screens'
   | 'Motorized Doors'
-  | 'Premium Carports';
+  | 'Premium Carports'
+  | 'Others';
 
 export interface PortfolioProject {
   id: string;

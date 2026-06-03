@@ -107,6 +107,9 @@ const METADATA = {
   'the-serenity':          { category: 'Residential Pergolas',  location: 'Cupey, PR',            brand: 'Azenco',            signature: false },
   'graphite-grove':        { category: 'Residential Pergolas',  location: 'Dorado, PR',           brand: 'Azenco',            signature: false },
   'the-villas':            { category: 'Residential Pergolas',  location: 'Puerto Rico',          brand: 'Azenco',            signature: false },
+  // Others (extra resources)
+  'miscellaneous':         { category: 'Others',                location: 'Puerto Rico',          brand: 'Sho-Pros',          signature: false },
+  'renderings':            { category: 'Others',                location: 'Puerto Rico',          brand: 'Sho-Pros',          signature: false },
 };
 
 // ── Slug helpers ───────────────────────────────────────────────────────────
@@ -183,8 +186,8 @@ async function main() {
     const cleanName = stripNumber(folderName);
     const slug = slugify(cleanName);
 
-    // Skip utility folders
-    if (['miscellaneous', 'renderings'].includes(slug)) continue;
+    // Folders with category 'Others' are included (miscellaneous, renderings)
+    // No longer skipped — they get the 'Others' category via METADATA
 
     // Sort images numerically by their name segment
     const sorted = [...resources].sort((a, b) => {

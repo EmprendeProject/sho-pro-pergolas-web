@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Star, ChevronLeft, ChevronRight, Phone, Mail, MessageSquare, MapPin, ClipboardList, HardHat, Wrench, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
-import { testimonials, portfolioProjects, homeFaqs, brands } from '../data/content';
+import { testimonials, homeFaqs, brands } from '../data/content';
+import { portfolioProjects } from '../data/portfolioData';
 import ImageWithFallback from '../components/ImageWithFallback';
 import { localBrandLogos } from '../utils/localAssets';
 import './Home.css';

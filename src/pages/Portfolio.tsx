@@ -13,6 +13,7 @@ const ALL_CATEGORIES: ('All' | ProjectCategory)[] = [
   'Motorized Screens',
   'Motorized Doors',
   'Premium Carports',
+  'Others',
 ];
 
 const categoryAccent: Record<string, string> = {
@@ -22,6 +23,7 @@ const categoryAccent: Record<string, string> = {
   'Motorized Screens':   '#3d2010',
   'Motorized Doors':     '#1a1a2e',
   'Premium Carports':    '#1a3028',
+  'Others':              '#3a3a3a',
 };
 
 export default function Portfolio() {
