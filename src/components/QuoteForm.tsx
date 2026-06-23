@@ -38,6 +38,7 @@ export default function QuoteForm() {
   const [contact, setContact] = useState({ name: '', email: '', phone: '', zipCode: '' });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -82,11 +83,7 @@ export default function QuoteForm() {
     }
   };
 
-  const sendToPancakeCRM = async () => {
-    const PANCAKE_API_KEY = '3f35589702424b48b8fa17cc699657a8';
-    const SHOP_ID = '1942209558';
-    const TABLE_NAME = 'Contact';
-
+  const sendToPancakeCRM = async (): Promise<void> => {
     const fileUrls = files.length > 0
       ? (await Promise.all(files.map(uploadFile))).filter(Boolean) as string[]
       : [];
@@ -112,17 +109,17 @@ export default function QuoteForm() {
       city: country,
     };
 
-    try {
-      await fetch(
-        `https://pos.pages.fm/api/v1/shops/${SHOP_ID}/crm/${TABLE_NAME}/records?api_key=${PANCAKE_API_KEY}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        }
-      );
-    } catch {
-      // Silently fail – never block the user experience
+    // Call our Vercel serverless proxy to avoid CORS restrictions.
+    // The proxy forwards the request to Pancake CRM from the server side.
+    const res = await fetch('/api/pancake-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData?.error ?? `Request failed with status ${res.status}`);
     }
   };
 
@@ -133,9 +130,17 @@ export default function QuoteForm() {
       return;
     }
     setSubmitting(true);
-    await sendToPancakeCRM();
-    setSubmitting(false);
-    setSubmitted(true);
+    setSubmitError(null);
+    try {
+      await sendToPancakeCRM();
+      setSubmitted(true);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Unknown error';
+      console.error('[QuoteForm] Failed to submit lead:', message);
+      setSubmitError('There was a problem sending your request. Please try again or contact us directly.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -331,6 +336,12 @@ export default function QuoteForm() {
                 onChange={(token) => setCaptchaToken(token)}
               />
             </div>
+
+            {submitError && (
+              <p style={{ color: '#e74c3c', fontSize: '0.875rem', marginBottom: '1rem', textAlign: 'center' }}>
+                {submitError}
+              </p>
+            )}
 
             <button type="submit" className="btn btn-primary quote-submit-btn" disabled={submitting || !captchaToken}>
               {submitting ? (

@@ -25,3 +25,4 @@ dist-ssr
 
 # PDFs are too large for GitHub — host on Cloudflare/S3/etc.
 public/library/
+.vercel

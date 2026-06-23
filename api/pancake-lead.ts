@@ -1,0 +1,50 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
+const PANCAKE_API_KEY = process.env.PANCAKE_API_KEY ?? '3f35589702424b48b8fa17cc699657a8';
+const SHOP_ID = process.env.PANCAKE_SHOP_ID ?? '1942209558';
+const TABLE_NAME = 'Contact';
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // Allow requests from any origin (our own frontend)
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle CORS preflight
+  if (req.method === 'OPTIONS') {
+    return res.status(204).end();
+  }
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const payload = req.body;
+
+  if (!payload || !payload.Name || !payload.Phone) {
+    return res.status(400).json({ error: 'Missing required fields: Name, Phone' });
+  }
+
+  try {
+    const pancakeRes = await fetch(
+      `https://pos.pages.fm/api/v1/shops/${SHOP_ID}/crm/${TABLE_NAME}/records?api_key=${PANCAKE_API_KEY}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }
+    );
+
+    const data = await pancakeRes.json().catch(() => ({}));
+
+    if (!pancakeRes.ok) {
+      console.error('[pancake-lead] Pancake API error:', pancakeRes.status, data);
+      return res.status(502).json({ error: 'Pancake API error', details: data });
+    }
+
+    return res.status(200).json({ success: true, data });
+  } catch (err) {
+    console.error('[pancake-lead] Unexpected error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+}
