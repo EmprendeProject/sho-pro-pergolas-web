@@ -1,6 +1,6 @@
 // AUTO-GENERATED — do not edit manually
 // Run: node generate-portfolio.mjs
-// Generated: 2026-06-03T18:05:30.650Z
+// Generated: 2026-07-29T22:29:44.236Z
 
 import type { ProjectCategory } from './content';
 
@@ -45,7 +45,6 @@ export const portfolioProjects: PortfolioProject[] = [
     "photos": [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503273/1_xqqnhz.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780506176/2_mmdyus.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780504311/2_rxpwqo.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503292/3_dt3poy.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503236/5_l5zpjs.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503260/6_uuwgvp.webp",
@@ -181,8 +180,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780504284/Palacio_Provincial_-_VSJ_PR_4_tdgtwd.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503214/Palacio_Provincial_-_VSJ_PR_7_f1f2sh.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780505258/Palacio_Provincial_-_VSJ_PR_8_k2n2tg.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780506210/Palacio_Provincial_-_VSJ_PR_8_oyjdhz.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780504311/Palacio_Provincial_-_VSJ_PR_8_z4yav0.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503266/Palacio_Provincial_-_VSJ_PR_9_qohkgj.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503243/Palacio_Provincial_-_VSJ_PR_10_hkvyyn.webp"
     ]
@@ -920,7 +917,8 @@ export const portfolioProjects: PortfolioProject[] = [
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503202/Caja_StruXure_mw9hzn.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503219/Control_ed71fw.webp",
       "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503202/Rain_Chains_ibgcmu.webp",
-      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503202/Walking_Over_System_pygzwh.webp"
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1780503202/Walking_Over_System_pygzwh.webp",
+      "https://res.cloudinary.com/du2kej0xd/image/upload/v1783704186/last.WebPg_wedbon.jpg"
     ]
   },
   {

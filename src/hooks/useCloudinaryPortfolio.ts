@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { portfolioProjects, type PortfolioProject } from '../data/content';
+import { portfolioProjects, type PortfolioProject } from '../data/portfolioData';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -73,6 +73,7 @@ const mergeWithMetadata = (raw: CloudinaryRaw[]): PortfolioProject[] => {
         location: 'Puerto Rico',
         brand: 'Sho-Pros',
         signature: false,
+        folderOrder: 999,
         coverImage: optimizeUrl(r.images[0], 800),
         photos: r.images,
       } satisfies PortfolioProject;
