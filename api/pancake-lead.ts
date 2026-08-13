@@ -35,7 +35,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     phone_number: payload.Phone,
     email: payload.Email,
     utm_source: payload.Note,
-    link: fileMatches ? fileMatches[0] : undefined,
+    link: fileMatches ? fileMatches : undefined,
     // Note: Pancake V2 ignores zip_code and city unless custom fields are created for them.
   };
 
