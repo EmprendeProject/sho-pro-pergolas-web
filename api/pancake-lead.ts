@@ -25,13 +25,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: 'Missing required fields: Name, Phone' });
   }
 
+  // Map the frontend payload to Pancake CRM V2 expected field names
+  const pancakePayload = {
+    name: payload.Name,
+    phone_number: payload.Phone,
+    email: payload.Email,
+    note: payload.Note,
+    zip_code: payload.zip_code,
+    city: payload.city,
+  };
+
   try {
     const pancakeRes = await fetch(
       `https://crm.pancake.vn/api/workspaces/${SHOP_ID}/${TABLE_NAME}/records?api_key=${PANCAKE_API_KEY}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(pancakePayload),
       }
     );
 
