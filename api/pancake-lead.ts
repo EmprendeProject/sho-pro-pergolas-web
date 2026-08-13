@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const PANCAKE_API_KEY = process.env.PANCAKE_API_KEY ?? '69bf636450cc4880ad2e9793b2edc7a2';
-const SHOP_ID = process.env.PANCAKE_SHOP_ID ?? '1942209558';
-const TABLE_NAME = 'Lead';
+const PANCAKE_API_KEY = process.env.PANCAKE_API_KEY ?? '87fd40783306424dbe6325df3e62090f';
+const SHOP_ID = process.env.PANCAKE_SHOP_ID ?? '1531';
+const TABLE_NAME = 'Contact';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Allow requests from any origin (our own frontend)
@@ -27,7 +27,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const pancakeRes = await fetch(
-      `https://pos.pages.fm/api/v1/shops/${SHOP_ID}/crm/${TABLE_NAME}/records?api_key=${PANCAKE_API_KEY}`,
+      `https://crm.pancake.vn/api/workspaces/${SHOP_ID}/${TABLE_NAME}/records?api_key=${PANCAKE_API_KEY}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
