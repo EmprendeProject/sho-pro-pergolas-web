@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const PANCAKE_API_KEY = process.env.PANCAKE_API_KEY ?? '87fd40783306424dbe6325df3e62090f';
 const SHOP_ID = process.env.PANCAKE_SHOP_ID ?? '1531';
-const TABLE_NAME = 'Contact';
+const TABLE_NAME = 'lead';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Allow requests from any origin (our own frontend)
