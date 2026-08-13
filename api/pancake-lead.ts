@@ -26,13 +26,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // Map the frontend payload to Pancake CRM V2 expected field names
+  // Pancake CRM V2 drops fields that don't exist. We map the Note to utm_source 
+  // so the user can see it in their CRM, and extract the first file URL into link.
+  const fileMatches = payload.Note?.match(/https:\/\/[^\s]+/g);
+  
   const pancakePayload = {
     name: payload.Name,
     phone_number: payload.Phone,
     email: payload.Email,
-    note: payload.Note,
-    zip_code: payload.zip_code,
-    city: payload.city,
+    utm_source: payload.Note,
+    link: fileMatches ? fileMatches[0] : undefined,
+    // Note: Pancake V2 ignores zip_code and city unless custom fields are created for them.
   };
 
   try {
