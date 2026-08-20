@@ -25,18 +25,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: 'Missing required fields: Name, Phone' });
   }
 
-  // Map the frontend payload to Pancake CRM V2 expected field names
-  // Pancake CRM V2 drops fields that don't exist. We map the Note to utm_source 
-  // so the user can see it in their CRM, and extract the first file URL into link.
+  // Pancake CRM V2 drops fields that don't exist, but we found the correct internal names
+  // for the custom fields configured in this workspace.
   const fileMatches = payload.Note?.match(/https:\/\/[^\s]+/g);
   
   const pancakePayload = {
     name: payload.Name,
     phone_number: payload.Phone,
     email: payload.Email,
-    utm_source: payload.Note,
-    link: fileMatches ? fileMatches : undefined,
-    // Note: Pancake V2 ignores zip_code and city unless custom fields are created for them.
+    project_description: payload.Note,
+    city: payload.city,
+    zip_code: payload.zip_code,
+    fotos: fileMatches ? fileMatches : undefined,
+    links: fileMatches ? fileMatches : undefined,
   };
 
   try {
